@@ -5,11 +5,12 @@ const StyledInfoCard = styled.div`
   flex-direction: column;
   position: fixed;
   bottom: 50px;
-  right: 0;
-  width: 300px;
-  background-color: var(--brand-color);
+  right: 150px;
+  width: 400px;
   gap: 2rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 `;
 
 const StyledUl = styled.ul`

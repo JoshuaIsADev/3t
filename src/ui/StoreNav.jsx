@@ -7,12 +7,14 @@ const StyledStoreNav = styled(motion.nav)`
   justify-content: flex-end;
   width: 150px;
   height: 150px;
-  background-color: var(--brand-color);
   z-index: 99;
   position: fixed;
   padding: 0.5rem;
   top: -50px;
   right: 150px;
+  background-color: var(--brand-color);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 `;
 
 const StyledUl = styled.ul`
@@ -31,7 +33,7 @@ function StoreNav() {
     <StyledStoreNav
       animate={{ translateY: 0 }}
       initial={{ translateY: -100 }}
-      transition={{ type: 'spring', delay: 0.5, duration: 1 }}
+      transition={{ type: 'spring', delay: 1, duration: 1 }}
     >
       <nav>
         <StyledUl>
