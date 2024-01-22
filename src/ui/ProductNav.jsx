@@ -12,8 +12,8 @@ const StyledProductNav = styled(motion.aside)`
   top: 100px;
   left: 0;
   background-color: var(--brand-color);
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  /* background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); */
 `;
 
 const StyledNav = styled.nav`
@@ -33,7 +33,7 @@ const StyledUl = styled.ul`
 
 const StyledLi = styled.li`
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--color-grey-0);
 `;
 
@@ -42,7 +42,7 @@ function ProductNav() {
     <StyledProductNav
       animate={{ translateX: -100 }}
       initial={{ translateX: -400 }}
-      transition={{ type: 'spring', delay: 0.5, duration: 1 }}
+      transition={{ type: 'spring', delay: 0.1, duration: 1 }}
     >
       <StyledNav>
         <StyledUl>

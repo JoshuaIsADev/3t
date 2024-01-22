@@ -11,7 +11,7 @@ function Logo() {
     <Img
       animate={{ opacity: 100 }}
       initial={{ opacity: 0 }}
-      transition={{ delay: 2, duration: 1 }}
+      transition={{ delay: 0.75, duration: 1 }}
       src='/3tlogored.png'
       alt='logo'
     />

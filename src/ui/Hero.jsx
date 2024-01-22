@@ -27,7 +27,7 @@ function Hero() {
       <Video
         animate={{ opacity: 100 }}
         initial={{ opacity: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ delay: 1, duration: 2 }}
         playsInline
         autoPlay
         muted

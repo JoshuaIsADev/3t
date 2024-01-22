@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StyledInfoCard = styled.div`
+const StyledInfoCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -9,8 +10,9 @@ const StyledInfoCard = styled.div`
   width: 400px;
   gap: 2rem;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background-color: var(--brand-color);
+  /* background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); */
 `;
 
 const StyledUl = styled.ul`
@@ -21,13 +23,17 @@ const StyledUl = styled.ul`
 
 const StyledLi = styled.li`
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--color-grey-0);
 `;
 
 function InfoCard() {
   return (
-    <StyledInfoCard>
+    <StyledInfoCard
+      animate={{ translateX: 0 }}
+      initial={{ translateX: 600 }}
+      transition={{ type: 'spring', delay: 0.2, duration: 1 }}
+    >
       <ul>
         <StyledLi>Strada</StyledLi>
         <StyledLi>$3,499</StyledLi>

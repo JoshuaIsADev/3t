@@ -13,8 +13,8 @@ const StyledStoreNav = styled(motion.nav)`
   top: -50px;
   right: 150px;
   background-color: var(--brand-color);
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  /* background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); */
 `;
 
 const StyledUl = styled.ul`
@@ -24,7 +24,7 @@ const StyledUl = styled.ul`
 
 const StyledLi = styled.li`
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--color-grey-0);
 `;
 
@@ -33,7 +33,7 @@ function StoreNav() {
     <StyledStoreNav
       animate={{ translateY: 0 }}
       initial={{ translateY: -100 }}
-      transition={{ type: 'spring', delay: 1, duration: 1 }}
+      transition={{ type: 'spring', delay: 0.2, duration: 1 }}
     >
       <nav>
         <StyledUl>
