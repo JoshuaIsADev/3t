@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import ProductNav from './ProductNav';
 import StoreNav from './StoreNav';
-import InfoCard from './InfoCard';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -30,7 +29,6 @@ function Header() {
       </LogoContainer>
       <ProductNav />
       <StoreNav />
-      <InfoCard />
     </StyledHeader>
   );
 }

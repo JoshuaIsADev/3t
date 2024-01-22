@@ -1,16 +1,17 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StyledStoreNav = styled.nav`
+const StyledStoreNav = styled(motion.nav)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 150px;
-  height: 100px;
+  height: 150px;
   background-color: var(--brand-color);
   z-index: 99;
   position: fixed;
   padding: 0.5rem;
-  top: 0;
+  top: -50px;
   right: 150px;
 `;
 
@@ -27,7 +28,11 @@ const StyledLi = styled.li`
 
 function StoreNav() {
   return (
-    <StyledStoreNav>
+    <StyledStoreNav
+      animate={{ translateY: 0 }}
+      initial={{ translateY: -100 }}
+      transition={{ type: 'spring', delay: 0.5 }}
+    >
       <nav>
         <StyledUl>
           <StyledLi>Account</StyledLi>

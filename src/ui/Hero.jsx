@@ -1,12 +1,19 @@
 import styled from 'styled-components';
+import InfoCard from './InfoCard';
 
-const Img = styled.img`
+const StyledHero = styled.section`
   width: 100%;
-  height: auto;
+  height: 100lvh;
+  background-image: url('/img/3t_strada_due_review_06.jpg');
+  background-size: cover;
 `;
 
 function Hero() {
-  return <Img src='/img/3t_strada_due_review_06.jpg' alt='hero background' />;
+  return (
+    <StyledHero>
+      <InfoCard />
+    </StyledHero>
+  );
 }
 
 export default Hero;
