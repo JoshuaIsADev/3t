@@ -31,7 +31,7 @@ function StoreNav() {
     <StyledStoreNav
       animate={{ translateY: 0 }}
       initial={{ translateY: -100 }}
-      transition={{ type: 'spring', delay: 0.5 }}
+      transition={{ type: 'spring', delay: 0.5, duration: 1 }}
     >
       <nav>
         <StyledUl>

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import Button from './Button';
+import { motion } from 'framer-motion';
 
-const StyledProductNav = styled.aside`
+const StyledProductNav = styled(motion.aside)`
   display: flex;
   justify-content: flex-end;
   width: 300px;
@@ -36,7 +37,11 @@ const StyledLi = styled.li`
 
 function ProductNav() {
   return (
-    <StyledProductNav>
+    <StyledProductNav
+      animate={{ translateX: 0 }}
+      initial={{ translateX: -300 }}
+      transition={{ type: 'spring', delay: 0.7, duration: 1 }}
+    >
       <StyledNav>
         <StyledUl>
           <StyledLi>Products </StyledLi>
