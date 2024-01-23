@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #161616;
   --color-grey-900: #000000;
 
-  --brand-color: #E41B13;
+  --color-brand: #E41B13;
   
   --color-danger: #000000;
 
@@ -37,16 +37,17 @@ const GlobalStyles = createGlobalStyle`
   color: var(--color-gray-900);
 }
 
-html, body {
-  font-family: 'Inter Tight', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
+body {
+  font-family: 'Inter Tight', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 li {
   list-style: none;
