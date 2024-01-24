@@ -20,11 +20,13 @@ const StyledProductHero = styled.section`
   /* width: 100vw; */
   height: 100vh;
   margin-top: 150vh;
+  /* margin-bottom: 10vh; */
   /* padding: 0 4rem 0rem 1rem;
   background-image: url('/img/strada01.jpg');
   background-size: cover;
   background-position: center;
   position: relative; */
+  /* position: relative; */
   position: sticky;
   top: 0;
   z-index: 0;
@@ -34,23 +36,23 @@ const ProductHeroBackground = styled(motion.div)`
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-image: url('/img/strada01.jpg');
+  background-image: url('/img/section-02.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
   position: absolute;
 `;
 
-function ProductHero() {
+function ProductHero2() {
   const { scrollYProgress } = useScroll({
-    target: '',
+    // target: '',
     // offset: ['0 1', '.9 1'],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
 
   return (
     <>
-      <StyledProductHero id='strada'>
+      <StyledProductHero id='strada2'>
         <HeroRevealText />;
         <ProductHeroBackground
           style={{
@@ -62,4 +64,4 @@ function ProductHero() {
   );
 }
 
-export default ProductHero;
+export default ProductHero2;
