@@ -7,21 +7,19 @@ const StyledHero = styled.section`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 220vh;
-  /* background-image: url('/img/3t_strada_due_review_06.jpg');
-  background-size: cover; */
+  height: 130vh;
   position: relative;
   z-index: 0;
 `;
 
 const Video = styled(motion.video)`
-  position: absolute;
+  position: fixed;
   object-fit: cover;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   top: 0%;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 `;
 
 function Hero() {

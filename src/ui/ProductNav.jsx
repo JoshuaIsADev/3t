@@ -6,8 +6,8 @@ const StyledProductNav = styled(motion.aside)`
   justify-content: flex-start;
   z-index: 99;
   position: fixed;
-  padding: 0 1vw 0 0;
-  bottom: 3vh;
+  padding: 0 2rem 0 0;
+  bottom: 2rem;
   right: 0;
   /* background-color: var(--brand-color); */
   /* background-color: rgba(255, 255, 255, 0.2);
@@ -19,7 +19,7 @@ const StyledUl = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
-  width: 35vw;
+  width: 30vw;
 `;
 
 const StyledLi = styled.li`
@@ -27,14 +27,14 @@ const StyledLi = styled.li`
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--color-grey-900);
+  color: var(--color-brand);
 `;
 
 function ProductNav() {
   return (
     <StyledProductNav
-      animate={{ translateY: 0 }}
       initial={{ translateY: 100 }}
+      animate={{ translateY: 0 }}
       transition={{ type: 'spring', delay: 0.5, duration: 0.6 }}
     >
       <nav>

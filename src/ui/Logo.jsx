@@ -8,9 +8,9 @@ const LogoContainer = styled.div`
   position: fixed;
   width: 100vw;
   margin: 0 auto;
-  top: 2vh;
-  left: 1vw;
-  z-index: 100;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1;
 `;
 
 const Img = styled(motion.img)`
