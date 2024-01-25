@@ -19,14 +19,12 @@ const StyledProductHero = styled.section`
   flex-direction: column;
   /* width: 100vw; */
   height: 100vh;
-  margin-top: 100vh;
   /* padding: 0 4rem 0rem 1rem;
   background-image: url('/img/strada01.jpg');
   background-size: cover;
   background-position: center;
   position: relative; */
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 0;
 `;
 
@@ -43,11 +41,8 @@ const ProductHeroBackground = styled(motion.div)`
 `;
 
 function ProductHero() {
-  const { scrollYProgress } = useScroll({
-    target: '',
-    offset: ['0 1', '.7 1'],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const { scrollYProgress } = useScroll();
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import InfoCard from './InfoCard';
 import { motion } from 'framer-motion';
-import HeroScrollText from './HeroScrollText';
+// import HeroScrollText from './HeroScrollText';
 
 const StyledHero = styled.section`
   display: flex;
@@ -13,7 +13,7 @@ const StyledHero = styled.section`
 `;
 
 const Video = styled(motion.video)`
-  position: fixed;
+  position: absolute;
   object-fit: cover;
   width: 100%;
   height: 100vh;
@@ -38,7 +38,7 @@ function Hero() {
       />
       {/* <InfoCard /> */}
 
-      <HeroScrollText />
+      {/* <HeroScrollText /> */}
     </StyledHero>
   );
 }

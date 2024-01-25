@@ -5,10 +5,9 @@ const StyledFooter = styled.footer`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  margin-top: 150vh;
   background-color: var(--color-grey-0);
   z-index: 0;
-  position: sticky;
+  position: relative;
 `;
 
 const ContentContainer = styled.section`

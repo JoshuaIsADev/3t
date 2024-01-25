@@ -6,15 +6,14 @@ const LogoContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   position: fixed;
-  width: 100vw;
   margin: 0 auto;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   z-index: 1;
 `;
 
 const Img = styled(motion.img)`
-  width: 100px;
+  width: 50px;
   object-fit: contain;
 `;
 

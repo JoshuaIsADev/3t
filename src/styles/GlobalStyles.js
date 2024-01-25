@@ -40,12 +40,15 @@ const GlobalStyles = createGlobalStyle`
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+
 }
 body {
   font-family: 'Inter Tight', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 *::-webkit-input-placeholder {

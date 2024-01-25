@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Logo from './Logo';
-import ProductNav from './ProductNav';
-import StoreNav from './StoreNav';
+// import ProductNav from './ProductNav';
+// import StoreNav from './StoreNav';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -14,8 +14,8 @@ function Header() {
   return (
     <StyledHeader>
       <Logo />
-      <ProductNav />
-      <StoreNav />
+      {/* <ProductNav />
+      <StoreNav /> */}
     </StyledHeader>
   );
 }

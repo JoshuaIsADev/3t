@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const ScrollTextContainer = styled.div`
-  position: fixed;
-  top: 35vh;
+  position: absolute;
+  top: 60vh;
   overflow: hidden;
   width: 100%;
 `;
 
 const StyledHeroScrollText = styled(motion.h1)`
-  font-size: 16rem;
+  font-size: 14rem;
   font-weight: 700;
-  line-height: 14rem;
+  line-height: 12rem;
   color: var(--color-brand);
   mix-blend-mode: normal;
   text-transform: uppercase;

@@ -19,7 +19,6 @@ const StyledProductHero = styled.section`
   flex-direction: column;
   /* width: 100vw; */
   height: 100vh;
-  margin-top: 100vh;
   /* margin-bottom: 10vh; */
   /* padding: 0 4rem 0rem 1rem;
   background-image: url('/img/strada01.jpg');
@@ -27,8 +26,7 @@ const StyledProductHero = styled.section`
   background-position: center;
   position: relative; */
   /* position: relative; */
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 0;
 `;
 
