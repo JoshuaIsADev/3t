@@ -9,6 +9,7 @@ const StyledProductNav = styled(motion.aside)`
   padding: 0 2rem 0 0;
   bottom: 2rem;
   right: 0;
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
   /* background-color: var(--brand-color); */
   /* background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px); */

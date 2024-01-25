@@ -7,7 +7,7 @@ const StyledHero = styled.section`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 130vh;
+  height: 100vh;
   position: relative;
   z-index: 0;
 `;

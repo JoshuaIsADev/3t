@@ -39,14 +39,15 @@ const ProductHeroBackground = styled(motion.div)`
   background-position: center;
   z-index: 0;
   position: absolute;
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;
 
 function ProductHero() {
   const { scrollYProgress } = useScroll({
     target: '',
-    // offset: ['0 1', '.9 1'],
+    offset: ['0 1', '.7 1'],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
 
   return (
     <>
