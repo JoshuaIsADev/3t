@@ -15,6 +15,8 @@ const ContentContainer = styled.section`
   display: flex;
   width: 100%;
   gap: 4rem;
+  padding: 2rem;
+  flex-direction: column;
 `;
 
 const NewsletterContainer = styled.form`
@@ -24,18 +26,28 @@ const NewsletterContainer = styled.form`
   width: 100%;
   padding: 0;
   margin: 0 auto;
+  background-color: var(--color-brand);
 `;
 
 const StyledInput = styled.input`
   border: none;
+  border-bottom: 1px solid var(--color-grey-0);
+  width: 100%;
   padding: 2rem 3rem;
+  margin-bottom: 1rem;
   background-color: var(--color-brand);
   color: var(--color-grey-0);
+  font-size: 5rem;
 `;
 
 const StyledLabel = styled.label`
+  border: none;
   color: var(--color-grey-0);
   padding: 2rem 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-grey-0);
+  font-size: 5rem;
+  cursor: pointer;
 `;
 
 function Footer() {
@@ -44,10 +56,12 @@ function Footer() {
       <ContentContainer>
         <NewsletterContainer>
           <StyledInput
-            value='Sign up for our newsletter'
+            placeholder='Sign up for our newsletter'
             id='newsletter'
           ></StyledInput>
-          <StyledLabel for='newsletter'>Submit</StyledLabel>
+          <StyledLabel for='newsletter' onClick='submit'>
+            Submit
+          </StyledLabel>
         </NewsletterContainer>
       </ContentContainer>
     </StyledFooter>

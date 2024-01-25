@@ -19,7 +19,7 @@ const StyledProductHero = styled.section`
   flex-direction: column;
   /* width: 100vw; */
   height: 100vh;
-  margin-top: 150vh;
+  margin-top: 100vh;
   /* padding: 0 4rem 0rem 1rem;
   background-image: url('/img/strada01.jpg');
   background-size: cover;

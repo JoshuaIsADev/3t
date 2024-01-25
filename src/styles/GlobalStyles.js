@@ -48,6 +48,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*::-webkit-input-placeholder {
+    color: var(--color-grey-0);
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: var(--color-grey-0);
+    opacity: 1;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: var(--color-grey-0);
+    opacity: 1;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--color-grey-0);
+}
+*::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--color-grey-0);
+}
+*::placeholder {
+    /* modern browser */
+    color: var(--color-grey-0);
+}
 
 li {
   list-style: none;

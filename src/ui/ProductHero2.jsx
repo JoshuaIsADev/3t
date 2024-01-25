@@ -48,7 +48,7 @@ function ProductHero2() {
     // target: '',
     // offset: ['0 1', '.9 1'],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0.2, 0.8], [0.3, 1]);
 
   return (
     <>
