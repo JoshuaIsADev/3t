@@ -15,14 +15,14 @@ const StyledNavToggle = styled.div`
   justify-content: space-between;
   position: fixed;
   right: 0;
-  width: 800px;
+  width: 50vw;
   height: 5rem;
   background-color: var(--color-grey-0);
   z-index: 1;
   border-left: 1px solid var(--color-grey-900);
   padding: 2rem;
   gap: 2rem;
-  transform: translateX(685px);
+  transform: translateX(calc(50vw - 120px));
   ${(props) => variations[props.$variation]}
   transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;
@@ -32,7 +32,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   position: fixed;
   right: 0;
-  width: 800px;
+  width: 50vw;
   height: calc(100vh - 5rem);
   top: 5rem;
   background-color: var(--color-grey-0);
@@ -40,7 +40,7 @@ const StyledNav = styled.nav`
   border-left: 1px solid var(--color-grey-900);
   padding: 2rem;
   gap: 2rem;
-  transform: translateX(685px);
+  transform: translateX(calc(50vw - 120px));
   ${(props) => variations[props.$variation]}
   transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;

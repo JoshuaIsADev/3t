@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import Heading from './Heading';
 
 const HeroHeaderContainer = styled.div`
-  position: absolute;
-  /* height: 100vh; */
-  bottom: 2rem;
-  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  height: 100vh;
+  padding: 2rem;
 `;
 
 function HeroHeader({ heading, subheading }) {
