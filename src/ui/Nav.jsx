@@ -1,5 +1,13 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+
+const variations = {
+  open: css`
+    transform: translateX(0px);
+  `,
+};
 
 const StyledNavToggle = styled.div`
   display: flex;
@@ -14,6 +22,9 @@ const StyledNavToggle = styled.div`
   border-left: 1px solid var(--color-grey-900);
   padding: 2rem;
   gap: 2rem;
+  transform: translateX(685px);
+  ${(props) => variations[props.$variation]}
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;
 const StyledNav = styled.nav`
   display: flex;
@@ -29,6 +40,9 @@ const StyledNav = styled.nav`
   border-left: 1px solid var(--color-grey-900);
   padding: 2rem;
   gap: 2rem;
+  transform: translateX(685px);
+  ${(props) => variations[props.$variation]}
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;
 
 const OpenCloseContainer = styled.div`
@@ -44,13 +58,6 @@ const OpenMenu = styled.div`
   cursor: pointer;
 `;
 
-const CloseMenu = styled.div`
-  position: relative;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-`;
-
 const LinksContainer = styled.ul`
   display: flex;
   flex-direction: column;
@@ -59,7 +66,9 @@ const LinksContainer = styled.ul`
 
 const LiTitle = styled.li`
   font-size: 1rem;
+  font-weight: 500;
   text-transform: uppercase;
+  line-height: 0;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -68,9 +77,13 @@ const StyledNavLink = styled(NavLink)`
     font-size: 8rem;
     text-transform: uppercase;
     text-decoration: underline;
+    font-weight: 500;
+    line-height: 8rem;
     text-decoration-thickness: 3px;
     text-underline-offset: 1rem;
-    cursor: pointer;
+
+    cursor: ${(props) => (props.disabled ? 'pointer' : 'default')};
+    pointer-events: ${(props) => (props.disabled ? 'auto' : 'none')};
   }
 
   &:hover,
@@ -82,41 +95,53 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function Nav() {
+  const [nav, setNav] = useState(false);
+  const showNav = () => setNav(!nav);
+
   return (
     <>
-      <StyledNavToggle>
+      <StyledNavToggle $variation={nav ? 'open' : ''}>
         <OpenCloseContainer>
-          <OpenMenu>Open</OpenMenu>
-          <CloseMenu>X</CloseMenu>
+          <OpenMenu onClick={showNav}>
+            {nav ? <SlArrowRight /> : <SlArrowLeft />}
+          </OpenMenu>
         </OpenCloseContainer>
       </StyledNavToggle>
-      <StyledNav>
+      <StyledNav $variation={nav ? 'open' : ''} onClick={showNav}>
         <LinksContainer>
           <LiTitle>Bicycles</LiTitle>
           <li>
-            <StyledNavLink to='/exploro' classname='underline'>
+            <StyledNavLink to='/exploro' disabled={nav}>
               Exploro
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to='/strada'>Strada</StyledNavLink>
+            <StyledNavLink to='/strada' disabled={nav}>
+              Strada
+            </StyledNavLink>
           </li>
         </LinksContainer>
 
         <LinksContainer>
           <LiTitle>Info</LiTitle>
           <li>
-            <StyledNavLink to='/about'>About</StyledNavLink>
+            <StyledNavLink to='/about' disabled={nav}>
+              About
+            </StyledNavLink>
           </li>
         </LinksContainer>
 
         <LinksContainer>
           <LiTitle>Shop</LiTitle>
           <li>
-            <StyledNavLink to='/login'>Login</StyledNavLink>
+            <StyledNavLink to='/login' disabled={nav}>
+              Login
+            </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to='/cart'>Cart</StyledNavLink>
+            <StyledNavLink to='/cart' disabled={nav}>
+              Cart
+            </StyledNavLink>
           </li>
         </LinksContainer>
       </StyledNav>

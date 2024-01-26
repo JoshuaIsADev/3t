@@ -8,6 +8,7 @@ function Home() {
   return (
     <>
       <Hero />
+
       {/* <HeroScrollText />
       <ProductHero />
       <ProductHero2 />

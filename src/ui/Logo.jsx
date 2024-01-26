@@ -8,8 +8,8 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   position: fixed;
   margin: 0 auto;
-  top: 1rem;
-  left: 1rem;
+  top: 2rem;
+  left: 2rem;
   z-index: 1;
 `;
 

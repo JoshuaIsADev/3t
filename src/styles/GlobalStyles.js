@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-gray-900);
 }
 
@@ -44,7 +44,7 @@ html {
 
 }
 body {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Darker Grotesque', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
