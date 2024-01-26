@@ -91,6 +91,11 @@ img {
   width: 100%;
 }
 
+.underline {
+  text-decoration-thickness: 3px;
+  text-underline-offset: 1rem;
+}
+
 //OVERRIDES
 .faded {
   color: var(--color-grey-300)

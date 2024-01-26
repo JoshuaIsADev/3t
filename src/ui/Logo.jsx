@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const LogoContainer = styled.div`
   display: flex;
@@ -20,13 +21,15 @@ const Img = styled(motion.img)`
 function Logo() {
   return (
     <LogoContainer>
-      <Img
-        animate={{ translateY: 0 }}
-        initial={{ translateY: -300 }}
-        transition={{ type: 'spring', delay: 0.2, duration: 1 }}
-        src='/3tlogored.png'
-        alt='logo'
-      />
+      <NavLink to='/home'>
+        <Img
+          animate={{ translateY: 0 }}
+          initial={{ translateY: -300 }}
+          transition={{ type: 'spring', delay: 0.2, duration: 1 }}
+          src='/3tlogored.png'
+          alt='logo'
+        />
+      </NavLink>
     </LogoContainer>
   );
 }

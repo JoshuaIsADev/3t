@@ -1,5 +1,20 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+const StyledNavToggle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  width: 800px;
+  height: 5rem;
+  background-color: var(--color-grey-0);
+  z-index: 1;
+  border-left: 1px solid var(--color-grey-900);
+  padding: 2rem;
+  gap: 2rem;
+`;
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
@@ -7,7 +22,8 @@ const StyledNav = styled.nav`
   position: fixed;
   right: 0;
   width: 800px;
-  height: 100vh;
+  height: calc(100vh - 5rem);
+  top: 5rem;
   background-color: var(--color-grey-0);
   z-index: 1;
   border-left: 1px solid var(--color-grey-900);
@@ -41,40 +57,70 @@ const LinksContainer = styled.ul`
   width: 100%;
 `;
 
-const Li = styled.li`
-  font-size: 8rem;
-  text-transform: uppercase;
-`;
 const LiTitle = styled.li`
   font-size: 1rem;
   text-transform: uppercase;
 `;
 
+const StyledNavLink = styled(NavLink)`
+  &:link,
+  &:visited {
+    font-size: 8rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 1rem;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active,
+  &.active:link,
+  &.active:visited {
+    color: var(--color-grey-500);
+  }
+`;
+
 function Nav() {
   return (
-    <StyledNav>
-      <OpenCloseContainer>
-        <OpenMenu>Open</OpenMenu>
-        <CloseMenu>X</CloseMenu>
-      </OpenCloseContainer>
+    <>
+      <StyledNavToggle>
+        <OpenCloseContainer>
+          <OpenMenu>Open</OpenMenu>
+          <CloseMenu>X</CloseMenu>
+        </OpenCloseContainer>
+      </StyledNavToggle>
+      <StyledNav>
+        <LinksContainer>
+          <LiTitle>Bicycles</LiTitle>
+          <li>
+            <StyledNavLink to='/exploro' classname='underline'>
+              Exploro
+            </StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink to='/strada'>Strada</StyledNavLink>
+          </li>
+        </LinksContainer>
 
-      <LinksContainer>
-        <LiTitle>Bicycles</LiTitle>
-        <Li>Exploro</Li>
-        <Li>Strada</Li>
-      </LinksContainer>
+        <LinksContainer>
+          <LiTitle>Info</LiTitle>
+          <li>
+            <StyledNavLink to='/about'>About</StyledNavLink>
+          </li>
+        </LinksContainer>
 
-      <LinksContainer>
-        <LiTitle>Info</LiTitle>
-        <Li>About</Li>
-      </LinksContainer>
-
-      <LinksContainer>
-        <LiTitle>Shop</LiTitle>
-        <Li>Login</Li>
-        <Li>Cart</Li>
-      </LinksContainer>
-    </StyledNav>
+        <LinksContainer>
+          <LiTitle>Shop</LiTitle>
+          <li>
+            <StyledNavLink to='/login'>Login</StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink to='/cart'>Cart</StyledNavLink>
+          </li>
+        </LinksContainer>
+      </StyledNav>
+    </>
   );
 }
 
