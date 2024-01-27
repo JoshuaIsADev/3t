@@ -1,9 +1,9 @@
 import _debounce from 'lodash/debounce';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import HeroHeader from '../ui/HeroHeader';
 import Video from '../ui/Video';
 import Section from '../ui/Section';
 import Background from '../ui/Background';
-import { useCallback, useEffect, useRef, useState } from 'react';
 
 const headings = [
   { heading: 'Exploro', subheading: 'Our award-winning gravel bike', link: '' },
@@ -17,21 +17,34 @@ const headings = [
 ];
 
 function Home() {
-  const step = 4;
+  // const step = 4;
+  const [step, setStep] = useState(1);
+
+  function handlePrevious() {
+    // console.log('Scrolling up');
+    if (step > 1) setStep((s) => s - 1);
+  }
+
+  function handleNext() {
+    // console.log('Scrolling down');
+    if (step < 4) setStep((s) => s + 1);
+  }
 
   const prevScrollPosRef = useRef(0);
 
   const handleScroll = _debounce(() => {
     const currentScrollPos = window.scrollY;
 
-    if (currentScrollPos > prevScrollPosRef.current) {
-      console.log('Scrolling down');
-    } else {
-      console.log('Scrolling up');
+    if (prevScrollPosRef.current >= 0) {
+      if (currentScrollPos > prevScrollPosRef.current) {
+        handleNext();
+      } else {
+        handlePrevious();
+      }
     }
 
     prevScrollPosRef.current = currentScrollPos;
-  }, 200);
+  }, 50);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
