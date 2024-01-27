@@ -36,10 +36,12 @@ function Home() {
     const currentScrollPos = window.scrollY;
 
     if (prevScrollPosRef.current >= 0) {
-      if (currentScrollPos > prevScrollPosRef.current) {
-        handleNext();
-      } else {
-        handlePrevious();
+      if (prevScrollPosRef.current !== undefined) {
+        if (currentScrollPos > prevScrollPosRef.current) {
+          handleNext();
+        } else {
+          handlePrevious();
+        }
       }
     }
 

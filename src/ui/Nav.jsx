@@ -95,28 +95,31 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function Nav() {
-  const [nav, setNav] = useState(false);
-  const showNav = () => setNav(!nav);
+  const [isNavVisible, setNavVisibility] = useState(false);
+  const toggleNavVisibility = () => setNavVisibility((nav) => !nav);
 
   return (
     <>
-      <StyledNavToggle $variation={nav ? 'open' : ''}>
+      <StyledNavToggle $variation={isNavVisible ? 'open' : ''}>
         <OpenCloseContainer>
-          <OpenMenu onClick={showNav}>
-            {nav ? <SlArrowRight /> : <SlArrowLeft />}
+          <OpenMenu onClick={toggleNavVisibility}>
+            {isNavVisible ? <SlArrowRight /> : <SlArrowLeft />}
           </OpenMenu>
         </OpenCloseContainer>
       </StyledNavToggle>
-      <StyledNav $variation={nav ? 'open' : ''} onClick={showNav}>
+      <StyledNav
+        $variation={isNavVisible ? 'open' : ''}
+        onClick={toggleNavVisibility}
+      >
         <LinksContainer>
           <LiTitle>Bicycles</LiTitle>
           <li>
-            <StyledNavLink to='/exploro' disabled={nav}>
+            <StyledNavLink to='/exploro' disabled={isNavVisible}>
               Exploro
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to='/strada' disabled={nav}>
+            <StyledNavLink to='/strada' disabled={isNavVisible}>
               Strada
             </StyledNavLink>
           </li>
@@ -125,7 +128,7 @@ function Nav() {
         <LinksContainer>
           <LiTitle>Info</LiTitle>
           <li>
-            <StyledNavLink to='/about' disabled={nav}>
+            <StyledNavLink to='/about' disabled={isNavVisible}>
               About
             </StyledNavLink>
           </li>
@@ -134,12 +137,12 @@ function Nav() {
         <LinksContainer>
           <LiTitle>Shop</LiTitle>
           <li>
-            <StyledNavLink to='/login' disabled={nav}>
+            <StyledNavLink to='/login' disabled={isNavVisible}>
               Login
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to='/cart' disabled={nav}>
+            <StyledNavLink to='/cart' disabled={isNavVisible}>
               Cart
             </StyledNavLink>
           </li>
