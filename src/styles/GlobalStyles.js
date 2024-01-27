@@ -40,9 +40,9 @@ const GlobalStyles = createGlobalStyle`
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-
+  /* scroll-snap-type: y mandatory; */
 }
+
 body {
   font-family: 'Darker Grotesque', sans-serif;
   overflow-x: hidden;

@@ -26,7 +26,7 @@ function Logo() {
           animate={{ translateY: 0 }}
           initial={{ translateY: -300 }}
           transition={{ type: 'spring', delay: 0.2, duration: 1 }}
-          src='/3tlogored.png'
+          src='/3tlogowhite.png'
           alt='logo'
         />
       </NavLink>

@@ -4,17 +4,22 @@ import Heading from './Heading';
 const HeroHeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
+  justify-content: flex-start;
+  position: fixed;
   height: 100vh;
-  padding: 2rem;
+  padding: 1.8rem 8rem;
+  z-index: 1;
 `;
 
-function HeroHeader({ heading, subheading }) {
+function HeroHeader({ color, heading, subheading }) {
   return (
     <HeroHeaderContainer>
-      <Heading as='h2'>{subheading}</Heading>
-      <Heading as='h1'>{heading}</Heading>
+      <Heading as='h1' $variation={color}>
+        {heading}
+      </Heading>
+      <Heading as='h2' $variation={color}>
+        {subheading}
+      </Heading>
     </HeroHeaderContainer>
   );
 }

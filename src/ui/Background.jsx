@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 const StyledBackground = styled.div`
-  width: 100vw;
+  /* width: 100vw;*/
   height: 100vh;
-  position: absolute;
+  top: 0;
   background-image: url(${(props) => props.src});
   background-size: cover;
+  z-index: -1;
 `;
 
 const Background = ({ src }) => {

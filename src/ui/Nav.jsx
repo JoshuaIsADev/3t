@@ -74,11 +74,11 @@ const LiTitle = styled.li`
 const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
-    font-size: 8rem;
+    font-size: 7rem;
     text-transform: uppercase;
     text-decoration: underline;
     font-weight: 500;
-    line-height: 8rem;
+    line-height: 7rem;
     text-decoration-thickness: 3px;
     text-underline-offset: 1rem;
 
