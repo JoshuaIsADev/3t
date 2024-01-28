@@ -20,9 +20,9 @@ const StyledSection = styled.section`
   /* transition: all 1s linear; */
 `;
 
-function Section({ background }) {
+function Section({ id, background }) {
   return (
-    <StyledSection>
+    <StyledSection id={id}>
       <StyledBackground src={background}></StyledBackground>
     </StyledSection>
   );

@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 const Main = styled.main`
   background-color: var(--color-background);
+  /* transform: translateY(0vh);
+  transition: all 1s; */
 `;
 
 function AppLayout() {
@@ -12,9 +14,9 @@ function AppLayout() {
     <div>
       <Header />
       <Nav />
-      <Main>
-        <Outlet />
-      </Main>
+      {/* <Main> */}
+      <Outlet />
+      {/* </Main> */}
     </div>
   );
 }
