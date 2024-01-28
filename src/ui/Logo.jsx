@@ -8,14 +8,16 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   position: fixed;
   margin: 0 auto;
-  top: 2rem;
+  top: 10rem;
   left: 2rem;
   z-index: 1;
+  mix-blend-mode: multiply;
 `;
 
 const Img = styled(motion.img)`
-  width: 50px;
+  width: 300px;
   object-fit: contain;
+  /* mix-blend-mode: multiply; */
 `;
 
 function Logo() {
@@ -23,10 +25,10 @@ function Logo() {
     <LogoContainer>
       <NavLink to='/home'>
         <Img
-          animate={{ translateY: 0 }}
-          initial={{ translateY: -300 }}
-          transition={{ type: 'spring', delay: 0.2, duration: 1 }}
-          src='/3tlogowhite.png'
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ type: 'ease', delay: 1, duration: 2 }}
+          src='/3tlogo.svg'
           alt='logo'
         />
       </NavLink>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Video from '../ui/Video';
 
 const StyledBackground = styled.div`
   /* width: 100vw;*/
@@ -9,21 +10,32 @@ const StyledBackground = styled.div`
   z-index: -1;
 `;
 
+// const StyledVideo = styled.video``
+
 const StyledSection = styled.section`
   display: flex;
-  width: calc(100vw - 120px);
+  width: 100vw;
   height: 100vh;
-
   flex-direction: column;
-  /* scroll-snap-align: center;
-  scroll-snap-stop: always; */
-  /* transition: all 1s linear; */
 `;
 
-function Section({ id, background }) {
+function Section({ id, ref, background, video }) {
+  console.log(video);
   return (
-    <StyledSection id={id}>
+    <StyledSection id={id} ref={ref}>
       <StyledBackground src={background}></StyledBackground>
+      {video ? (
+        <Video
+          src={video}
+          playsInline
+          autoPlay
+          muted
+          loop
+          type='video/webm'
+        ></Video>
+      ) : (
+        ''
+      )}
     </StyledSection>
   );
 }
