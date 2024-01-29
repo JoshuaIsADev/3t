@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--color-gray-900);
 }
 
@@ -44,40 +44,12 @@ html {
 
 body {
   font-family: 'Darker Grotesque', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-}
-
-*::-webkit-input-placeholder {
-    color: var(--color-brand);
-    opacity: .5;
-}
-*:-moz-placeholder {
-    /* FF 4-18 */
-    color: var(--color-brand);
-    opacity: .5;
-}
-*::-moz-placeholder {
-    /* FF 19+ */
-    color: var(--color-brand);
-    opacity: .5;
-}
-*:-ms-input-placeholder {
-    /* IE 10+ */
-    color: var(--color-brand);
-    opacity: .5;
-}
-*::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: var(--color-brand);
-    opacity: .5;
-}
-*::placeholder {
-    /* modern browser */
-    color: var(--color-brand);
-    opacity: .5;
 }
 
 li {

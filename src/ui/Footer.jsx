@@ -1,124 +1,105 @@
 import styled from 'styled-components';
+import HeroHeading from './HeroHeading';
+import Row from './Row';
+import Column from './Column';
+import Heading from './Heading';
+
+const footerData = [
+  {
+    id: 5,
+    heading: 'Reach out',
+    subheading: 'Contact us globally',
+  },
+];
+
+const addressDatas = [
+  {
+    id: 1,
+    heading: 'Americas',
+    subheadine: 'American Offices 3t Bika America Inc.',
+    address: '160 Bartley Dr.Unit 2North York, Ontario,M4A 1E1',
+    phone: 'Phone: +1 (949) 600.9841 (Mon – Fri; GMT -8)',
+  },
+  {
+    id: 2,
+    heading: 'Europe',
+    subheadine: 'European Offices 3t Cycling SRL',
+    address: 'Via Leonardo Da Vinci, 1924030 Presezzo (BG) Italy',
+    phone: 'Phone: +39.035.4943451 (Mon – Fri; business hours)',
+  },
+  {
+    id: 3,
+    heading: 'Asia',
+    subheadine: 'Asian Offices 3t APAC LTD',
+    address: '36, Cunzhong St., West Dist., Taichung City, 40349, Taiwan R.O.C',
+    phone: 'Phone: +886 4.2376.6697 Fax: +886 4.2376.6356',
+  },
+];
 
 const StyledFooter = styled.footer`
-  display: flex;
   width: 100vw;
   height: 100vh;
-  align-items: center;
-  background-color: var(--color-grey-0);
-  z-index: 0;
-  position: relative;
-`;
-
-const ContentContainer = styled.section`
-  display: flex;
-  width: 100%;
-  gap: 4rem;
-  padding: 0 3rem 0 2rem;
-  flex-direction: column;
-  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-`;
-
-const NewsletterContainer = styled.form`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  margin: 0 auto;
-  border-bottom: 1px solid var(--color-brand);
-  gap: 1rem;
 `;
 
 const StyledInput = styled.input`
   border: none;
-  border-bottom: 1px solid var(--color-grey-0);
+  border-bottom: 1px solid var(--color-grey-900);
   width: 100%;
-  padding: 0;
-  font-weight: 600;
-  color: var(--color-brand);
-  font-size: 3rem;
+  padding: 0.25rem 0.25rem;
+  font-weight: 500;
+  color: var(--color-grey-900);
+  font-size: 14px;
   text-transform: uppercase;
 `;
 
 const StyledLabel = styled.label`
   border: none;
-  color: var(--color-grey-0);
-  padding: 0;
+  color: var(--color-grey-900);
+  padding: 0.25rem 0.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--color-brand);
-  font-size: 3rem;
+  font-size: 1rem;
   text-transform: uppercase;
   cursor: pointer;
-`;
-
-const AddressContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  gap: 2rem;
-  padding-bottom: 4rem;
-`;
-
-const AddressBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 300px;
-`;
-
-const H2 = styled.h2`
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  padding-bottom: 2rem;
-  color: var(--color-brand);
-  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-`;
-const P = styled.p`
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--color-brand);
-  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
 `;
 
 function Footer() {
   return (
     <StyledFooter>
-      <ContentContainer>
-        <AddressContainer>
-          <AddressBox>
-            <H2>American Offices 3t Bike America Inc.</H2>
-            <P>160 Bartley Dr. Unit 2, North York, Ontario, M4A 1E1</P>
-            <P>Phone: +1 (949) 600.9841 (Mon – Fri; GMT -8)</P>
-          </AddressBox>
-          <AddressBox>
-            <H2>European Offices 3t Cycling SRL</H2>
-            <P>Via Leonardo Da Vinci, 1924030 Presezzo (BG) Italy</P>
-            <P>Phone: +39.035.4943451 (Mon – Fri; business hours)</P>
-          </AddressBox>
-          <AddressBox>
-            <H2>Asian Offices 3t APAC LTD</H2>
-            <P>
-              36, Cunzhong St., West Dist., Taichung City, 40349, Taiwan R.O.C
-            </P>
-            <P>Phone: +886 4.2376.6697 Fax: +886 4.2376.6356</P>
-          </AddressBox>
-        </AddressContainer>
-        <NewsletterContainer>
-          <StyledInput
-            placeholder='Sign up for our newsletter'
-            id='newsletter'
-          ></StyledInput>
+      <HeroHeading
+        heading={footerData[0].heading}
+        subheading={footerData[0].subheading}
+      />
+      <Row>
+        <Column $variation='fourColumns'>
+          <Heading as='h2'>Sign up for our newsletter</Heading>
+        </Column>
+        <Column $variation=''>
+          <StyledInput placeholder='Email' id='newsletter'></StyledInput>
+        </Column>
+        <Column $variation=''>
           <StyledLabel for='newsletter' onClick='submit'>
             Submit
           </StyledLabel>
-        </NewsletterContainer>
-      </ContentContainer>
+        </Column>
+      </Row>
+      <Row>
+        <Column $variation='fourColumns'>
+          <Heading as='h2'>Write or call</Heading>
+        </Column>
+        {addressDatas.map((addressData) => (
+          <>
+            <Column $variation=''>
+              <Heading as='h2'>{addressData.heading}</Heading>
+            </Column>
+            <Column $variation='threeColumns'>
+              <p>{addressData.subheading}</p>
+              <p>{addressData.address}</p>
+              <p>{addressData.phone}</p>
+            </Column>
+          </>
+        ))}
+      </Row>
     </StyledFooter>
   );
 }

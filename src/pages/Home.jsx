@@ -1,12 +1,13 @@
-import HeroHeader from '../ui/HeroHeader';
-import Section from '../ui/Section';
-import { useRef, useState } from 'react';
+import SectionFeature from '../ui/SectionFeature';
+import React, { useRef, useState } from 'react';
 
 const heroSections = [
   {
     id: 1,
-    heading: 'Fast adventures',
-    subheading: 'Award-winning aero bikes',
+    heading: 'Award-winning bikes',
+    subheading: 'Fast adventures. Unforgettable experiences',
+    filter: '/img/noiseb.jpg',
+    mix: 'multiply',
     background: '',
     video: '/img/extrema_italia_small.webm',
     link: '',
@@ -14,10 +15,10 @@ const heroSections = [
   {
     id: 2,
     heading: 'Exploro',
-    subheading: "From all terrain to road, we've got you covered",
+    subheading: 'Fast on all terrain',
     background: '/img/section-02c.jpg',
     video: '',
-    productLink: 'exploro',
+    link: 'exploro',
   },
   {
     id: 3,
@@ -25,55 +26,45 @@ const heroSections = [
     subheading: "World's most comfortable aero bike",
     background: '/img/3t_strada_due_review_06.jpg',
     video: '',
-    productLink: 'strada',
+    link: 'strada',
   },
 
   {
     id: 4,
     heading: 'Made in Italy',
-    subheading: 'Learn about 3t',
+    subheading: 'With love and passion',
     background: '/img/extremaitalia_mercurio_02-1600x1200.jpg',
     video: '',
     link: 'about',
   },
-  {
-    id: 5,
-    heading: 'Contact us',
-    subheading: 'Reach us globally',
-    background: '',
-    video: '',
-    link: '',
-  },
 ];
 
 function Home() {
-  const [step, setStep] = useState(1);
+  // const [step, setStep] = useState(1);
 
-  function handlePrevious() {
-    if (step > 1) setStep((s) => s - 1);
-  }
+  // function handlePrevious() {
+  //   if (step > 1) setStep((s) => s - 1);
+  // }
 
-  function handleNext() {
-    if (step < 5) setStep((s) => s + 1);
-  }
+  // function handleNext() {
+  //   if (step < 5) setStep((s) => s + 1);
+  // }
 
   return (
     <>
-      {heroSections.map((heroSection) => (
-        <>
-          <HeroHeader
-            heading={heroSection.heading}
-            subheading={heroSection.subheading}
-            productLink={heroSection.productLink}
-            link={heroSection.link}
-          />
-          <Section
-            key={heroSection.id}
-            id={heroSection.id}
-            background={heroSection.background}
-            video={heroSection.video}
-          />
-        </>
+      {heroSections.map((heroSection, index) => (
+        <React.Fragment key={`${heroSection.id}-${heroSection.heading}`}>
+          <>
+            <SectionFeature
+              id={heroSection.id}
+              heading={heroSection.heading}
+              subheading={heroSection.subheading}
+              link={heroSection.link}
+              background={heroSection.background}
+              video={heroSection.video}
+            />
+          </>
+        </React.Fragment>
       ))}
     </>
   );

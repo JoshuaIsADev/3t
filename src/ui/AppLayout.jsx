@@ -2,20 +2,25 @@ import { Outlet } from 'react-router-dom';
 import Nav from './Nav';
 import Header from './Header';
 import styled from 'styled-components';
+import Footer from './Footer';
 
 const Main = styled.main`
-  background-color: var(--color-background);
+  background-color: none;
+  /* background-image: url('/img/noiseb.jpg');
+  background-repeat: repeat;
+  mix-blend-mode: multiply; */
 `;
 
 function AppLayout() {
   return (
-    <div>
+    <>
       <Header />
       <Nav />
       <Main>
         <Outlet />
       </Main>
-    </div>
+      <Footer />
+    </>
   );
 }
 

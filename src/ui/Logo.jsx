@@ -8,14 +8,14 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   position: fixed;
   margin: 0 auto;
-  top: 10rem;
+  top: 2rem;
   left: 2rem;
   z-index: 1;
   mix-blend-mode: multiply;
 `;
 
 const Img = styled(motion.img)`
-  width: 300px;
+  height: 25vh;
   object-fit: contain;
   /* mix-blend-mode: multiply; */
 `;
@@ -27,7 +27,7 @@ function Logo() {
         <Img
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
-          transition={{ type: 'ease', delay: 1, duration: 2 }}
+          transition={{ type: 'ease', delay: 1.25, duration: 1 }}
           src='/3tlogo.svg'
           alt='logo'
         />

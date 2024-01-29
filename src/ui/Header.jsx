@@ -14,8 +14,6 @@ function Header() {
   return (
     <StyledHeader>
       <Logo />
-      {/* <ProductNav />
-      <StoreNav /> */}
     </StyledHeader>
   );
 }
