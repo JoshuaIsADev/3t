@@ -9,6 +9,7 @@ const Row = styled.div`
   padding: 2rem;
   margin-bottom: 4rem;
   padding-left: calc(2rem + 400px);
+  padding-right: calc(2rem + 140px);
 `;
 
 export default Row;

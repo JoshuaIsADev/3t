@@ -1,5 +1,13 @@
+import Noise from '../ui/Noise';
+import SectionProductCards from '../ui/SectionProductCards';
+
 function Exploro() {
-  return <>Exploro</>;
+  return (
+    <>
+      <Noise />
+      <SectionProductCards />
+    </>
+  );
 }
 
 export default Exploro;

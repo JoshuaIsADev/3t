@@ -1,3 +1,4 @@
+import Noise from '../ui/Noise';
 import SectionFeature from '../ui/SectionFeature';
 import React, { useRef, useState } from 'react';
 
@@ -52,7 +53,8 @@ function Home() {
 
   return (
     <>
-      {heroSections.map((heroSection, index) => (
+      <Noise />
+      {heroSections.map((heroSection) => (
         <React.Fragment key={`${heroSection.id}-${heroSection.heading}`}>
           <>
             <SectionFeature

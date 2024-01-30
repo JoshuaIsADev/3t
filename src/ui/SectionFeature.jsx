@@ -18,19 +18,6 @@ const StyledBackground = styled.div`
   z-index: -1;
 `;
 
-const Noise = styled.div`
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  background-image: url('/img/noisec.jpg');
-  background-repeat: repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.7;
-  position: fixed;
-  z-index: 1;
-  pointer-events: none;
-`;
-
 function SectionFeature({
   id,
   ref,
@@ -43,7 +30,6 @@ function SectionFeature({
 }) {
   return (
     <StyledSection id={id} ref={ref}>
-      <Noise />
       <HeroHeading
         heading={heading}
         subheading={subheading}

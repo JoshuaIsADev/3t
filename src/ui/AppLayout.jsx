@@ -6,9 +6,6 @@ import Footer from './Footer';
 
 const Main = styled.main`
   background-color: none;
-  /* background-image: url('/img/noiseb.jpg');
-  background-repeat: repeat;
-  mix-blend-mode: multiply; */
 `;
 
 function AppLayout() {
