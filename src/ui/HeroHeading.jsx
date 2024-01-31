@@ -38,10 +38,10 @@ const Ul = styled.ul`
 function HeroHeading({ color, heading, subheading, link, variation }) {
   return (
     <HeroHeadingContainer $variation={variation}>
-      <Heading as='h1' $variation={color}>
+      <Heading as='h3' $variation={color}>
         {heading}
       </Heading>
-      <Heading as='h2' $variation={color}>
+      <Heading as='h4' $variation={color}>
         {subheading}
       </Heading>
       {link ? (

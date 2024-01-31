@@ -75,7 +75,7 @@ function Footer() {
       />
       <Row>
         <Column $variation='fourColumns'>
-          <Heading as='h2'>Sign up for our newsletter</Heading>
+          <Heading as='h4'>Sign up for our newsletter</Heading>
         </Column>
         <form>
           <Column $variation=''>
@@ -90,12 +90,12 @@ function Footer() {
       </Row>
       <Row>
         <Column $variation='fourColumns'>
-          <Heading as='h2'>Write or call</Heading>
+          <Heading as='h4'>Write or call</Heading>
         </Column>
         {addressDatas.map((addressData) => (
           <React.Fragment key={addressData.heading + addressData.index}>
             <Column $variation=''>
-              <Heading as='h2'>{addressData.heading}</Heading>
+              <Heading as='h4'>{addressData.heading}</Heading>
             </Column>
             <Column $variation='threeColumns'>
               <p>{addressData.subheading}</p>

@@ -16,6 +16,8 @@ const variations = {
 
 const Column = styled.div`
   justify-self: stretch;
+  align-self: ${(props) => props.align || 'auto'};
+  padding: ${(props) => props.padding || '0'};
   ${(props) => variations[props.$variation]}
 `;
 
