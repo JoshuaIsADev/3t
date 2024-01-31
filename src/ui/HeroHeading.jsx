@@ -1,6 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Heading from './Heading';
 import StyledLink from './StyledLink';
+
+const variations = {
+  feature: css`
+    position: absolute;
+  `,
+  product: css`
+    position: fixed;
+  `,
+};
 
 const HeroHeadingContainer = styled.aside`
   display: flex;
@@ -11,6 +20,7 @@ const HeroHeadingContainer = styled.aside`
   width: 400px;
   padding: 40vh 2rem;
   z-index: 0;
+  ${(props) => variations[props.$variation]}
 `;
 
 // const LinkContainer = styled.nav`
@@ -25,9 +35,9 @@ const Ul = styled.ul`
   justify-content: space-between;
 `;
 
-function HeroHeading({ color, heading, subheading, link }) {
+function HeroHeading({ color, heading, subheading, link, variation }) {
   return (
-    <HeroHeadingContainer>
+    <HeroHeadingContainer $variation={variation}>
       <Heading as='h1' $variation={color}>
         {heading}
       </Heading>

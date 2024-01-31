@@ -1,21 +1,13 @@
 import styled from 'styled-components';
 import Video from './Video';
 import HeroHeading from './HeroHeading';
+import Background from './Background';
 
 const StyledSection = styled.section`
   display: flex;
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-`;
-
-const StyledBackground = styled.div`
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  background-image: url(${(props) => props.src});
-  background-size: cover;
-  z-index: -1;
 `;
 
 function SectionFeature({
@@ -31,23 +23,16 @@ function SectionFeature({
   return (
     <StyledSection id={id} ref={ref}>
       <HeroHeading
+        variation='feature'
         heading={heading}
         subheading={subheading}
         productLink={productLink}
         link={link}
       />
-      <StyledBackground src={background}></StyledBackground>
       {video ? (
-        <Video
-          src={video}
-          playsInline
-          autoPlay
-          muted
-          loop
-          type='video/webm'
-        ></Video>
+        <Video src={video} playsInline autoPlay muted loop type='video/webm' />
       ) : (
-        ''
+        <Background src={background}></Background>
       )}
     </StyledSection>
   );
