@@ -41,8 +41,12 @@ const exploroProducts = [
   },
 ];
 
-const exploroDatas = [
+const productHighlights = [
   {
+    id: 'exploro',
+    highlightH: 'Gravel just got faster',
+    highlightP:
+      'Developed and made in our Italian Factory, using proprietary Filament Winding + RTM technology to get a super responsive yet comfortable platform with a unique feeling and look.',
     video: '/img/exploro_small.webm',
     highlightImg: [
       '/img/3T-BMW-Exploro-Bike-42.jpg',
@@ -51,8 +55,20 @@ const exploroDatas = [
   },
 ];
 
+const productTires = [
+  {
+    id: 'exploro',
+    name: ['Primo', 'Ultra', 'Racemax Italia', 'Extrema Italia'],
+    size: ['54', '61', '57', '61'],
+  },
+  {
+    id: 'strada',
+    name: ['SPrimo', 'SUltra', 'SRacemax Italia', 'SExtrema Italia'],
+    size: ['54', '61', '57', '61'],
+  },
+];
+
 function Exploro() {
-  console.log(exploroDatas[0].video);
   return (
     <>
       <Noise />
@@ -82,33 +98,36 @@ function Exploro() {
           muted
           loop
           $variation='halfFeature'
-          src={exploroDatas[0].video}
+          src={productHighlights[0].video}
         />
       </Section>
       <Section id='highlight'>
         <Row>
           <Column $variation='twoColumns'>
-            <Heading as='h1'>Gravel just got faster</Heading>
+            <Heading as='h1'>{productHighlights[0].highlightH}</Heading>
           </Column>
           <Column
             $variation='oneColumn'
-            align={'self-end'}
-            padding={'0rem 0rem .75rem'}
+            $align={'self-end'}
+            $padding={'0rem 0rem .75rem'}
           >
-            <p>
-              Developed and made in our Italian Factory, using proprietary
-              Filament Winding + RTM technology to get a super responsive yet
-              comfortable platform with a unique feeling and look.
-            </p>
+            <p>{productHighlights[0].highlightP}</p>
           </Column>
         </Row>
         <Row>
-          {exploroDatas[0].highlightImg.map((highlightImg) => (
-            <Column
-              key={exploroDatas[0].highlightImg.index}
-              $variation='twoColumns'
-            >
-              <Img src={highlightImg} />
+          {productHighlights[0].highlightImg.map((img, index) => (
+            <Column key={index} $variation='twoColumns'>
+              <Img src={img} />
+            </Column>
+          ))}
+        </Row>
+        <Row>
+          <Heading as='h4'>Tire clearances</Heading>
+          {productTires[0].name.map((name, index) => (
+            <Column key={index}>
+              <p>{name}</p>
+              {/* <Heading as='h5'>{tire.size}</Heading> */}
+              <p>mm</p>
             </Column>
           ))}
         </Row>
