@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Column from './Column';
-import Row from './Row';
 import StyledLink from './StyledLink';
 
 const TextContainer = styled.div`

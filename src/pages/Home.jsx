@@ -55,18 +55,14 @@ function Home() {
     <>
       <Noise />
       {heroSections.map((heroSection) => (
-        <React.Fragment key={`${heroSection.id}-${heroSection.heading}`}>
-          <>
-            <SectionFeature
-              id={heroSection.id}
-              heading={heroSection.heading}
-              subheading={heroSection.subheading}
-              link={heroSection.link}
-              background={heroSection.background}
-              video={heroSection.video}
-            />
-          </>
-        </React.Fragment>
+        <SectionFeature
+          key={heroSection.id}
+          heading={heroSection.heading}
+          subheading={heroSection.subheading}
+          link={heroSection.link}
+          background={heroSection.background}
+          video={heroSection.video}
+        />
       ))}
     </>
   );

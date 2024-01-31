@@ -3,6 +3,7 @@ import HeroHeading from './HeroHeading';
 import Row from './Row';
 import Column from './Column';
 import Heading from './Heading';
+import React from 'react';
 
 const footerData = [
   {
@@ -63,6 +64,8 @@ const StyledLabel = styled.label`
   cursor: pointer;
 `;
 
+function handleSubmit() {}
+
 function Footer() {
   return (
     <StyledFooter>
@@ -74,21 +77,23 @@ function Footer() {
         <Column $variation='fourColumns'>
           <Heading as='h2'>Sign up for our newsletter</Heading>
         </Column>
-        <Column $variation=''>
-          <StyledInput placeholder='Email' id='newsletter'></StyledInput>
-        </Column>
-        <Column $variation=''>
-          <StyledLabel for='newsletter' onClick='submit'>
-            Submit
-          </StyledLabel>
-        </Column>
+        <form>
+          <Column $variation=''>
+            <StyledInput placeholder='Email' id='newsletter'></StyledInput>
+          </Column>
+          <Column $variation=''>
+            <StyledLabel htmlFor='newsletter' onClick={handleSubmit}>
+              Submit
+            </StyledLabel>
+          </Column>
+        </form>
       </Row>
       <Row>
         <Column $variation='fourColumns'>
           <Heading as='h2'>Write or call</Heading>
         </Column>
         {addressDatas.map((addressData) => (
-          <>
+          <React.Fragment key={addressData.heading + addressData.index}>
             <Column $variation=''>
               <Heading as='h2'>{addressData.heading}</Heading>
             </Column>
@@ -97,7 +102,7 @@ function Footer() {
               <p>{addressData.address}</p>
               <p>{addressData.phone}</p>
             </Column>
-          </>
+          </React.Fragment>
         ))}
       </Row>
     </StyledFooter>
