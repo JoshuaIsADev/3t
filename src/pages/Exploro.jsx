@@ -9,6 +9,7 @@ import Row from '../ui/Row';
 import Section from '../ui/Section';
 import Video from '../ui/Video';
 import Img from '../ui/Img';
+import Gallery from '../ui/Gallery';
 
 const exploroProducts = [
   {
@@ -17,6 +18,7 @@ const exploroProducts = [
     price: '2,988',
     link: 'primo',
     image: '/img/3t-exploro-primo.jpg',
+    tire: '54',
   },
   {
     name: 'Exploro Ultra',
@@ -24,6 +26,7 @@ const exploroProducts = [
     price: '3,298',
     link: 'ultra',
     image: '/img/3t-exploro-ultra.jpg',
+    tire: '61',
   },
   {
     name: 'Exploro Racemax Italia',
@@ -31,6 +34,7 @@ const exploroProducts = [
     price: '7,684',
     link: 'racemax',
     image: '/img/3t-exploro-racemax-italia.jpg',
+    tire: '57',
   },
   {
     name: 'Exploro Extrema Italia',
@@ -38,6 +42,7 @@ const exploroProducts = [
     price: '7,299',
     link: 'extrema',
     image: '/img/3t-exploro-extrema-italia.jpg',
+    tire: '61',
   },
 ];
 
@@ -52,19 +57,10 @@ const productHighlights = [
       '/img/3T-BMW-Exploro-Bike-42.jpg',
       '/img/3T-BMW-Exploro-Bike-13.jpg',
     ],
-  },
-];
-
-const productTires = [
-  {
-    id: 'exploro',
-    name: ['Primo', 'Ultra', 'Racemax Italia', 'Extrema Italia'],
-    size: ['54', '61', '57', '61'],
-  },
-  {
-    id: 'strada',
-    name: ['SPrimo', 'SUltra', 'SRacemax Italia', 'SExtrema Italia'],
-    size: ['54', '61', '57', '61'],
+    galleryImg: [
+      '/img/3T-BMW-Exploro-Bike-42.jpg',
+      '/img/3T-BMW-Exploro-Bike-13.jpg',
+    ],
   },
 ];
 
@@ -121,15 +117,27 @@ function Exploro() {
             </Column>
           ))}
         </Row>
+        <Row $variation='smallPadding'>
+          <Heading as='h5'>Tire clearances</Heading>
+        </Row>
         <Row>
-          <Heading as='h4'>Tire clearances</Heading>
-          {productTires[0].name.map((name, index) => (
-            <Column key={index}>
-              <p>{name}</p>
-              {/* <Heading as='h5'>{tire.size}</Heading> */}
-              <p>mm</p>
+          {exploroProducts.map((exploroProduct) => (
+            <Column key={exploroProduct.index}>
+              <p>{exploroProduct.name}</p>
+              <Heading as='h2'>
+                {exploroProduct.tire}
+                <span style={{ fontWeight: '600' }}>mm</span>
+              </Heading>
             </Column>
           ))}
+        </Row>
+      </Section>
+      <Section id='gallery'>
+        <Row>
+          <Column $variation='fourColumns'>
+            {/* <Img src={productHighlights[0].galleryImg[0]}></Img> */}
+            <Gallery src={productHighlights[0].galleryImg[0]} />
+          </Column>
         </Row>
       </Section>
     </>

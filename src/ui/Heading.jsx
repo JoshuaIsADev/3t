@@ -23,6 +23,16 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h2' &&
     css`
+      font-size: 7rem;
+      font-weight: 900;
+      line-height: 5rem;
+      text-transform: uppercase;
+      ${(props) => variations[props.$variation]}
+    `}
+
+  ${(props) =>
+    props.as === 'h3' &&
+    css`
       font-size: 1rem;
       font-weight: 600;
       line-height: 1rem;
@@ -31,7 +41,7 @@ const Heading = styled.h1`
     `}
     
     ${(props) =>
-    props.as === 'h3' &&
+    props.as === 'h4' &&
     css`
       font-size: 2rem;
       font-weight: 900;
@@ -43,7 +53,7 @@ const Heading = styled.h1`
     `}
 
   ${(props) =>
-    props.as === 'h4' &&
+    props.as === 'h5' &&
     css`
       font-size: 1rem;
       font-weight: 600;
