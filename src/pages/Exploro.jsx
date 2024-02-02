@@ -134,19 +134,7 @@ function Exploro() {
         </Row>
       </Section>
       <Section id='gallery'>
-        <Row $variation='smallPadding'>
-          <Column>
-            {exploroProducts.map((exploroProduct) => (
-              <ButtonGallery key={exploroProduct.index}></ButtonGallery>
-            ))}
-          </Column>
-        </Row>
-        <Row>
-          <Column $variation='fourColumns'>
-            {/* <Img src={productHighlights[0].galleryImg[0]}></Img> */}
-            <Gallery src={productHighlights[0].galleryImg[0]} />
-          </Column>
-        </Row>
+        <Gallery src={productHighlights[0].galleryImg} />
       </Section>
     </>
   );
