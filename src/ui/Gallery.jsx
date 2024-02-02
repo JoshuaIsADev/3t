@@ -6,7 +6,7 @@ const StyledGallery = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  aspect-ratio: 5/3;
+  aspect-ratio: 6/3;
 `;
 
 function Gallery({ src }) {

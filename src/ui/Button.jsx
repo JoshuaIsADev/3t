@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+const ButtonGallery = styled.button`
+  position: relative;
+  content: '';
+  width: 3rem;
+  height: 0.8rem;
+  border: 6px solid var(--color-grey-0);
+  border-left: none;
+  border-right: none;
+  background-color: var(--color-grey-900);
+  cursor: pointer;
+  margin-right: 0.5rem;
+`;
+
 const Button = styled.button`
   border: none;
   cursor: pointer;
@@ -11,4 +24,4 @@ const Button = styled.button`
   top: -0.2rem;
 `;
 
-export default Button;
+export { Button, ButtonGallery };

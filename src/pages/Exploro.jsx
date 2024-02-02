@@ -10,6 +10,7 @@ import Section from '../ui/Section';
 import Video from '../ui/Video';
 import Img from '../ui/Img';
 import Gallery from '../ui/Gallery';
+import { ButtonGallery } from '../ui/Button';
 
 const exploroProducts = [
   {
@@ -133,6 +134,13 @@ function Exploro() {
         </Row>
       </Section>
       <Section id='gallery'>
+        <Row $variation='smallPadding'>
+          <Column>
+            {exploroProducts.map((exploroProduct) => (
+              <ButtonGallery key={exploroProduct.index}></ButtonGallery>
+            ))}
+          </Column>
+        </Row>
         <Row>
           <Column $variation='fourColumns'>
             {/* <Img src={productHighlights[0].galleryImg[0]}></Img> */}

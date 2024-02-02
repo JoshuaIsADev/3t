@@ -4,6 +4,7 @@ const variations = {
   product: css`
     gap: 6rem;
   `,
+
   smallPadding: css`
     padding-top: 0rem;
     padding-bottom: 0rem;
