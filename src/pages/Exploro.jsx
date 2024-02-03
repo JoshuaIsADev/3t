@@ -61,6 +61,7 @@ const productHighlights = [
     galleryImg: [
       '/img/3T-BMW-Exploro-Bike-42.jpg',
       '/img/3T-BMW-Exploro-Bike-13.jpg',
+      '/img/3T-BMW-Exploro-Bike-10.jpg',
     ],
   },
 ];

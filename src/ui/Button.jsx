@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const variations = {
+  active: css`
+    background-color: var(--color-grey-900);
+  `,
+};
 
 const ButtonGallery = styled.button`
   position: relative;
@@ -8,9 +14,10 @@ const ButtonGallery = styled.button`
   border: 6px solid var(--color-grey-0);
   border-left: none;
   border-right: none;
-  background-color: var(--color-grey-900);
+  background-color: var(--color-grey-200);
   cursor: pointer;
   margin-right: 0.5rem;
+  ${(props) => variations[props.$variation]};
 `;
 
 const Button = styled.button`
