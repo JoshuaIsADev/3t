@@ -11,6 +11,7 @@ import Video from '../ui/Video';
 import Img from '../ui/Img';
 import Gallery from '../ui/Gallery';
 import { ButtonGallery } from '../ui/Button';
+import SectionFeature from '../ui/SectionFeature';
 
 const exploroProducts = [
   {
@@ -63,6 +64,7 @@ const productHighlights = [
       '/img/3T-BMW-Exploro-Bike-13.jpg',
       '/img/3T-BMW-Exploro-Bike-10.jpg',
     ],
+    featureImg: '/img/exploro-travel.jpg',
   },
 ];
 
@@ -137,6 +139,9 @@ function Exploro() {
       <Section id='gallery'>
         <Gallery src={productHighlights[0].galleryImg} />
       </Section>
+      <SectionFeature
+        background={productHighlights[0].featureImg}
+      ></SectionFeature>
     </>
   );
 }

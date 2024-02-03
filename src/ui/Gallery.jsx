@@ -26,7 +26,7 @@ function Gallery({ src }) {
   return (
     <>
       <Row $variation='smallPadding'>
-        <Column>
+        <Column $variation='fourColumns'>
           {src.map((index, i) => (
             <ButtonGallery
               key={index}
