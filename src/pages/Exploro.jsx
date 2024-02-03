@@ -12,6 +12,7 @@ import Img from '../ui/Img';
 import Gallery from '../ui/Gallery';
 import { ButtonGallery } from '../ui/Button';
 import SectionFeature from '../ui/SectionFeature';
+import { SpecColumn, SpecContainer, SpecText } from '../ui/SpecTable';
 
 const exploroProducts = [
   {
@@ -68,7 +69,85 @@ const productHighlights = [
   },
 ];
 
+// const sizes = [
+//   {
+//     rider: ['157-171', '168-180', '176-186', '183-195'],
+//     stack: ['544', '566', '586', '606'],
+//     reach: ['364', '374', '382', '390'],
+//     fork: ['375', '375 ', '375', '375'],
+//     headTube: ['147', '161 ', '180', '201'],
+//     headAngle: ['69.2', '70.7', '71.7', '72.2'],
+//     bb: ['77', '77', '75', '73'],
+//     seatAngle: ['72.5', '72.5', '72.5', '72.5'],
+//     seatTube: ['463', '490', '518', '545'],
+//   },
+// ];
+
+const sizes = {
+  51: {
+    rider: '157-171',
+    stack: '544',
+    reach: '364',
+    fork: '375',
+    headTube: '147',
+    headAngle: '69.2',
+    bb: '77',
+    seatAngle: '72.5',
+    seatTube: '463',
+    topTube: '518',
+    wheelBase: '1018',
+    front: '612',
+    rear: '418',
+  },
+  54: {
+    rider: '168-180',
+    stack: '566',
+    reach: '374',
+    fork: '375 ',
+    headTube: '161',
+    headAngle: '70.7',
+    bb: '77',
+    seatAngle: '72.5',
+    seatTube: '490',
+    topTube: '536',
+    wheelBase: '1013',
+    front: '607',
+    rear: '418',
+  },
+  56: {
+    rider: '176-186',
+    stack: '586',
+    reach: '382',
+    fork: '375',
+    headTube: '180',
+    headAngle: '71.7',
+    bb: '75',
+    seatAngle: '72.5',
+    seatTube: '518',
+    topTube: '549',
+    wheelBase: '1019',
+    front: '612',
+    rear: '418',
+  },
+  58: {
+    rider: '183-195',
+    stack: '606',
+    reach: '390',
+    fork: '375',
+    headTube: '201',
+    headAngle: '72.2',
+    bb: '73',
+    seatAngle: '72.5',
+    seatTube: '545',
+    topTube: '563',
+    wheelBase: '1028',
+    front: '622',
+    rear: '418',
+  },
+};
+
 function Exploro() {
+  console.log(sizes[51].rider);
   return (
     <>
       <Noise />
@@ -115,8 +194,8 @@ function Exploro() {
           </Column>
         </Row>
         <Row>
-          {productHighlights[0].highlightImg.map((img, index) => (
-            <Column key={index} $variation='twoColumns'>
+          {productHighlights[0].highlightImg.map((img, i) => (
+            <Column key={i} $variation='twoColumns'>
               <Img src={img} />
             </Column>
           ))}
@@ -125,8 +204,8 @@ function Exploro() {
           <Heading as='h5'>Tire clearances</Heading>
         </Row>
         <Row>
-          {exploroProducts.map((exploroProduct) => (
-            <Column key={exploroProduct.index}>
+          {exploroProducts.map((exploroProduct, i) => (
+            <Column key={i}>
               <p>{exploroProduct.name}</p>
               <Heading as='h2'>
                 {exploroProduct.tire}
@@ -138,6 +217,38 @@ function Exploro() {
       </Section>
       <Section id='gallery'>
         <Gallery src={productHighlights[0].galleryImg} />
+      </Section>
+      <Section id='size'>
+        <Row>
+          <Column $variation='twoColumns'>
+            <SpecContainer>
+              <SpecColumn>
+                <SpecText>Test</SpecText>
+                <SpecText>Test</SpecText>
+              </SpecColumn>
+              <SpecColumn>
+                {Object.values(sizes['51']).map((spec, i) => (
+                  <SpecText key={i}>{spec}</SpecText>
+                ))}
+              </SpecColumn>
+              <SpecColumn>
+                {Object.values(sizes['54']).map((spec, i) => (
+                  <SpecText key={i}>{spec}</SpecText>
+                ))}
+              </SpecColumn>
+              <SpecColumn>
+                {Object.values(sizes['56']).map((spec, i) => (
+                  <SpecText key={i}>{spec}</SpecText>
+                ))}
+              </SpecColumn>
+              <SpecColumn>
+                {Object.values(sizes['58']).map((spec, i) => (
+                  <SpecText key={i}>{spec}</SpecText>
+                ))}
+              </SpecColumn>
+            </SpecContainer>
+          </Column>
+        </Row>
       </Section>
       <SectionFeature
         background={productHighlights[0].featureImg}
