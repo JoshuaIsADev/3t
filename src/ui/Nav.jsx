@@ -16,7 +16,7 @@ const StyledNavToggle = styled.div`
   display: flex;
   justify-content: right;
   position: fixed;
-  right: 1.5rem;
+  right: 2.5rem;
   z-index: 2;
   padding: 2rem;
   ${(props) => variations[props.$variation]}
@@ -34,14 +34,14 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   position: fixed;
   right: 0;
-  width: 30vw;
+  width: 700px;
   height: calc(100vh);
   background-color: var(--color-grey-0);
   z-index: 1;
-  border-left: 1px solid var(--color-grey-900);
+  border-left: 1px solid var(--color-grey-100);
   padding: 5rem 2rem 2rem;
   gap: 2rem;
-  transform: translateX(calc(30vw - 120px));
+  transform: translateX(calc(700px - 100px));
   ${(props) => variations[props.$variation]}
   transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
   @media (max-height: 450px) {
@@ -56,6 +56,8 @@ const LinksContainer = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
+  justify-content: space-between;
 `;
 
 const LiTitle = styled.li`
@@ -72,27 +74,20 @@ const LiTitle = styled.li`
 const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
-    font-size: calc(10vh);
+    font-size: calc(15vh);
     text-transform: uppercase;
-    text-decoration: underline;
-    font-weight: 500;
-    line-height: calc(10vh);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 0.5rem;
-
+    text-decoration: none;
+    font-weight: 300;
+    line-height: calc(5vh);
     cursor: ${(props) => (props.disabled ? 'pointer' : 'default')};
     pointer-events: ${(props) => (props.disabled ? 'auto' : 'none')};
-    @media (max-height: 450px) {
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.2rem;
-    }
   }
 
   &:hover,
   &:active,
   &.active:link,
   &.active:visited {
-    color: var(--color-grey-500);
+    color: var(--color-grey-100);
   }
 `;
 
@@ -110,7 +105,6 @@ function Nav() {
         onClick={toggleNavVisibility}
       >
         <LinksContainer>
-          <LiTitle>Bicycles</LiTitle>
           <li>
             <StyledNavLink to='/exploro' disabled={isNavVisible}>
               Exploro
@@ -121,19 +115,11 @@ function Nav() {
               Strada
             </StyledNavLink>
           </li>
-        </LinksContainer>
-
-        <LinksContainer>
-          <LiTitle>Info</LiTitle>
           <li>
             <StyledNavLink to='/about' disabled={isNavVisible}>
               About
             </StyledNavLink>
           </li>
-        </LinksContainer>
-
-        <LinksContainer>
-          <LiTitle>Shop</LiTitle>
           <li>
             <StyledNavLink to='/login' disabled={isNavVisible}>
               Login

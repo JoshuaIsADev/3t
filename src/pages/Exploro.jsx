@@ -13,41 +13,13 @@ import Gallery from '../ui/Gallery';
 import { ButtonGallery } from '../ui/Button';
 import SectionFeature from '../ui/SectionFeature';
 import { SpecColumn, SpecContainer, SpecText } from '../ui/SpecTable';
-
-const exploroProducts = [
-  {
-    name: 'Exploro Primo',
-    headline: "The world's first aero gravel bike",
-    price: '2,988',
-    link: 'primo',
-    image: '/img/3t-exploro-primo.jpg',
-    tire: '54',
-  },
-  {
-    name: 'Exploro Ultra',
-    headline: 'For tough gravel',
-    price: '3,298',
-    link: 'ultra',
-    image: '/img/3t-exploro-ultra.jpg',
-    tire: '61',
-  },
-  {
-    name: 'Exploro Racemax Italia',
-    headline: 'Fastest speed on gravel, made in Italy',
-    price: '7,684',
-    link: 'racemax',
-    image: '/img/3t-exploro-racemax-italia.jpg',
-    tire: '57',
-  },
-  {
-    name: 'Exploro Extrema Italia',
-    headline: 'For the worst gravel and the most comfort, made in Italy',
-    price: '7,299',
-    link: 'extrema',
-    image: '/img/3t-exploro-extrema-italia.jpg',
-    tire: '61',
-  },
-];
+import { Pagination, Navigation } from 'swiper/modules';
+import exploroProductsData from '../data/exploroProducts.json';
+import { SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { StyledSwiper, SwiperNav } from '../ui/StyledSwiper';
 
 const productHighlights = [
   {
@@ -68,20 +40,6 @@ const productHighlights = [
     featureImg: '/img/exploro-travel.jpg',
   },
 ];
-
-// const sizes = [
-//   {
-//     rider: ['157-171', '168-180', '176-186', '183-195'],
-//     stack: ['544', '566', '586', '606'],
-//     reach: ['364', '374', '382', '390'],
-//     fork: ['375', '375 ', '375', '375'],
-//     headTube: ['147', '161 ', '180', '201'],
-//     headAngle: ['69.2', '70.7', '71.7', '72.2'],
-//     bb: ['77', '77', '75', '73'],
-//     seatAngle: ['72.5', '72.5', '72.5', '72.5'],
-//     seatTube: ['463', '490', '518', '545'],
-//   },
-// ];
 
 const sizes = {
   51: {
@@ -147,112 +105,70 @@ const sizes = {
 };
 
 function Exploro() {
-  console.log(sizes[51].rider);
+  const pagination = {
+    clickable: true,
+  };
   return (
     <>
-      <Noise />
-      <HeroHeading
-        // variation='feature'
-        heading='Exploro'
-        subheading='Fast on all terrain'
-      />
       <Section id='products'>
-        <Row $variation='product'>
-          {exploroProducts.map((exploroProduct) => (
-            <ProductCard
-              key={exploroProduct.name + exploroProduct.index}
-              name={exploroProduct.name}
-              headline={exploroProduct.headline}
-              price={exploroProduct.price}
-              link={exploroProduct.link}
-              image={exploroProduct.image}
-            />
-          ))}
+        <Row>
+          <Column $gridColumn='span 4' $variation='center'>
+            <Heading as='h5'>Select your base</Heading>
+          </Column>
         </Row>
+        <Row>
+          <Column $gridColumn='span 4'>
+            <StyledSwiper
+              modules={[Pagination, Navigation]}
+              pagination={pagination}
+              clickable={true}
+              className='mySwiper'
+            >
+              <SwiperNav />
+
+              {exploroProductsData.map((exploroProduct) => (
+                <SwiperSlide key={exploroProduct.image}>
+                  <ProductCard
+                    name={exploroProduct.name}
+                    headline={exploroProduct.headline}
+                    price={exploroProduct.price}
+                    link={exploroProduct.link}
+                    image={exploroProduct.image}
+                  />
+                </SwiperSlide>
+              ))}
+            </StyledSwiper>
+          </Column>
+        </Row>
+
+        {/* <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          slidesPerView={1}
+          // navigation='true'
+          pagination='true'
+          breakpoints={{ 768: { slidesPerView: 4 } }}
+          on={{
+            slideChange: () => console.log('slide changed'),
+            progress: (s, progress) => console.log(`progress is ${progress}`),
+          }}
+        > */}
+
+        {/* <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperNav />
+        </Swiper> */}
       </Section>
-      <Section id='productHero'>
-        <Video
-          playsInline
-          autoPlay
-          muted
-          loop
-          $variation='halfFeature'
-          src={productHighlights[0].video}
+      {/* {exploroProducts.map((exploroProduct, index) => (
+        <ProductCard
+          key={index}
+          name={exploroProduct.name}
+          headline={exploroProduct.headline}
+          price={exploroProduct.price}
+          link={exploroProduct.link}
+          image={exploroProduct.image}
         />
-      </Section>
-      <Section id='highlight'>
-        <Row>
-          <Column $variation='twoColumns'>
-            <Heading as='h1'>{productHighlights[0].highlightH}</Heading>
-          </Column>
-          <Column
-            $variation='oneColumn'
-            $align={'self-end'}
-            $padding={'0rem 0rem .75rem'}
-          >
-            <p>{productHighlights[0].highlightP}</p>
-          </Column>
-        </Row>
-        <Row>
-          {productHighlights[0].highlightImg.map((img, i) => (
-            <Column key={i} $variation='twoColumns'>
-              <Img src={img} />
-            </Column>
-          ))}
-        </Row>
-        <Row $variation='smallPadding'>
-          <Heading as='h5'>Tire clearances</Heading>
-        </Row>
-        <Row>
-          {exploroProducts.map((exploroProduct, i) => (
-            <Column key={i}>
-              <p>{exploroProduct.name}</p>
-              <Heading as='h2'>
-                {exploroProduct.tire}
-                <span style={{ fontWeight: '600' }}>mm</span>
-              </Heading>
-            </Column>
-          ))}
-        </Row>
-      </Section>
-      <Section id='gallery'>
-        <Gallery src={productHighlights[0].galleryImg} />
-      </Section>
-      <Section id='size'>
-        <Row>
-          <Column $variation='twoColumns'>
-            <SpecContainer>
-              <SpecColumn>
-                <SpecText>Test</SpecText>
-                <SpecText>Test</SpecText>
-              </SpecColumn>
-              <SpecColumn>
-                {Object.values(sizes['51']).map((spec, i) => (
-                  <SpecText key={i}>{spec}</SpecText>
-                ))}
-              </SpecColumn>
-              <SpecColumn>
-                {Object.values(sizes['54']).map((spec, i) => (
-                  <SpecText key={i}>{spec}</SpecText>
-                ))}
-              </SpecColumn>
-              <SpecColumn>
-                {Object.values(sizes['56']).map((spec, i) => (
-                  <SpecText key={i}>{spec}</SpecText>
-                ))}
-              </SpecColumn>
-              <SpecColumn>
-                {Object.values(sizes['58']).map((spec, i) => (
-                  <SpecText key={i}>{spec}</SpecText>
-                ))}
-              </SpecColumn>
-            </SpecContainer>
-          </Column>
-        </Row>
-      </Section>
-      <SectionFeature
-        background={productHighlights[0].featureImg}
-      ></SectionFeature>
+      ))} */}
     </>
   );
 }

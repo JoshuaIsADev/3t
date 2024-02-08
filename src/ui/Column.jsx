@@ -12,13 +12,20 @@ const variations = {
   fourColumns: css`
     grid-column: span 4;
   `,
+
+  center: css`
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  `,
 };
 
 const Column = styled.div`
   justify-self: stretch;
   align-self: ${(props) => props.$align || 'auto'};
   padding: ${(props) => props.$padding || '0'};
-  ${(props) => variations[props.$variation]}
+  ${(props) => variations[props.$variation]};
+  grid-column: ${(props) => props.$gridColumn || ''};
 `;
 
 export default Column;

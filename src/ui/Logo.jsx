@@ -8,14 +8,14 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   position: fixed;
   margin: 0 auto;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   z-index: 1;
   mix-blend-mode: multiply;
 `;
 
 const Img = styled(motion.img)`
-  height: 25vh;
+  height: 2rem;
   object-fit: contain;
   /* mix-blend-mode: multiply; */
 `;

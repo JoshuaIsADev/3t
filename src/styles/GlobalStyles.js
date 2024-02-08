@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-gray-900);
 }
 

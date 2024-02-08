@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Exploro Primo",
+    "headline": "The world's first aero gravel bike",
+    "price": "2,988",
+    "link": "primo",
+    "image": "/img/3t-exploro-primo.jpg",
+    "tire": "54"
+  },
+  {
+    "name": "Exploro Ultra",
+    "headline": "For tough gravel",
+    "price": "3,298",
+    "link": "ultra",
+    "image": "/img/3t-exploro-ultra.jpg",
+    "tire": "61"
+  },
+  {
+    "name": "Exploro Racemax Italia",
+    "headline": "Fastest speed on gravel, made in Italy",
+    "price": "7,684",
+    "link": "racemax",
+    "image": "/img/3t-exploro-racemax-italia.jpg",
+    "tire": "57"
+  },
+  {
+    "name": "Exploro Extrema Italia",
+    "headline": "For the worst gravel and the most comfort, made in Italy",
+    "price": "7,299",
+    "link": "extrema",
+    "image": "/img/3t-exploro-extrema-italia.jpg",
+    "tire": "61"
+  }
+]

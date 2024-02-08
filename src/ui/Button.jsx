@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+// import right from '../../public/right.svg';
 
 const variations = {
   active: css`
