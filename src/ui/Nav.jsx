@@ -16,9 +16,9 @@ const StyledNavToggle = styled.div`
   display: flex;
   justify-content: right;
   position: fixed;
-  right: 2.5rem;
-  z-index: 2;
-  padding: 2rem;
+  right: 2.8rem;
+  z-index: 20;
+  padding: 1rem;
   ${(props) => variations[props.$variation]}
   transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
@@ -37,9 +37,9 @@ const StyledNav = styled.nav`
   width: 700px;
   height: calc(100vh);
   background-color: var(--color-grey-0);
-  z-index: 1;
+  z-index: 10;
   border-left: 1px solid var(--color-grey-100);
-  padding: 5rem 2rem 2rem;
+  padding: 5rem 1rem 2rem;
   gap: 2rem;
   transform: translateX(calc(700px - 100px));
   ${(props) => variations[props.$variation]}
@@ -74,7 +74,7 @@ const LiTitle = styled.li`
 const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
-    font-size: calc(15vh);
+    font-size: calc(20vh);
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 300;
@@ -87,7 +87,7 @@ const StyledNavLink = styled(NavLink)`
   &:active,
   &.active:link,
   &.active:visited {
-    color: var(--color-grey-100);
+    color: var(--color-brand);
   }
 `;
 

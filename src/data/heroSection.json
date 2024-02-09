@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "heading": null,
+    "subHeading": null,
+    "filter": "/img/noiseb.jpg",
+    "mix": "multiply",
+    "background": "",
+    "video": "/img/extrema_italia_small.webm",
+    "link": ""
+  },
+  {
+    "id": 2,
+    "heading": "Exploro",
+    "subHeading": "Fast on all terrain",
+    "background": "/img/section-02c.jpg",
+    "video": "",
+    "link": "exploro"
+  },
+  {
+    "id": 3,
+    "heading": "Strada",
+    "subHeading": "World's most comfortable aero bike",
+    "background": "/img/3t_strada_due_review_06.jpg",
+    "video": "",
+    "link": "strada"
+  },
+
+  {
+    "id": 4,
+    "heading": "Made in Italy",
+    "subHeading": "With love and passion",
+    "background": "/img/extremaitalia_mercurio_02-1600x1200.jpg",
+    "video": "",
+    "link": "about"
+  }
+]

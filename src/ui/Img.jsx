@@ -1,10 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const variations = {
+  highlight: css`
+    transform: translateX(${(props) => props.$translate || '0'});
+    width: ${(props) => props.$width};
+    aspect-ratio: ${(props) => props.$ratio || '6/3.9'};
+  `,
+};
 
 const Img = styled.img`
   width: 100%;
-  aspect-ratio: 6/3.9;
   object-fit: cover;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  ${(props) => variations[props.$variation]}
+  aspect-ratio: ${(props) => props.$ratio || '6/3.9'}
 `;
 
 export default Img;

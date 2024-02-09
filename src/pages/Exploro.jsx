@@ -13,13 +13,18 @@ import Gallery from '../ui/Gallery';
 import { ButtonGallery } from '../ui/Button';
 import SectionFeature from '../ui/SectionFeature';
 import { SpecColumn, SpecContainer, SpecText } from '../ui/SpecTable';
+
 import { Pagination, Navigation } from 'swiper/modules';
-import exploroProductsData from '../data/exploroProducts.json';
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { StyledSwiper, SwiperNav } from '../ui/StyledSwiper';
+
+import exploroProductsData from '../data/exploroProducts.json';
+import heroSectionData from '../data/heroSection.json';
+import SectionHeading from '../ui/SectionHeading';
+import HighlightImgCard from '../ui/HighlightImgCard';
 
 const productHighlights = [
   {
@@ -105,28 +110,35 @@ const sizes = {
 };
 
 function Exploro() {
-  const pagination = {
-    clickable: true,
-  };
   return (
     <>
+      <SectionFeature
+        id='productHero'
+        heading={heroSectionData[1].heading}
+        subHeading={heroSectionData[1].subHeading}
+        background={heroSectionData[1].background}
+      ></SectionFeature>
+      <Section id='introHeading'>
+        <SectionHeading
+          heading={exploroProductsData[1].highlights[0].introHeading}
+        />
+      </Section>
       <Section id='products'>
         <Row>
           <Column $gridColumn='span 4' $variation='center'>
-            <Heading as='h5'>Select your base</Heading>
+            <Heading as='h4'>Exploro variants</Heading>
           </Column>
         </Row>
         <Row>
           <Column $gridColumn='span 4'>
             <StyledSwiper
               modules={[Pagination, Navigation]}
-              pagination={pagination}
-              clickable={true}
+              pagination={true}
               className='mySwiper'
             >
               <SwiperNav />
 
-              {exploroProductsData.map((exploroProduct) => (
+              {exploroProductsData[0].products.map((exploroProduct) => (
                 <SwiperSlide key={exploroProduct.image}>
                   <ProductCard
                     name={exploroProduct.name}
@@ -140,35 +152,83 @@ function Exploro() {
             </StyledSwiper>
           </Column>
         </Row>
-
-        {/* <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          slidesPerView={1}
-          // navigation='true'
-          pagination='true'
-          breakpoints={{ 768: { slidesPerView: 4 } }}
-          on={{
-            slideChange: () => console.log('slide changed'),
-            progress: (s, progress) => console.log(`progress is ${progress}`),
-          }}
-        > */}
-
-        {/* <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperNav />
-        </Swiper> */}
       </Section>
-      {/* {exploroProducts.map((exploroProduct, index) => (
-        <ProductCard
-          key={index}
-          name={exploroProduct.name}
-          headline={exploroProduct.headline}
-          price={exploroProduct.price}
-          link={exploroProduct.link}
-          image={exploroProduct.image}
+      <SectionFeature
+        background={exploroProductsData[1].highlights[0].galleryImg[0]}
+      ></SectionFeature>
+
+      <Section id='highlight1'>
+        <SectionHeading
+          heading={exploroProductsData[1].highlights[0].highlightHeading1}
         />
-      ))} */}
+        <HighlightImgCard
+          img1={exploroProductsData[1].highlights[0].highlightImg1}
+          img2={exploroProductsData[1].highlights[0].highlightImg1}
+          img3={exploroProductsData[1].highlights[0].highlightImg1}
+        />
+        {/* <HighlightCard
+          heading={exploroProductsData[1].highlights[0].highlightHeading1}
+          img={exploroProductsData[1].highlights[0].highlight1Img}
+          translate={'-10vw'}
+          ratio={'2/2'}
+        /> */}
+      </Section>
+
+      <Section id='tireHeadline' $variation='headline'>
+        <SectionHeading
+          heading={exploroProductsData[1].highlights[0].tireHeading}
+        />
+      </Section>
+
+      <Section id='tire'>
+        <Row>
+          <Column $gridColumn='2 / span 2' $variation='center'>
+            {exploroProductsData[1].highlights[0].tireSubHeading}
+          </Column>
+        </Row>
+        <Row>
+          {exploroProductsData[0].products.map((exploroProduct) => (
+            <Column
+              $gridColumn='span 1'
+              $variation='center'
+              key={exploroProduct.name}
+            >
+              <Heading as='h4' $padding='0 0 1rem'>
+                {exploroProduct.name}
+              </Heading>
+              <Heading as='h3'>
+                {exploroProduct.tire}{' '}
+                <span>
+                  <Heading as='h4' $padding='1rem 0 0'>
+                    mm
+                  </Heading>
+                </span>
+              </Heading>
+            </Column>
+          ))}
+        </Row>
+        <Row>
+          <Column $gridColumn='2 / span 1'>
+            <Img></Img>
+            <p>
+              To make the fastest possible gravel bike, you need to start with
+              the tire. Tire choice determines comfort & grip. But it also
+              determines how you can shape the frame to redirect the airflow.
+            </p>
+          </Column>
+          <Column $gridColumn='3 / span 1'>
+            <Img></Img>
+            <p>
+              To aerodynamically engineer the frame around the tires, you need
+              to know what their REAL measurements are. Not what’s on the label,
+              but how they really fit. That’s REALFAST aerodynamics. But it’s
+              not easy, as the tire dimension depends on the rim you use, the
+              pressure and of course how accurate the manufacturer’s claimed
+              size is.
+            </p>
+          </Column>
+        </Row>
+      </Section>
     </>
   );
 }

@@ -10,7 +10,7 @@ const LogoContainer = styled.div`
   margin: 0 auto;
   top: 1rem;
   left: 1rem;
-  z-index: 1;
+  z-index: 10;
   mix-blend-mode: multiply;
 `;
 

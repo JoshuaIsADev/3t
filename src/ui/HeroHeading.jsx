@@ -14,12 +14,14 @@ const variations = {
 const HeroHeadingContainer = styled.aside`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
   position: absolute;
   height: 100vh;
-  width: 400px;
-  padding: 40vh 2rem;
-  z-index: 0;
+  padding: 4rem;
+  width: var(--width-desktop);
+  z-index: 1;
   ${(props) => variations[props.$variation]}
 `;
 
@@ -35,19 +37,21 @@ const Ul = styled.ul`
   justify-content: space-between;
 `;
 
-function HeroHeading({ color, heading, subheading, link, variation }) {
+function HeroHeading({ heading, subHeading, link, variation }) {
   return (
     <HeroHeadingContainer $variation={variation}>
-      <Heading as='h4' $variation={color}>
+      <Heading as='h1' $variation='hero'>
         {heading}
       </Heading>
-      <Heading as='h5' $variation={color}>
-        {subheading}
+      <Heading as='h2' $variation='hero'>
+        {subHeading}
       </Heading>
       {link ? (
         <Ul>
           <li>
-            <StyledLink to={`/${link}`}>Learn more</StyledLink>
+            <StyledLink to={`/${link}`} $variation='hero'>
+              Learn more
+            </StyledLink>
           </li>
         </Ul>
       ) : (

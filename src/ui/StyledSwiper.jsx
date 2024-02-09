@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { Swiper, useSwiper } from 'swiper/react';
 
 const ButtonLeft = styled.button`
-  background-image: url('../../public/left.svg');
+  background-image: url('../../public/right.svg');
+  transform: rotate(180deg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--color-grey-0);
-  width: 50px;
-  height: 20px;
+  background-color: rgba(var(--color-grey-0), 0);
+  width: 100px;
+  height: 31px;
   border: none;
   cursor: pointer;
 `;
@@ -18,9 +19,9 @@ const ButtonRight = styled.button`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--color-grey-0);
-  width: 50px;
-  height: 20px;
+  background-color: rgba(var(--color-grey-0), 0);
+  width: 100px;
+  height: 31px;
   border: none;
   cursor: pointer;
 `;
@@ -47,7 +48,7 @@ const StyledSwiper = styled(Swiper)`
   }
   & .swiper-pagination-bullets {
     bottom: 8rem;
-    z-index: -1;
+    z-index: 2;
   }
 
   & .swiper-pagination-bullet-active {

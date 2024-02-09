@@ -1,5 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const variations = {
+  hero: css`
+    color: var(--color-brand);
+  `,
+};
 
 const StyledLink = styled(NavLink)`
   &:link,
@@ -11,6 +17,7 @@ const StyledLink = styled(NavLink)`
     text-decoration-thickness: 2px;
     text-underline-offset: 0.2rem;
     color: var(--color-grey-900);
+    ${(props) => variations[props.$variation]}
   }
 
   &:hover,

@@ -5,7 +5,7 @@ import Background from './Background';
 
 const StyledSection = styled.section`
   display: flex;
-  width: 100vw;
+  width: var(--width-desktop);
   height: 100vh;
   flex-direction: column;
 `;
@@ -14,7 +14,7 @@ function SectionFeature({
   id,
   ref,
   heading,
-  subheading,
+  subHeading,
   productLink,
   link,
   background,
@@ -25,7 +25,7 @@ function SectionFeature({
       <HeroHeading
         variation='feature'
         heading={heading}
-        subheading={subheading}
+        subHeading={subHeading}
         productLink={productLink}
         link={link}
       />

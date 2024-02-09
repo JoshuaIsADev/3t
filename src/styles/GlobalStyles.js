@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #161616;
   --color-grey-900: #000000;
 
-  --color-brand: #E41B13;
+  --color-brand: #F0F406;
   
   --color-danger: #000000;
 
@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-md: 1rem;
   --border-radius-lg: 2rem;
 
-  --container-width-m: 820px;
+  --width-desktop: calc(100vw - 7rem);
   /* --container-width-small: 450px; */
 }
 

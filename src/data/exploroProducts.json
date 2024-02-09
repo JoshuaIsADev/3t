@@ -1,34 +1,61 @@
 [
   {
-    "name": "Exploro Primo",
-    "headline": "The world's first aero gravel bike",
-    "price": "2,988",
-    "link": "primo",
-    "image": "/img/3t-exploro-primo.jpg",
-    "tire": "54"
+    "products": [
+      {
+        "name": "Exploro Primo",
+        "headline": "The world's first aero gravel bike",
+        "price": "2,988",
+        "link": "primo",
+        "image": "/img/3t-exploro-primo.jpg",
+        "tire": "54"
+      },
+      {
+        "name": "Exploro Ultra",
+        "headline": "For tough gravel",
+        "price": "3,298",
+        "link": "ultra",
+        "image": "/img/3t-exploro-ultra.jpg",
+        "tire": "61"
+      },
+      {
+        "name": "Exploro Racemax Italia",
+        "headline": "Fastest speed on gravel, made in Italy",
+        "price": "7,684",
+        "link": "racemax",
+        "image": "/img/3t-exploro-racemax-italia.jpg",
+        "tire": "57"
+      },
+      {
+        "name": "Exploro Extrema Italia",
+        "headline": "For the worst gravel and the most comfort, made in Italy",
+        "price": "7,299",
+        "link": "extrema",
+        "image": "/img/3t-exploro-extrema-italia.jpg",
+        "tire": "61"
+      }
+    ]
   },
   {
-    "name": "Exploro Ultra",
-    "headline": "For tough gravel",
-    "price": "3,298",
-    "link": "ultra",
-    "image": "/img/3t-exploro-ultra.jpg",
-    "tire": "61"
-  },
-  {
-    "name": "Exploro Racemax Italia",
-    "headline": "Fastest speed on gravel, made in Italy",
-    "price": "7,684",
-    "link": "racemax",
-    "image": "/img/3t-exploro-racemax-italia.jpg",
-    "tire": "57"
-  },
-  {
-    "name": "Exploro Extrema Italia",
-    "headline": "For the worst gravel and the most comfort, made in Italy",
-    "price": "7,299",
-    "link": "extrema",
-    "image": "/img/3t-exploro-extrema-italia.jpg",
-    "tire": "61"
+    "highlights": [
+      {
+        "id": "exploro",
+        "introHeading": "If you’re like us, you love riding in rough terrain but live in a more urban jungle. So you need a bike that is fast on-road and capable off-road.",
+        "highlightHeading1": "The Exploro pioneered aerodynamics for gravel bikes, including even mud-covered knobby tire wind tunnel testing (much to the chagrin of the wind tunnel staff). The race-proven Exploro range gives you the speed you’re used to on asphalt and an additional advantage on wind-swept gravel tracks.",
+        "highlightImg1": "/img/section-03.jpg",
+        "tireHeading": "Gravel riding is all about tire choice and the 3T Exploro models fit the widest possible tires, up to 61mm. But each model is optimized for a different purpose.",
+        "tireSubHeading": "Tire clearances",
+        "video": "/img/exploro_small.webm",
+        "highlightImg": [
+          "/img/3T-BMW-Exploro-Bike-42.jpg",
+          "/img/3T-BMW-Exploro-Bike-13.jpg"
+        ],
+        "galleryImg": [
+          "/img/3T-BMW-Exploro-Bike-42.jpg",
+          "/img/3T-BMW-Exploro-Bike-13.jpg",
+          "/img/3T-BMW-Exploro-Bike-10.jpg"
+        ],
+        "featureImg": "/img/exploro-travel.jpg"
+      }
+    ]
   }
 ]

@@ -1,10 +1,6 @@
 import styled, { css } from 'styled-components';
 
 const variations = {
-  product: css`
-    gap: 6rem;
-  `,
-
   noPadding: css`
     padding-left: 0rem;
     padding-right: 0rem;
@@ -26,7 +22,7 @@ const Row = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
-  padding-right: calc(2rem + 100px);
+  padding-right: 1rem;
   ${(props) => variations[props.$variation]}
 `;
 
