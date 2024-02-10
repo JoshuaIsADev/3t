@@ -13,7 +13,7 @@ function HighlightImgCard({ img1, img2, img3, ratio, width, translate }) {
             $variation='highlight'
             $width='40vw'
             $ratio='3/2.2'
-            $translate='-5vw'
+            $translate='-10vw'
           />
         ) : null}
         {img2 ? (
@@ -21,8 +21,9 @@ function HighlightImgCard({ img1, img2, img3, ratio, width, translate }) {
             src={img2}
             $variation='highlight'
             $width='30vw'
-            $ratio='3/2.2'
-            $translate='0vw'
+            $ratio='2/1'
+            $translate='5vw'
+            $margin='0 0 3rem'
           />
         ) : null}
         {img3 ? (
@@ -30,8 +31,9 @@ function HighlightImgCard({ img1, img2, img3, ratio, width, translate }) {
             src={img3}
             $variation='highlight'
             $width='45vw'
-            $ratio='3/2.2'
-            $translate='0'
+            $ratio='4/2.2'
+            $translate='5vw'
+            $margin='10rem 0 0'
           />
         ) : null}
       </Column>

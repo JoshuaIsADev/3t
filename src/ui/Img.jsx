@@ -5,6 +5,7 @@ const variations = {
     transform: translateX(${(props) => props.$translate || '0'});
     width: ${(props) => props.$width};
     aspect-ratio: ${(props) => props.$ratio || '6/3.9'};
+    margin: ${(props) => props.$margin || '0 0'};
   `,
 };
 

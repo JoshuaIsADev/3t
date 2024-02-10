@@ -159,20 +159,22 @@ function Exploro() {
 
       <Section id='highlight1'>
         <SectionHeading
-          heading={exploroProductsData[1].highlights[0].highlightHeading1}
+          heading={exploroProductsData[1].highlights[0].highlightHeading2}
         />
+      </Section>
+      <Section>
         <HighlightImgCard
-          img1={exploroProductsData[1].highlights[0].highlightImg1}
-          img2={exploroProductsData[1].highlights[0].highlightImg1}
-          img3={exploroProductsData[1].highlights[0].highlightImg1}
+          img1={exploroProductsData[1].highlights[0].highlightImg2[0]}
+          img2={exploroProductsData[1].highlights[0].highlightImg2[1]}
+          img3={exploroProductsData[1].highlights[0].highlightImg2[2]}
         />
-        {/* <HighlightCard
+      </Section>
+      {/* <HighlightCard
           heading={exploroProductsData[1].highlights[0].highlightHeading1}
           img={exploroProductsData[1].highlights[0].highlight1Img}
           translate={'-10vw'}
           ratio={'2/2'}
         /> */}
-      </Section>
 
       <Section id='tireHeadline' $variation='headline'>
         <SectionHeading
