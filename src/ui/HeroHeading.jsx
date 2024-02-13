@@ -11,35 +11,26 @@ const variations = {
   `,
 };
 
-const HeroHeadingContainer = styled.aside`
+const HeroHeadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  text-align: center;
   position: absolute;
   height: 100vh;
-  padding: 4rem;
+  padding: 4rem 1rem;
   width: var(--width-desktop);
   z-index: 1;
   ${(props) => variations[props.$variation]}
 `;
-
-// const LinkContainer = styled.nav`
-//   display: flex;
-//   width: 100%;
-//   max-width: 300px;
-//   padding-top: 2rem;
-// `;
 
 const Ul = styled.ul`
   display: flex;
   justify-content: space-between;
 `;
 
-function HeroHeading({ heading, subHeading, link, variation }) {
+function HeroHeading({ heading, subHeading, link }) {
   return (
-    <HeroHeadingContainer $variation={variation}>
+    <HeroHeadingContainer>
       <Heading as='h1' $variation='hero'>
         {heading}
       </Heading>

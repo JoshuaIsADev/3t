@@ -23,7 +23,6 @@ function SectionFeature({
   return (
     <StyledSection id={id} ref={ref}>
       <HeroHeading
-        variation='feature'
         heading={heading}
         subHeading={subHeading}
         productLink={productLink}

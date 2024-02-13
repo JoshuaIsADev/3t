@@ -12,7 +12,6 @@ const variations = {
 const Img = styled.img`
   width: 100%;
   object-fit: cover;
-  margin-bottom: 1rem;
   ${(props) => variations[props.$variation]}
   aspect-ratio: ${(props) => props.$ratio || '6/3.9'}
 `;

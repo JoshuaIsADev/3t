@@ -40,7 +40,6 @@ const addressDatas = [
 const StyledFooter = styled.footer`
   width: 100vw;
   height: 100vh;
-  padding-top: 4rem;
 `;
 
 const StyledInput = styled.input`
@@ -70,46 +69,43 @@ function handleSubmit() {}
 function Footer() {
   return (
     <StyledFooter>
+      <HeroHeading
+        heading={footerData[0].heading}
+        subheading={footerData[0].subheading}
+      />
       <Row>
-        {/* <HeroHeading
-          heading={footerData[0].heading}
-          subheading={footerData[0].subheading}
-        /> */}
-        <Column $gridColumn='1 / span 2'>
+        <Column $gridColumn='2 / span 2'></Column>
+        <Column $gridColumn='span 4'>
           <Heading as='h5'>Sign up for our newsletter</Heading>
         </Column>
-      </Row>
-      <form>
-        <Row>
-          <Column $gridColumn='1 / span 1'>
+        <form>
+          <Column>
             <StyledInput placeholder='Email' id='newsletter'></StyledInput>
           </Column>
-          <Column $gridColumn='2 / span 1'>
+          <Column>
             <StyledLabel htmlFor='newsletter' onClick={handleSubmit}>
               Submit
             </StyledLabel>
           </Column>
-        </Row>
-      </form>
+        </form>
+      </Row>
       <Row>
-        <Column $gridColumn='1/ span 2'>
+        <Column $gridColumn='span 4'>
           <Heading as='h5'>Write or call</Heading>
         </Column>
-      </Row>
-      {addressDatas.map((addressData) => (
-        <React.Fragment key={addressData.heading + addressData.index}>
-          <Row>
-            <Column $gridColumn='1 / span 1'>
+        {addressDatas.map((addressData) => (
+          <React.Fragment key={addressData.heading + addressData.index}>
+            <Column>
               <Heading as='h5'>{addressData.heading}</Heading>
             </Column>
-            <Column $gridColumn='2 /span 1'>
+            <Column $gridColumn='span 3'>
               <p>{addressData.subheading}</p>
               <p>{addressData.address}</p>
               <p>{addressData.phone}</p>
             </Column>
-          </Row>
-        </React.Fragment>
-      ))}
+          </React.Fragment>
+        ))}
+      </Row>
     </StyledFooter>
   );
 }

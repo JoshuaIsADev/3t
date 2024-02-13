@@ -16,14 +16,12 @@ const variations = {
 const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: ${(props) => props.$gridTemplateRows || '1fr'};
   width: 100%;
-  gap: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  ${(props) => variations[props.$variation]}
+  gap: ${(props) => props.$gap || '1rem'};
+  border-top: 1px solid var(--color-grey-100);
+  padding: 0rem;
+  ${(props) => variations[props.$variation]};
 `;
 
 export default Row;

@@ -25,6 +25,9 @@ import exploroProductsData from '../data/exploroProducts.json';
 import heroSectionData from '../data/heroSection.json';
 import SectionHeading from '../ui/SectionHeading';
 import HighlightImgCard from '../ui/HighlightImgCard';
+import InfoContainer from '../ui/InfoContainer';
+import HeadingContainer from '../ui/HeadingContainer';
+import SectionProducts from '../ui/SectionProduct';
 
 const productHighlights = [
   {
@@ -118,70 +121,108 @@ function Exploro() {
         subHeading={heroSectionData[1].subHeading}
         background={heroSectionData[1].background}
       ></SectionFeature>
-      <Section id='introHeading'>
-        <SectionHeading
-          heading={exploroProductsData[1].highlights[0].introHeading}
-        />
-      </Section>
-      <Section id='products'>
+      <SectionProducts id='products'>
+        <HeadingContainer>
+          <Heading as='h2' $variation='hero'>
+            A model for every need
+          </Heading>
+        </HeadingContainer>
+        <InfoContainer>
+          <p>{exploroProductsData[1].highlights[0].introHeading}</p>
+        </InfoContainer>
+        <StyledSwiper
+          modules={[Pagination, Navigation]}
+          pagination={true}
+          // className='mySwiper'
+        >
+          <SwiperNav />
+          {exploroProductsData[0].products.map((exploroProduct) => (
+            <SwiperSlide key={exploroProduct.image}>
+              <ProductCard
+                name={exploroProduct.name}
+                headline={exploroProduct.headline}
+                price={exploroProduct.price}
+                link={exploroProduct.link}
+                image={exploroProduct.image}
+              />
+            </SwiperSlide>
+          ))}
+        </StyledSwiper>
+      </SectionProducts>
+      {/* <Section id='products'>
         <Row>
-          <Column $gridColumn='span 4' $variation='center'>
-            <Heading as='h4'>Exploro variants</Heading>
+          <Column $gridColumn='1 / span 4'>
+            <Heading as='h2' $variation='hero'>
+              A model for every need
+            </Heading>
           </Column>
         </Row>
         <Row>
-          <Column $gridColumn='span 4'>
-            <StyledSwiper
-              modules={[Pagination, Navigation]}
-              pagination={true}
-              className='mySwiper'
-            >
-              <SwiperNav />
+          <Column $gridColumn='1 / span 1'>
+            <InfoContainer>
+              <p>{exploroProductsData[1].highlights[0].introHeading}</p>
+            </InfoContainer>
+          </Column>
+        </Row>
 
-              {exploroProductsData[0].products.map((exploroProduct) => (
-                <SwiperSlide key={exploroProduct.image}>
-                  <ProductCard
-                    name={exploroProduct.name}
-                    headline={exploroProduct.headline}
-                    price={exploroProduct.price}
-                    link={exploroProduct.link}
-                    image={exploroProduct.image}
-                  />
-                </SwiperSlide>
-              ))}
-            </StyledSwiper>
-          </Column>
-        </Row>
-      </Section>
-      <SectionFeature
+        <StyledSwiper
+          modules={[Pagination, Navigation]}
+          pagination={true}
+          // className='mySwiper'
+        >
+          <SwiperNav />
+          {exploroProductsData[0].products.map((exploroProduct) => (
+            <SwiperSlide key={exploroProduct.image}>
+              <ProductCard
+                name={exploroProduct.name}
+                headline={exploroProduct.headline}
+                price={exploroProduct.price}
+                link={exploroProduct.link}
+                image={exploroProduct.image}
+              />
+            </SwiperSlide>
+          ))}
+        </StyledSwiper>
+      </Section> */}
+
+      {/* <SectionFeature
         background={exploroProductsData[1].highlights[0].galleryImg[0]}
       ></SectionFeature>
-
       <Section id='highlight1'>
-        <SectionHeading
-          heading={exploroProductsData[1].highlights[0].highlightHeading2}
-        />
+        <Row>
+          <Column $gridColumn='1 / span 4'>
+            <HeadingContainer>
+              <Heading as='h4'>The first gravel bike</Heading>
+            </HeadingContainer>
+          </Column>
+        </Row>
+        <Row>
+          <Column $gridColumn='1 / span 1'>
+            <InfoContainer>
+              <p>{exploroProductsData[1].highlights[0].highlightHeading2}</p>
+            </InfoContainer>
+          </Column>
+        </Row>
+        <Row $gap='0'>
+          <Column $gridColumn='1 / span 2'>
+            <Img
+              src={exploroProductsData[1].highlights[0].highlightImg2[0]}
+              $ratio='3/2'
+            />
+          </Column>
+          <Column $gridColumn='3 / span 2'>
+            <Img
+              src={exploroProductsData[1].highlights[0].highlightImg2[1]}
+              $ratio='3/2'
+            />
+          </Column>
+        </Row>
       </Section>
-      <Section>
-        <HighlightImgCard
-          img1={exploroProductsData[1].highlights[0].highlightImg2[0]}
-          img2={exploroProductsData[1].highlights[0].highlightImg2[1]}
-          img3={exploroProductsData[1].highlights[0].highlightImg2[2]}
-        />
-      </Section>
-      {/* <HighlightCard
-          heading={exploroProductsData[1].highlights[0].highlightHeading1}
-          img={exploroProductsData[1].highlights[0].highlight1Img}
-          translate={'-10vw'}
-          ratio={'2/2'}
-        /> */}
-
       <Section id='tireHeadline' $variation='headline'>
         <SectionHeading
           heading={exploroProductsData[1].highlights[0].tireHeading}
         />
       </Section>
-
       <Section id='tire'>
         <Row>
           <Column $gridColumn='2 / span 2' $variation='center'>
@@ -230,7 +271,7 @@ function Exploro() {
             </p>
           </Column>
         </Row>
-      </Section>
+      </Section> */}
     </>
   );
 }

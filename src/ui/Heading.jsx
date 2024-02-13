@@ -15,7 +15,7 @@ const Heading = styled.h1`
       font-weight: 800;
       line-height: calc(100vw / 12);
       text-transform: uppercase;
-      /* color: var(--color-brand); */
+      transform: translateX(-0.5rem);
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0 0 3rem'};
     `}
@@ -23,9 +23,9 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h2' &&
     css`
-      font-size: 3rem;
-      font-weight: 400;
-      line-height: 3rem;
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 4rem;
       text-transform: uppercase;
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0'};

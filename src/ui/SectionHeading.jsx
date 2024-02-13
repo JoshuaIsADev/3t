@@ -5,7 +5,7 @@ import Row from './Row';
 function SectionHeading({ heading }) {
   return (
     <Row>
-      <Column $gridColumn='2 / span 2' $variation='center'>
+      <Column $gridColumn='1 / span 2'>
         <Heading as='h2'>{heading}</Heading>
       </Column>
     </Row>

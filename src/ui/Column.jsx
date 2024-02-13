@@ -23,9 +23,11 @@ const variations = {
 const Column = styled.div`
   justify-self: stretch;
   align-self: ${(props) => props.$align || 'auto'};
-  padding: ${(props) => props.$padding || '0'};
+  padding: ${(props) => props.$padding || '.5rem'};
   ${(props) => variations[props.$variation]};
   grid-column: ${(props) => props.$gridColumn || ''};
+  border-left: ${(props) => props.$borderLeft || 'none'};
+  background-color: ${(props) => props.$backgroundColor || 'none'};
 `;
 
 export default Column;
