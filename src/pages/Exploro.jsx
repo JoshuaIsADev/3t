@@ -15,19 +15,19 @@ import SectionFeature from '../ui/SectionFeature';
 import { SpecColumn, SpecContainer, SpecText } from '../ui/SpecTable';
 
 import { Pagination, Navigation } from 'swiper/modules';
-import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { StyledSwiper, SwiperNav } from '../ui/StyledSwiper';
+import { ProductSwiper } from '../ui/ProductSwiper';
 
 import exploroProductsData from '../data/exploroProducts.json';
 import heroSectionData from '../data/heroSection.json';
 import SectionHeading from '../ui/SectionHeading';
 import HighlightImgCard from '../ui/HighlightImgCard';
-import InfoContainer from '../ui/InfoContainer';
+import SubHeadingContainer from '../ui/SubHeadingContainer';
 import HeadingContainer from '../ui/HeadingContainer';
 import SectionProducts from '../ui/SectionProduct';
+import ArticleContainer from '../ui/ArticleContainer';
 
 const productHighlights = [
   {
@@ -122,32 +122,13 @@ function Exploro() {
         background={heroSectionData[1].background}
       ></SectionFeature>
       <SectionProducts id='products'>
-        <HeadingContainer>
-          <Heading as='h2' $variation='hero'>
-            A model for every need
-          </Heading>
-        </HeadingContainer>
-        <InfoContainer>
-          <p>{exploroProductsData[1].highlights[0].introHeading}</p>
-        </InfoContainer>
-        <StyledSwiper
-          modules={[Pagination, Navigation]}
-          pagination={true}
-          // className='mySwiper'
-        >
-          <SwiperNav />
-          {exploroProductsData[0].products.map((exploroProduct) => (
-            <SwiperSlide key={exploroProduct.image}>
-              <ProductCard
-                name={exploroProduct.name}
-                headline={exploroProduct.headline}
-                price={exploroProduct.price}
-                link={exploroProduct.link}
-                image={exploroProduct.image}
-              />
-            </SwiperSlide>
-          ))}
-        </StyledSwiper>
+        <HeadingContainer heading='A model for every need'></HeadingContainer>
+        <SubHeadingContainer
+          subHeading={exploroProductsData[1].highlights[0].introHeading}
+        ></SubHeadingContainer>
+        <ArticleContainer>
+          <ProductSwiper productData={exploroProductsData[0].products} />
+        </ArticleContainer>
       </SectionProducts>
       {/* <Section id='products'>
         <Row>
@@ -159,9 +140,9 @@ function Exploro() {
         </Row>
         <Row>
           <Column $gridColumn='1 / span 1'>
-            <InfoContainer>
+            <SubHeadingContainer>
               <p>{exploroProductsData[1].highlights[0].introHeading}</p>
-            </InfoContainer>
+            </SubHeadingContainer>
           </Column>
         </Row>
 
@@ -198,9 +179,9 @@ function Exploro() {
         </Row>
         <Row>
           <Column $gridColumn='1 / span 1'>
-            <InfoContainer>
+            <SubHeadingContainer>
               <p>{exploroProductsData[1].highlights[0].highlightHeading2}</p>
-            </InfoContainer>
+            </SubHeadingContainer>
           </Column>
         </Row>
         <Row $gap='0'>

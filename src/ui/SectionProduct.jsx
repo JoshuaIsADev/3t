@@ -8,7 +8,9 @@ const SectionProducts = styled.section`
   min-height: 100vh;
   padding: 4rem 0 0;
   overflow: hidden;
-  border-bottom: 1px solid var(--color-grey-100);
+  > * {
+    border-bottom: 1px solid var(--color-grey-100);
+  }
 `;
 
 export default SectionProducts;
