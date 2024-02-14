@@ -38,7 +38,7 @@ const StyledNav = styled.nav`
   height: calc(100vh);
   background-color: var(--color-grey-0);
   z-index: 10;
-  border-left: 1px solid var(--color-grey-100);
+  border-left: 1px solid var(--background-color-grey);
   padding: 5rem 1rem 2rem;
   gap: 2rem;
   transform: translateX(calc(700px - 100px));

@@ -17,7 +17,10 @@ const GlobalStyles = createGlobalStyle`
   
   --color-danger: #000000;
 
+  --color-line: rgba(0, 0, 0, .2);
+
   --background-color: #FFFFFF;
+  --background-color-grey: #D9D9D9;
 
   --border-radius-sm: .5rem;
   --border-radius-md: 1rem;

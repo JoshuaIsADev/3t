@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 // import Img from './Img';
-import Column from './Column';
+import Column from './Column-v1';
 import Row from './Row';
 import { ButtonGallery } from './Button';
 import { useState } from 'react';

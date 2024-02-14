@@ -1,4 +1,4 @@
-import Column from './Column';
+import Column from './Column-v1';
 import Heading from './Heading';
 import Row from './Row';
 

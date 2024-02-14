@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Column from './Column';
+import Column from './Column-v1';
 import Img from './Img';
 import Row from './Row';
 

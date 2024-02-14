@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Background from '../ui/Background';
-import Column from '../ui/Column';
+import Column from '../ui/Column-v1';
 import Heading from '../ui/Heading';
 import HeroHeading from '../ui/HeroHeading';
 import Noise from '../ui/Noise';
 import ProductCard from '../ui/ProductCard';
 import Row from '../ui/Row';
-import Section from '../ui/Section';
 import Video from '../ui/Video';
 import Img from '../ui/Img';
 import Gallery from '../ui/Gallery';
@@ -24,9 +23,8 @@ import exploroProductsData from '../data/exploroProducts.json';
 import heroSectionData from '../data/heroSection.json';
 import SectionHeading from '../ui/SectionHeading';
 import HighlightImgCard from '../ui/HighlightImgCard';
-import SubHeadingContainer from '../ui/SubHeadingContainer';
 import HeadingContainer from '../ui/HeadingContainer';
-import SectionProducts from '../ui/SectionProduct';
+import Section from '../ui/Section';
 import ArticleContainer from '../ui/ArticleContainer';
 
 const productHighlights = [
@@ -121,15 +119,18 @@ function Exploro() {
         subHeading={heroSectionData[1].subHeading}
         background={heroSectionData[1].background}
       ></SectionFeature>
-      <SectionProducts id='products'>
-        <HeadingContainer heading='A model for every need'></HeadingContainer>
-        <SubHeadingContainer
+      <Section id='products'>
+        <HeadingContainer
+          heading='A model for every need'
           subHeading={exploroProductsData[1].highlights[0].introHeading}
-        ></SubHeadingContainer>
+        />
         <ArticleContainer>
           <ProductSwiper productData={exploroProductsData[0].products} />
         </ArticleContainer>
-      </SectionProducts>
+      </Section>
+      <SectionFeature
+        background={exploroProductsData[1].highlights[0].galleryImg[0]}
+      ></SectionFeature>
       {/* <Section id='products'>
         <Row>
           <Column $gridColumn='1 / span 4'>

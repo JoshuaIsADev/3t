@@ -1,48 +1,20 @@
 import styled from 'styled-components';
 import StyledLink from './StyledLink';
+import { Column, Column1, Column2, Column3, Column4 } from './Columns';
 
-const ProductCardContainer = styled.div`
+const StyledProductCard = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: min-content 1fr;
 `;
 
-const Container = styled.div`
-  padding: 0.5rem 1rem;
-  border-right: 1px solid var(--color-grey-100);
-
-  &:nth-child(4n) {
-    background-color: var(--color-brand);
-  }
-`;
-
-const NameContainer = styled(Container)`
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 1;
-`;
-
-const HeadlineContainer = styled(Container)`
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-`;
-
-const PriceContainer = styled(Container)`
-  grid-column: 3 / span 1;
-  grid-row: 1 / span 1;
-`;
-
-const ConfigureContainer = styled(Container)`
-  grid-column: 4 / span 1;
-  grid-row: 1 / span 1;
-`;
-
-const ImgContainer = styled(Container)`
+const ImgContainer = styled(Column)`
   grid-column: 1 / span 4;
   grid-row: 2 / span 1;
   max-height: calc(100vh - 200px);
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--color-grey-100);
+  border-top: 1px solid var(--color-line);
 `;
 
 const Img = styled.img`
@@ -54,25 +26,25 @@ const Img = styled.img`
 
 function ProductCard({ name, headline, price, link, image }) {
   return (
-    <ProductCardContainer>
-      <NameContainer>
+    <StyledProductCard>
+      <Column1>
         <p>{name}</p>
-      </NameContainer>
-      <HeadlineContainer>
+      </Column1>
+      <Column2>
         <p>{headline}</p>
-      </HeadlineContainer>
-      <PriceContainer>
+      </Column2>
+      <Column3>
         <p>from {price} €</p>
-      </PriceContainer>
-      <ConfigureContainer>
+      </Column3>
+      <Column4 $variation='highlight'>
         <p>
           <StyledLink to={`/${link}`}>Configure</StyledLink>
         </p>
-      </ConfigureContainer>
+      </Column4>
       <ImgContainer>
         <Img src={image}></Img>
       </ImgContainer>
-    </ProductCardContainer>
+    </StyledProductCard>
   );
 }
 

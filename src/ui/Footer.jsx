@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import HeroHeading from './HeroHeading';
 import Row from './Row';
-import Column from './Column';
+import Column from './Column-v1';
 import Heading from './Heading';
 import React from 'react';
+import Section from './Section';
+import HeadingContainer from './HeadingContainer';
+import ArticleContainer from './ArticleContainer';
+import FooterArticle from './FooterArticle';
 
 const footerData = [
   {
@@ -37,80 +41,19 @@ const addressDatas = [
   },
 ];
 
-const StyledFooter = styled.footer`
-  width: 100vw;
-  height: 100vh;
-  padding-top: 4rem;
-`;
-
-const StyledInput = styled.input`
-  border: none;
-  border-bottom: 1px solid var(--color-grey-900);
-  width: 100%;
-  padding: 0.25rem 0.25rem;
-  font-weight: 500;
-  color: var(--color-grey-900);
-  font-size: 14px;
-  text-transform: uppercase;
-`;
-
-const StyledLabel = styled.label`
-  border: none;
-  color: var(--color-grey-900);
-  padding: 0.25rem 0.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  cursor: pointer;
-`;
-
-function handleSubmit() {}
-
 function Footer() {
   return (
-    <StyledFooter>
-      <Row>
-        {/* <HeroHeading
-          heading={footerData[0].heading}
-          subheading={footerData[0].subheading}
-        /> */}
-        <Column $gridColumn='1 / span 2'>
-          <Heading as='h5'>Sign up for our newsletter</Heading>
-        </Column>
-      </Row>
-      <form>
-        <Row>
-          <Column $gridColumn='1 / span 1'>
-            <StyledInput placeholder='Email' id='newsletter'></StyledInput>
-          </Column>
-          <Column $gridColumn='2 / span 1'>
-            <StyledLabel htmlFor='newsletter' onClick={handleSubmit}>
-              Submit
-            </StyledLabel>
-          </Column>
-        </Row>
-      </form>
-      <Row>
-        <Column $gridColumn='1/ span 2'>
-          <Heading as='h5'>Write or call</Heading>
-        </Column>
-      </Row>
-      {addressDatas.map((addressData) => (
-        <React.Fragment key={addressData.heading + addressData.index}>
-          <Row>
-            <Column $gridColumn='1 / span 1'>
-              <Heading as='h5'>{addressData.heading}</Heading>
-            </Column>
-            <Column $gridColumn='2 /span 1'>
-              <p>{addressData.subheading}</p>
-              <p>{addressData.address}</p>
-              <p>{addressData.phone}</p>
-            </Column>
-          </Row>
-        </React.Fragment>
-      ))}
-    </StyledFooter>
+    <footer>
+      <Section $variation='grey'>
+        <HeadingContainer
+          heading='Reach us'
+          subHeading={'Contact us globally'}
+        />
+        <ArticleContainer>
+          <FooterArticle addresses={addressDatas} />
+        </ArticleContainer>
+      </Section>
+    </footer>
   );
 }
 
