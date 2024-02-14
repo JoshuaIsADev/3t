@@ -113,6 +113,7 @@ const sizes = {
 function Exploro() {
   return (
     <>
+      <Noise />
       <SectionFeature
         id='productHero'
         heading={heroSectionData[1].heading}
@@ -131,6 +132,17 @@ function Exploro() {
       <SectionFeature
         background={exploroProductsData[1].highlights[0].galleryImg[0]}
       ></SectionFeature>
+      <Section id='highlight1'>
+        <HeadingContainer
+          heading='Fast adventure'
+          subHeading={exploroProductsData[1].highlights[0].highlightHeading2}
+        />
+        <ArticleContainer>
+          <HighlightImgCard
+            images={exploroProductsData[1].highlights[0].highlightImg2}
+          />
+        </ArticleContainer>
+      </Section>
       {/* <Section id='products'>
         <Row>
           <Column $gridColumn='1 / span 4'>

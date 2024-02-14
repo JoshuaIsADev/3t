@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Column1, Column2, Column3, Column4 } from './Columns';
 import Heading from './Heading';
 
-const StyledFooterArticle = styled.div`
+const StyledFooterCard = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
@@ -41,9 +41,9 @@ const StyledLabel = styled.label`
 
 function handleSubmit() {}
 
-function FooterArticle({ addresses }) {
+function FooterCard({ addresses }) {
   return (
-    <StyledFooterArticle>
+    <StyledFooterCard>
       <Column1>
         <Heading as='h5'>{addresses[0].heading}</Heading>
         <Container>
@@ -79,8 +79,8 @@ function FooterArticle({ addresses }) {
           </div>
         </Container>
       </Column4>
-    </StyledFooterArticle>
+    </StyledFooterCard>
   );
 }
 
-export default FooterArticle;
+export default FooterCard;

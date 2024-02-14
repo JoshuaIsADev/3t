@@ -4,6 +4,10 @@ const variations = {
   highlight: css`
     background-color: var(--color-brand);
   `,
+
+  images: css`
+    padding: 0;
+  `,
 };
 
 const Column = styled.div`
@@ -12,6 +16,7 @@ const Column = styled.div`
   justify-content: space-between;
   padding: 0.5rem 1rem;
   border-right: 1px solid var(--color-line);
+  ${(props) => variations[props.$variation]}
 `;
 
 const Column1 = styled(Column)`

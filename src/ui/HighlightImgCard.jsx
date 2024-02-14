@@ -1,43 +1,29 @@
 import styled from 'styled-components';
-import Column from './Column-v1';
-import Img from './Img';
-import Row from './Row';
+import { Column } from './Columns';
 
-function HighlightImgCard({ img1, img2, img3, ratio, width, translate }) {
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0;
+  object-fit: cover;
+`;
+const StyledHighlighImgCard = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  height: 100%;
+  padding: 0;
+`;
+
+function HighlightImgCard({ images }) {
   return (
-    <Row>
-      <Column $gridColumn='span 4' $variation='center'>
-        {img1 ? (
-          <Img
-            src={img1}
-            $variation='highlight'
-            $width='40vw'
-            $ratio='3/2.2'
-            $translate='-10vw'
-          />
-        ) : null}
-        {img2 ? (
-          <Img
-            src={img2}
-            $variation='highlight'
-            $width='30vw'
-            $ratio='2/1'
-            $translate='5vw'
-            $margin='0 0 3rem'
-          />
-        ) : null}
-        {img3 ? (
-          <Img
-            src={img3}
-            $variation='highlight'
-            $width='45vw'
-            $ratio='4/2.2'
-            $translate='5vw'
-            $margin='10rem 0 0'
-          />
-        ) : null}
-      </Column>
-    </Row>
+    <StyledHighlighImgCard>
+      {images.map((image, i) => (
+        <Column $variation='images' key={i}>
+          <Img src={image}></Img>
+        </Column>
+      ))}
+    </StyledHighlighImgCard>
   );
 }
 

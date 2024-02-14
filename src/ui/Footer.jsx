@@ -7,7 +7,7 @@ import React from 'react';
 import Section from './Section';
 import HeadingContainer from './HeadingContainer';
 import ArticleContainer from './ArticleContainer';
-import FooterArticle from './FooterArticle';
+import FooterCard from './FooterCard';
 
 const footerData = [
   {
@@ -50,7 +50,7 @@ function Footer() {
           subHeading={'Contact us globally'}
         />
         <ArticleContainer>
-          <FooterArticle addresses={addressDatas} />
+          <FooterCard addresses={addressDatas} />
         </ArticleContainer>
       </Section>
     </footer>
