@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import StyledLink from './StyledLink';
-import { Column, Column1, Column2, Column3, Column4 } from './Columns';
+import { Col, Column } from './Columns';
 
 const StyledProductCard = styled.div`
   display: grid;
@@ -11,14 +11,14 @@ const StyledProductCard = styled.div`
 const ImgContainer = styled(Column)`
   grid-column: 1 / span 4;
   grid-row: 2 / span 1;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 240px);
   justify-content: center;
   align-items: center;
   border-top: 1px solid var(--color-line);
 `;
 
 const Img = styled.img`
-  max-height: 100%;
+  max-height: 90%;
   width: 100%;
   object-fit: contain;
   padding-top: 4vh;
@@ -27,20 +27,20 @@ const Img = styled.img`
 function ProductCard({ name, headline, price, link, image }) {
   return (
     <StyledProductCard>
-      <Column1>
+      <Col $col='1' $span='1'>
         <p>{name}</p>
-      </Column1>
-      <Column2>
+      </Col>
+      <Col $col='2' $span='1'>
         <p>{headline}</p>
-      </Column2>
-      <Column3>
+      </Col>
+      <Col $col='3' $span='1'>
         <p>from {price} €</p>
-      </Column3>
-      <Column4 $variation='highlight'>
+      </Col>
+      <Col $col='4' $span='1' $variation='highlight'>
         <p>
           <StyledLink to={`/${link}`}>Configure</StyledLink>
         </p>
-      </Column4>
+      </Col>
       <ImgContainer>
         <Img src={image}></Img>
       </ImgContainer>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Column1, Column2, Column3, Column4 } from './Columns';
+import { Col } from './Columns';
 import Heading from './Heading';
 
 const StyledFooterCard = styled.div`
@@ -44,31 +44,31 @@ function handleSubmit() {}
 function FooterCard({ addresses }) {
   return (
     <StyledFooterCard>
-      <Column1>
+      <Col $col='1' $span='1'>
         <Heading as='h5'>{addresses[0].heading}</Heading>
         <Container>
           <p>{addresses[0].subheading}</p>
           <p>{addresses[0].address}</p>
           <p>{addresses[0].phone}</p>
         </Container>
-      </Column1>
-      <Column2>
+      </Col>
+      <Col $col='2' $span='1'>
         <Heading as='h5'>{addresses[1].heading}</Heading>
         <Container>
           <p>{addresses[1].subheading}</p>
           <p>{addresses[1].address}</p>
           <p>{addresses[1].phone}</p>
         </Container>
-      </Column2>
-      <Column3>
+      </Col>
+      <Col $col='3' $span='1'>
         <Heading as='h5'>{addresses[0].heading}</Heading>
         <Container>
           <p>{addresses[2].subheading}</p>
           <p>{addresses[2].address}</p>
           <p>{addresses[2].phone}</p>
         </Container>
-      </Column3>
-      <Column4>
+      </Col>
+      <Col $col='4' $span='1'>
         <Heading as='h5'>Sign up for our newsletter</Heading>
         <Container>
           <div>
@@ -78,7 +78,7 @@ function FooterCard({ addresses }) {
             </StyledLabel>
           </div>
         </Container>
-      </Column4>
+      </Col>
     </StyledFooterCard>
   );
 }

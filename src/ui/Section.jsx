@@ -12,7 +12,7 @@ const Section = styled.section`
   grid-template-rows: min-content min-content 1fr;
   width: var(--width-desktop);
   min-height: 100vh;
-  padding: 4rem 0 0;
+  padding: 0rem 0 0;
   overflow: hidden;
   ${(props) => variations[props.$variation]};
   > * {

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import Heading from './Heading';
 
 const StyledHeadingContainer = styled.header`
-  padding: 0.5rem 1rem;
+  padding: 4rem 0.5rem 1rem;
+  background-color: var(--color-brand);
 `;
 
 const StyledSubHeadingContainer = styled.article`
@@ -15,9 +16,7 @@ function HeadingContainer({ heading, subHeading }) {
   return (
     <>
       <StyledHeadingContainer>
-        <Heading as='h2' $variation='hero'>
-          {heading}
-        </Heading>
+        <Heading as='h2'>{heading}</Heading>
       </StyledHeadingContainer>
       <StyledSubHeadingContainer>
         <p>{subHeading}</p>

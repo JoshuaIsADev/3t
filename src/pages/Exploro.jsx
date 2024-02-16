@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Background from '../ui/Background';
-import Column from '../ui/Column-v1';
 import Heading from '../ui/Heading';
 import HeroHeading from '../ui/HeroHeading';
 import Noise from '../ui/Noise';
@@ -8,12 +7,9 @@ import ProductCard from '../ui/ProductCard';
 import Row from '../ui/Row';
 import Video from '../ui/Video';
 import Img from '../ui/Img';
-import Gallery from '../ui/Gallery';
 import { ButtonGallery } from '../ui/Button';
 import SectionFeature from '../ui/SectionFeature';
-import { SpecColumn, SpecContainer, SpecText } from '../ui/SpecTable';
 
-import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -21,11 +17,12 @@ import { ProductSwiper } from '../ui/ProductSwiper';
 
 import exploroProductsData from '../data/exploroProducts.json';
 import heroSectionData from '../data/heroSection.json';
-import SectionHeading from '../ui/SectionHeading';
-import HighlightImgCard from '../ui/HighlightImgCard';
 import HeadingContainer from '../ui/HeadingContainer';
 import Section from '../ui/Section';
 import ArticleContainer from '../ui/ArticleContainer';
+import ImgCard from '../ui/ImgCard';
+import TextCard from '../ui/TextCard';
+import { Col } from '../ui/Columns';
 
 const productHighlights = [
   {
@@ -125,7 +122,7 @@ function Exploro() {
           heading='A model for every need'
           subHeading={exploroProductsData[1].highlights[0].introHeading}
         />
-        <ArticleContainer>
+        <ArticleContainer $variation='single'>
           <ProductSwiper productData={exploroProductsData[0].products} />
         </ArticleContainer>
       </Section>
@@ -134,15 +131,30 @@ function Exploro() {
       ></SectionFeature>
       <Section id='highlight1'>
         <HeadingContainer
-          heading='Fast adventure'
-          subHeading={exploroProductsData[1].highlights[0].highlightHeading2}
+          heading='Realistic testing'
+          subHeading={exploroProductsData[1].highlights[0].highlight2SubHeading}
+        />
+        <ArticleContainer $col='repeat(4, 1fr)'>
+          <Col $col='1' $span='1' $variation='borderless'>
+            {exploroProductsData[1].highlights[0].paragraph}
+          </Col>
+
+          <Col $col='3' $span='2' $variation='image'>
+            <Img src={exploroProductsData[1].highlights[0].highlight2Img} />
+          </Col>
+        </ArticleContainer>
+      </Section>
+      {/* <Section id='highlight2'>
+        <HeadingContainer
+          heading='3 flavors of exploring'
+          subHeading={exploroProductsData[1].highlights[0].highlightHeading3}
         />
         <ArticleContainer>
           <HighlightImgCard
-            images={exploroProductsData[1].highlights[0].highlightImg2}
+            image={exploroProductsData[1].highlights[0].highlightImg3}
           />
         </ArticleContainer>
-      </Section>
+      </Section> */}
       {/* <Section id='products'>
         <Row>
           <Column $gridColumn='1 / span 4'>

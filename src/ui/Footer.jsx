@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import HeroHeading from './HeroHeading';
 import Row from './Row';
-import Column from './Column-v1';
 import Heading from './Heading';
 import React from 'react';
 import Section from './Section';
