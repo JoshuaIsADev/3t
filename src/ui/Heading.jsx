@@ -11,9 +11,10 @@ const Heading = styled.h1`
     props.as === 'h1' &&
     css`
       /* font-size: 10rem; */
-      font-size: calc(100vw / 8);
+      /* font-size: calc(100vw / 8); */
+      font-size: clamp(7rem, 100vw / 6, 20rem);
       font-weight: 800;
-      line-height: calc(100vw / 30);
+      line-height: clamp(3rem, 100vw / 12, 18rem);
       text-transform: uppercase;
       transform: translateX(-0.5rem);
       ${(props) => variations[props.$variation]}
@@ -23,9 +24,9 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h2' &&
     css`
-      font-size: 6rem;
+      font-size: clamp(4rem, 100vw / 12, 8rem);
       font-weight: 800;
-      line-height: 5.5rem;
+      line-height: clamp(3rem, 100vw / 16, 6rem);
       text-transform: uppercase;
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0'};
@@ -34,9 +35,9 @@ const Heading = styled.h1`
     ${(props) =>
     props.as === 'h3' &&
     css`
-      font-size: 3rem;
+      font-size: clamp(2rem, 100vw / 16, 4rem);
       font-weight: 900;
-      line-height: 1.5rem;
+      line-height: clamp(0.75rem, 100vw / 20, 3rem);
       text-transform: uppercase;
       transform: translateX(-0.1rem);
       padding: ${(props) => props.$padding || '0'};

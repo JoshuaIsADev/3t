@@ -132,18 +132,18 @@ function Exploro() {
       <Section id='highlight1'>
         <HeadingContainer
           heading='Realistic testing'
-          subHeading={exploroProductsData[1].highlights[0].highlight2SubHeading}
+          subHeading={exploroProductsData[1].highlights[0].highlight1SubHeading}
         />
-        <ArticleContainer $col='repeat(4, 1fr)'>
-          <Col $col='1' $span='1' $variation='borderless'>
-            {exploroProductsData[1].highlights[0].paragraph}
-          </Col>
+        <ArticleContainer>
+          <TextCard
+            heading={exploroProductsData[1].highlights[0].highight1subheading2}
+            paragraph={exploroProductsData[1].highlights[0].highlight1paragraph}
+          />
 
-          <Col $col='3' $span='2' $variation='image'>
-            <Img src={exploroProductsData[1].highlights[0].highlight2Img} />
-          </Col>
+          <ImgCard src={exploroProductsData[1].highlights[0].highlight2Img} />
         </ArticleContainer>
       </Section>
+
       {/* <Section id='highlight2'>
         <HeadingContainer
           heading='3 flavors of exploring'

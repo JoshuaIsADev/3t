@@ -1,11 +1,19 @@
-// import styled from 'styled-components';
-import { Col } from './Columns';
+import styled from 'styled-components';
+import Heading from './Heading';
 
-function TextCard({ paragraph }) {
+const StyledTextCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+`;
+
+function TextCard({ heading, paragraph }) {
   return (
-    <Col $col='1' $span='1'>
+    <StyledTextCard>
+      <Heading as='h3'>{heading}</Heading>
       <p>{paragraph}</p>
-    </Col>
+    </StyledTextCard>
   );
 }
 

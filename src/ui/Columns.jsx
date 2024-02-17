@@ -29,8 +29,9 @@ const Col = styled.div`
   justify-content: space-between;
   padding: 0.5rem 1rem;
   border-right: 1px solid var(--color-line);
-  ${(props) => variations[props.$variation]}
-  grid-column: ${(props) => props.$col} / span ${(props) => props.$span};
+  ${(props) => variations[props.$variation]};
+  grid-column: ${(props) => props.$col} / span ${(props) => props.$colSpan};
+  grid-row: ${(props) => props.$row} / span ${(props) => props.$rowSpan};
 `;
 
 export { Col, Column };

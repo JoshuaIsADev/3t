@@ -10,8 +10,8 @@ const ArticleContainer = styled.article`
   grid-row: 3 / span 1;
   padding: 0rem;
   display: grid;
-  grid-template-rows: ${(props) => props.$row};
-  grid-template-columns: ${(props) => props.$col};
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   /* ${(props) => variations[props.$variation]}; */
 `;
 
