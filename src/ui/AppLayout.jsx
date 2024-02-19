@@ -12,11 +12,11 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <Nav />
+      {/* <Nav /> */}
       <Main>
         <Outlet />
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

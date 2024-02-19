@@ -14,13 +14,12 @@ const variations = {
 };
 
 const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: ${(props) => props.$gridTemplateRows || '1fr'};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   width: 100%;
-  gap: ${(props) => props.$gap || '1rem'};
-  border-top: 1px solid var(--color-grey-100);
-  padding: 0rem;
+  gap: 1rem;
+  flex-wrap: nowrap;
   ${(props) => variations[props.$variation]};
 `;
 

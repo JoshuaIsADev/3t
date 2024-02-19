@@ -18,6 +18,9 @@ const Section = styled.section`
   > * {
     border-bottom: 1px solid var(--color-line);
   }
+  @media (max-aspect-ratio: 3/2) {
+    min-height: 40vh;
+  }
 `;
 
 export default Section;

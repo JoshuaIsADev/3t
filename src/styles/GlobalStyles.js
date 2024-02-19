@@ -27,6 +27,7 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-lg: 2rem;
 
   --width-desktop: calc(100vw - 7rem);
+  --width-max: 1920px;
   /* --container-width-small: 450px; */
 }
 
@@ -47,12 +48,15 @@ html {
 
 body {
   font-family: 'Darker Grotesque', sans-serif;
-  text-transform: uppercase;
   font-weight: 600;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
+}
+
+p {
+  font-size: 1.3rem;
 }
 
 li {

@@ -45,7 +45,7 @@ function Footer() {
     <footer>
       <Section $variation='grey'>
         <HeadingContainer
-          heading='Reach us'
+          heading='Reach out'
           subHeading={'Contact us globally'}
         />
         <ArticleContainer>

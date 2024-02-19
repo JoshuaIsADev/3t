@@ -16,13 +16,15 @@ import 'swiper/css/navigation';
 import { ProductSwiper } from '../ui/ProductSwiper';
 
 import exploroProductsData from '../data/exploroProducts.json';
+import exploroProducts from '../data/exploroProducts.json';
 import heroSectionData from '../data/heroSection.json';
 import HeadingContainer from '../ui/HeadingContainer';
 import Section from '../ui/Section';
 import ArticleContainer from '../ui/ArticleContainer';
 import ImgCard from '../ui/ImgCard';
-import TextCard from '../ui/TextCard';
+import InfoCard from '../ui/InfoCard';
 import { Col } from '../ui/Columns';
+import Hero from '../ui/Hero';
 
 const productHighlights = [
   {
@@ -108,14 +110,23 @@ const sizes = {
 };
 
 function Exploro() {
+  const highlights = exploroProducts[1].highlights[0];
+
   return (
     <>
       <Noise />
-      <SectionFeature
+      <Hero
+        background={highlights.heroBackground}
+        altHero='hero'
+        heading={highlights.name}
+        subHeading={highlights.heroSubHeading}
+        paragraphs={highlights.heroParagraphs}
+      ></Hero>
+      {/* <SectionFeature
         id='productHero'
         heading={heroSectionData[1].heading}
         subHeading={heroSectionData[1].subHeading}
-        background={heroSectionData[1].background}
+        // background={highlights.background}
       ></SectionFeature>
       <Section id='products'>
         <HeadingContainer
@@ -131,152 +142,17 @@ function Exploro() {
       ></SectionFeature>
       <Section id='highlight1'>
         <HeadingContainer
-          heading='Realistic testing'
+          heading={exploroProductsData[1].highlights[0].highlight1Heading}
           subHeading={exploroProductsData[1].highlights[0].highlight1SubHeading}
         />
         <ArticleContainer>
-          <TextCard
+          <InfoCard
             heading={exploroProductsData[1].highlights[0].highight1subheading2}
             paragraph={exploroProductsData[1].highlights[0].highlight1paragraph}
           />
 
           <ImgCard src={exploroProductsData[1].highlights[0].highlight2Img} />
         </ArticleContainer>
-      </Section>
-
-      {/* <Section id='highlight2'>
-        <HeadingContainer
-          heading='3 flavors of exploring'
-          subHeading={exploroProductsData[1].highlights[0].highlightHeading3}
-        />
-        <ArticleContainer>
-          <HighlightImgCard
-            image={exploroProductsData[1].highlights[0].highlightImg3}
-          />
-        </ArticleContainer>
-      </Section> */}
-      {/* <Section id='products'>
-        <Row>
-          <Column $gridColumn='1 / span 4'>
-            <Heading as='h2' $variation='hero'>
-              A model for every need
-            </Heading>
-          </Column>
-        </Row>
-        <Row>
-          <Column $gridColumn='1 / span 1'>
-            <SubHeadingContainer>
-              <p>{exploroProductsData[1].highlights[0].introHeading}</p>
-            </SubHeadingContainer>
-          </Column>
-        </Row>
-
-        <StyledSwiper
-          modules={[Pagination, Navigation]}
-          pagination={true}
-          // className='mySwiper'
-        >
-          <SwiperNav />
-          {exploroProductsData[0].products.map((exploroProduct) => (
-            <SwiperSlide key={exploroProduct.image}>
-              <ProductCard
-                name={exploroProduct.name}
-                headline={exploroProduct.headline}
-                price={exploroProduct.price}
-                link={exploroProduct.link}
-                image={exploroProduct.image}
-              />
-            </SwiperSlide>
-          ))}
-        </StyledSwiper>
-      </Section> */}
-
-      {/* <SectionFeature
-        background={exploroProductsData[1].highlights[0].galleryImg[0]}
-      ></SectionFeature>
-      <Section id='highlight1'>
-        <Row>
-          <Column $gridColumn='1 / span 4'>
-            <HeadingContainer>
-              <Heading as='h4'>The first gravel bike</Heading>
-            </HeadingContainer>
-          </Column>
-        </Row>
-        <Row>
-          <Column $gridColumn='1 / span 1'>
-            <SubHeadingContainer>
-              <p>{exploroProductsData[1].highlights[0].highlightHeading2}</p>
-            </SubHeadingContainer>
-          </Column>
-        </Row>
-        <Row $gap='0'>
-          <Column $gridColumn='1 / span 2'>
-            <Img
-              src={exploroProductsData[1].highlights[0].highlightImg2[0]}
-              $ratio='3/2'
-            />
-          </Column>
-          <Column $gridColumn='3 / span 2'>
-            <Img
-              src={exploroProductsData[1].highlights[0].highlightImg2[1]}
-              $ratio='3/2'
-            />
-          </Column>
-        </Row>
-      </Section>
-      <Section id='tireHeadline' $variation='headline'>
-        <SectionHeading
-          heading={exploroProductsData[1].highlights[0].tireHeading}
-        />
-      </Section>
-      <Section id='tire'>
-        <Row>
-          <Column $gridColumn='2 / span 2' $variation='center'>
-            {exploroProductsData[1].highlights[0].tireSubHeading}
-          </Column>
-        </Row>
-        <Row>
-          {exploroProductsData[0].products.map((exploroProduct) => (
-            <Column
-              $gridColumn='span 1'
-              $variation='center'
-              key={exploroProduct.name}
-            >
-              <Heading as='h4' $padding='0 0 1rem'>
-                {exploroProduct.name}
-              </Heading>
-              <Heading as='h3'>
-                {exploroProduct.tire}{' '}
-                <span>
-                  <Heading as='h4' $padding='1rem 0 0'>
-                    mm
-                  </Heading>
-                </span>
-              </Heading>
-            </Column>
-          ))}
-        </Row>
-        <Row>
-          <Column $gridColumn='2 / span 1'>
-            <Img></Img>
-            <p>
-              To make the fastest possible gravel bike, you need to start with
-              the tire. Tire choice determines comfort & grip. But it also
-              determines how you can shape the frame to redirect the airflow.
-            </p>
-          </Column>
-          <Column $gridColumn='3 / span 1'>
-            <Img></Img>
-            <p>
-              To aerodynamically engineer the frame around the tires, you need
-              to know what their REAL measurements are. Not what’s on the label,
-              but how they really fit. That’s REALFAST aerodynamics. But it’s
-              not easy, as the tire dimension depends on the rim you use, the
-              pressure and of course how accurate the manufacturer’s claimed
-              size is.
-            </p>
-          </Column>
-        </Row>
       </Section> */}
     </>
   );

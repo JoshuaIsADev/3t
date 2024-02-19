@@ -38,19 +38,25 @@
   {
     "highlights": [
       {
-        "id": "exploro",
+        "name": "Exploro",
+        "heroBackground": "/img/section-02d.jpg",
+        "heroParagraphs": [
+          "If you’re like us, you love riding in rough terrain but live in a more urban jungle. So you need a bike that is fast on-road and capable off-road.",
+          "Explore gravel roads and the toughest terrain without giving up any road speed with 3T’s award-winning range of aero gravel bikes."
+        ],
+        "heroSubHeading": "The original fast gravel bike",
         "introHeading": "If you’re like us, you love riding in rough terrain but live in a more urban jungle. So you need a bike that is fast on-road and capable off-road.",
-        "tireHeading": "Gravel riding is all about tire choice and the 3T Exploro models fit the widest possible tires, up to 61mm. But each model is optimized for a different purpose.",
-        "tireSubHeading": "Tire clearances",
         "video": "/img/exploro_small.webm",
         "highlightImg": [
           "/img/3T-BMW-Exploro-Bike-42.jpg",
           "/img/3T-BMW-Exploro-Bike-13.jpg"
         ],
-        "highlight1Heading": "The original fast gravel bike",
-        "highlight1SubHeading": "The Exploro pioneered aerodynamics for gravel bikes, including even mud-covered knobby tire wind tunnel testing (much to the chagrin of the wind tunnel staff). The race-proven Exploro range gives you the speed you’re used to on asphalt and an additional advantage on wind-swept gravel tracks.",
-        "highight1subheading2": "2-step aero downtube (75/50mm wide) shielding water bottles & redirecting front wheel turbulence.",
-        "highlight1paragraph": "We didn’t want the Exploro Primo to be fast in theory, we wanted it to be fast in the real world. So we tested at a realistic 20mph (32kmh) instead of the standard 30mph (48kmh) and optimized the frame for water bottles too. We even designed the Sqaero shape to work well when covered in mud! The result? A muddy Exploro with 40mm knobby gravel tires and 2 water bottles (red line in the graph) is faster than the equivalent clean round tube bike is with 28mm slick road tires and without bottles (grey line).",
+        "highlight1Heading": "Freedom for all",
+        "highlight1SubHeading": "Long before gravel riding became popular, we decided we wanted to ride faster & farther on any terrain. The resulting 3T Exploro was the first to combine road speed and mountain toughness, so you can race through the smooth sections and crush the rough stuff. Total freedom at last!",
+        "highlight2Heading": "The original fast gravel bike",
+        "highlight2SubHeading": "The Exploro pioneered aerodynamics for gravel bikes, including even mud-covered knobby tire wind tunnel testing (much to the chagrin of the wind tunnel staff). The race-proven Exploro range gives you the speed you’re used to on asphalt and an additional advantage on wind-swept gravel tracks.",
+        "highight2subheading2": "2-step aero downtube (75/50mm wide) shielding water bottles & redirecting front wheel turbulence.",
+        "highlight2paragraph": "We didn’t want the Exploro Primo to be fast in theory, we wanted it to be fast in the real world. So we tested at a realistic 20mph (32kmh) instead of the standard 30mph (48kmh) and optimized the frame for water bottles too. We even designed the Sqaero shape to work well when covered in mud! The result? A muddy Exploro with 40mm knobby gravel tires and 2 water bottles (red line in the graph) is faster than the equivalent clean round tube bike is with 28mm slick road tires and without bottles (grey line).",
         "highlight2Img": ["/img/exploro_2_ultra.jpg"],
         "highlightHeading3": "The Exploro PRO/TEAM bikes all use the latest generation of the original Exploro frame. It's a great choice for a high-end, highly-versatile gravel bike at an affordable price.The Exploro RACEMAX is the absolute fastest gravel bike possible, aero optimized for for 35-42mm WAM (Width As Measured) tires but for particularly tough rides or long trips it even fits up to 61mm tires.The Exploro ULTRA is designed to go fast on the worst possible terrain, aero optimized for 55-61mm tires (but of course you can spec a narrower tire too). It also combines an aero seattube with a round seatpost so you can use any 27.2 round, dropper or suspension post.",
         "highlightImg3": ["/img/exploro3b.jpg", "/img/exploro3.jpg"],
