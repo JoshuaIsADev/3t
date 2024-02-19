@@ -1,49 +1,34 @@
 import styled from 'styled-components';
-import StyledLink from './StyledLink';
-import { Col, Column } from './Columns';
+import Heading from './Heading';
+import { Button } from './Button';
+import { NavLink } from 'react-router-dom';
+// import StyledLink from './StyledLink';
 
 const StyledProductCard = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: min-content 1fr;
-`;
-
-const ImgContainer = styled(Column)`
-  grid-column: 1 / span 4;
-  grid-row: 2 / span 1;
-  max-height: calc(100vh - 240px);
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  border-top: 1px solid var(--color-line);
+  gap: 1rem;
+  max-width: 700px;
+  /* min-width: 400px; */
 `;
 
 const Img = styled.img`
-  max-height: 90%;
   width: 100%;
   object-fit: contain;
-  padding-top: 4vh;
 `;
 
-function ProductCard({ name, headline, price, link, image }) {
+function ProductCard({ product }) {
+  console.log(product);
   return (
     <StyledProductCard>
-      <Col $col='1' $span='1'>
-        <p>{name}</p>
-      </Col>
-      <Col $col='2' $span='1'>
-        <p>{headline}</p>
-      </Col>
-      <Col $col='3' $span='1'>
-        <p>from {price} €</p>
-      </Col>
-      <Col $col='4' $span='1' $variation='highlight'>
-        <p>
-          <StyledLink to={`/${link}`}>Configure</StyledLink>
-        </p>
-      </Col>
-      <ImgContainer>
-        <Img src={image}></Img>
-      </ImgContainer>
+      <Img src={product.image} />
+      <Heading as='h7'>{product.name}</Heading>
+      <Heading as='h6'>{product.headline}</Heading>
+      <Heading as='h10'>from ${product.price}</Heading>
+      <Button $variation='configure'>
+        <NavLink to={`/${product.link}`}>Configure</NavLink>
+      </Button>
     </StyledProductCard>
   );
 }

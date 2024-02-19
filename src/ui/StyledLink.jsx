@@ -12,7 +12,7 @@ const StyledLink = styled(NavLink)`
   &:visited {
     font-size: 1rem;
     text-transform: uppercase;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-weight: 600;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.2rem;

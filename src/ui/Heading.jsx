@@ -64,6 +64,33 @@ const Heading = styled.h1`
       text-transform: uppercase;
       padding: ${(props) => props.$padding || '0'};
     `}
+
+  ${(props) =>
+    props.as === 'h6' &&
+    css`
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.8rem;
+      padding: ${(props) => props.$padding || '0'};
+    `}
+
+  ${(props) =>
+    props.as === 'h7' &&
+    css`
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.8rem;
+      padding: ${(props) => props.$padding || '0'};
+    `}
+
+  ${(props) =>
+    props.as === 'h10' &&
+    css`
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1rem;
+      padding: ${(props) => props.$padding || '0'};
+    `}
 `;
 
 export default Heading;

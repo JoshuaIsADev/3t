@@ -2,15 +2,7 @@ import styled from 'styled-components';
 import Heading from './Heading';
 import Row from './Row';
 import Column from './Column';
-
-const StyledHero = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: var(--width-max);
-  margin: 0 auto;
-`;
+import Section from './Section';
 
 const HeroBackground = styled.img`
   width: 100%;
@@ -21,7 +13,7 @@ const HeroBackground = styled.img`
 
 function Hero({ background, altHero, heading, subHeading, paragraphs }) {
   return (
-    <StyledHero>
+    <Section>
       <HeroBackground src={background} alt={altHero}></HeroBackground>
       <Row>
         <Column>
@@ -40,7 +32,7 @@ function Hero({ background, altHero, heading, subHeading, paragraphs }) {
           <Heading as='h2'>{subHeading}</Heading>
         </Column>
       </Row>
-    </StyledHero>
+    </Section>
   );
 }
 

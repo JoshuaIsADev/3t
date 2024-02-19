@@ -55,6 +55,10 @@ body {
   
 }
 
+a {
+  text-decoration: none;
+}
+
 p {
   font-size: 1.3rem;
 }

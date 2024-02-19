@@ -25,6 +25,7 @@ import ImgCard from '../ui/ImgCard';
 import InfoCard from '../ui/InfoCard';
 import { Col } from '../ui/Columns';
 import Hero from '../ui/Hero';
+import SectionProducts from '../ui/SectionProducts';
 
 const productHighlights = [
   {
@@ -111,6 +112,7 @@ const sizes = {
 
 function Exploro() {
   const highlights = exploroProducts[1].highlights[0];
+  const products = exploroProducts[0].products;
 
   return (
     <>
@@ -122,6 +124,8 @@ function Exploro() {
         subHeading={highlights.heroSubHeading}
         paragraphs={highlights.heroParagraphs}
       ></Hero>
+      <SectionProducts products={products} />
+
       {/* <SectionFeature
         id='productHero'
         heading={heroSectionData[1].heading}

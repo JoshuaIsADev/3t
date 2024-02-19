@@ -5,6 +5,25 @@ const variations = {
   active: css`
     background-color: var(--color-grey-900);
   `,
+
+  configure: css`
+    background-color: var(--color-grey-0);
+    border: 1px solid var(--color-grey-900);
+    border-radius: 2rem;
+    color: var(--color-grey-900);
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    width: 200px;
+    &:hover,
+    &:active,
+    &.active:link,
+    &.active:visited {
+      border-radius: 0.3rem;
+      transition: 0.2s ease;
+    }
+  `,
 };
 
 const ButtonGallery = styled.button`
@@ -24,12 +43,7 @@ const ButtonGallery = styled.button`
 const Button = styled.button`
   border: none;
   cursor: pointer;
-  background-color: var(--brand-color);
-  color: var(--color-grey-0);
-  font-size: 1.5rem;
-  font-weight: 100;
-  position: relative;
-  top: -0.2rem;
+  ${(props) => variations[props.$variation]};
 `;
 
 export { Button, ButtonGallery };
