@@ -36,9 +36,9 @@ const Heading = styled.h1`
     ${(props) =>
     props.as === 'h3' &&
     css`
-      font-size: clamp(2rem, 100vw / 16, 4rem);
+      font-size: clamp(2rem, 100vw / 10, 10rem);
       font-weight: 900;
-      line-height: clamp(0.75rem, 100vw / 20, 3rem);
+      line-height: clamp(0.75rem, 100vw / 18, 8rem);
       text-transform: uppercase;
       transform: translateX(-0.1rem);
       padding: ${(props) => props.$padding || '0'};
@@ -80,15 +80,6 @@ const Heading = styled.h1`
       font-size: 3rem;
       font-weight: 500;
       line-height: 1.8rem;
-      padding: ${(props) => props.$padding || '0'};
-    `}
-
-  ${(props) =>
-    props.as === 'h10' &&
-    css`
-      font-size: 1.5rem;
-      font-weight: 800;
-      line-height: 1rem;
       padding: ${(props) => props.$padding || '0'};
     `}
 `;

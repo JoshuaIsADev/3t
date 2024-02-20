@@ -1,12 +1,4 @@
-import styled from 'styled-components';
-import HeroHeading from './HeroHeading';
-import Row from './Row';
-import Heading from './Heading';
-import React from 'react';
 import Section from './Section';
-import HeadingContainer from './HeadingContainer';
-import ArticleContainer from './ArticleContainer';
-import FooterCard from './FooterCard';
 
 const footerData = [
   {
@@ -44,13 +36,13 @@ function Footer() {
   return (
     <footer>
       <Section $variation='grey'>
-        <HeadingContainer
+        {/* <HeadingContainer
           heading='Reach out'
           subHeading={'Contact us globally'}
         />
         <ArticleContainer>
           <FooterCard addresses={addressDatas} />
-        </ArticleContainer>
+        </ArticleContainer> */}
       </Section>
     </footer>
   );

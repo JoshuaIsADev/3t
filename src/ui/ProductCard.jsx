@@ -19,13 +19,12 @@ const Img = styled.img`
 `;
 
 function ProductCard({ product }) {
-  console.log(product);
   return (
     <StyledProductCard>
       <Img src={product.image} />
-      <Heading as='h7'>{product.name}</Heading>
+      <Heading as='h6'>{product.name}</Heading>
       <Heading as='h6'>{product.headline}</Heading>
-      <Heading as='h10'>from ${product.price}</Heading>
+      <p>from ${product.price}</p>
       <Button $variation='configure'>
         <NavLink to={`/${product.link}`}>Configure</NavLink>
       </Button>

@@ -2,18 +2,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: fixed;
-  margin: 0 auto;
-  top: 1rem;
-  left: 1rem;
-  z-index: 10;
-  mix-blend-mode: multiply;
-`;
-
 const Img = styled(motion.img)`
   height: 2rem;
   object-fit: contain;
@@ -22,7 +10,7 @@ const Img = styled(motion.img)`
 
 function Logo() {
   return (
-    <LogoContainer>
+    <>
       <NavLink to='/home'>
         <Img
           animate={{ opacity: 1 }}
@@ -32,7 +20,7 @@ function Logo() {
           alt='logo'
         />
       </NavLink>
-    </LogoContainer>
+    </>
   );
 }
 

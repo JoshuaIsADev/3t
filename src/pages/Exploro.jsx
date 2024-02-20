@@ -1,31 +1,15 @@
-import styled from 'styled-components';
-import Background from '../ui/Background';
-import Heading from '../ui/Heading';
-import HeroHeading from '../ui/HeroHeading';
 import Noise from '../ui/Noise';
-import ProductCard from '../ui/ProductCard';
-import Row from '../ui/Row';
-import Video from '../ui/Video';
-import Img from '../ui/Img';
-import { ButtonGallery } from '../ui/Button';
-import SectionFeature from '../ui/SectionFeature';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { ProductSwiper } from '../ui/ProductSwiper';
 
-import exploroProductsData from '../data/exploroProducts.json';
 import exploroProducts from '../data/exploroProducts.json';
-import heroSectionData from '../data/heroSection.json';
-import HeadingContainer from '../ui/HeadingContainer';
-import Section from '../ui/Section';
-import ArticleContainer from '../ui/ArticleContainer';
-import ImgCard from '../ui/ImgCard';
-import InfoCard from '../ui/InfoCard';
-import { Col } from '../ui/Columns';
+
 import Hero from '../ui/Hero';
 import SectionProducts from '../ui/SectionProducts';
+import SectionHighlight from '../ui/SectionHighlight';
 
 const productHighlights = [
   {
@@ -111,20 +95,22 @@ const sizes = {
 };
 
 function Exploro() {
-  const highlights = exploroProducts[1].highlights[0];
-  const products = exploroProducts[0].products;
+  const hero = exploroProducts[0].hero[0];
+  const products = exploroProducts[1].products;
+  const highlights = exploroProducts[2].highlights;
 
   return (
     <>
       <Noise />
       <Hero
-        background={highlights.heroBackground}
+        background={hero.heroBackground}
         altHero='hero'
-        heading={highlights.name}
-        subHeading={highlights.heroSubHeading}
-        paragraphs={highlights.heroParagraphs}
+        heading={hero.name}
+        subHeading={hero.heroSubHeading}
+        paragraphs={hero.heroParagraphs}
       ></Hero>
       <SectionProducts products={products} />
+      <SectionHighlight highlight={highlights[0]} />
 
       {/* <SectionFeature
         id='productHero'

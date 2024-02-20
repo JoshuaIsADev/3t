@@ -1,5 +1,4 @@
 import Noise from '../ui/Noise';
-import SectionFeature from '../ui/SectionFeature';
 import React, { useRef, useState } from 'react';
 import heroSectionData from '../data/heroSection.json';
 
@@ -17,7 +16,7 @@ function Home() {
   return (
     <>
       <Noise />
-      {heroSectionData.map((heroData) => (
+      {/* {heroSectionData.map((heroData) => (
         <SectionFeature
           key={heroData.id}
           heading={heroData.heading}
@@ -26,7 +25,7 @@ function Home() {
           background={heroData.background}
           video={heroData.video}
         />
-      ))}
+      ))} */}
     </>
   );
 }
