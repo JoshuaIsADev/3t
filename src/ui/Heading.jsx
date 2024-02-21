@@ -4,6 +4,9 @@ const variations = {
   hero: css`
     color: var(--color-brand);
   `,
+  cap: css`
+    text-transform: uppercase;
+  `,
 };
 
 const Heading = styled.h1`
@@ -72,6 +75,7 @@ const Heading = styled.h1`
       font-weight: 800;
       line-height: 1.8rem;
       padding: ${(props) => props.$padding || '0'};
+      ${(props) => variations[props.$variation]}
     `}
 
   ${(props) =>

@@ -10,26 +10,7 @@ import exploroProducts from '../data/exploroProducts.json';
 import Hero from '../ui/Hero';
 import SectionProducts from '../ui/SectionProducts';
 import SectionHighlight from '../ui/SectionHighlight';
-
-const productHighlights = [
-  {
-    id: 'exploro',
-    highlightH: 'Gravel just got faster',
-    highlightP:
-      'Developed and made in our Italian Factory, using proprietary Filament Winding + RTM technology to get a super responsive yet comfortable platform with a unique feeling and look.',
-    video: '/img/exploro_small.webm',
-    highlightImg: [
-      '/img/3T-BMW-Exploro-Bike-42.jpg',
-      '/img/3T-BMW-Exploro-Bike-13.jpg',
-    ],
-    galleryImg: [
-      '/img/3T-BMW-Exploro-Bike-42.jpg',
-      '/img/3T-BMW-Exploro-Bike-13.jpg',
-      '/img/3T-BMW-Exploro-Bike-10.jpg',
-    ],
-    featureImg: '/img/exploro-travel.jpg',
-  },
-];
+import SectionDetails from '../ui/SectionDetails';
 
 const sizes = {
   51: {
@@ -98,6 +79,7 @@ function Exploro() {
   const hero = exploroProducts[0].hero[0];
   const products = exploroProducts[1].products;
   const highlights = exploroProducts[2].highlights;
+  const details = exploroProducts[3].details;
 
   return (
     <>
@@ -109,9 +91,12 @@ function Exploro() {
         subHeading={hero.heroSubHeading}
         paragraphs={hero.heroParagraphs}
       ></Hero>
+
       <SectionProducts products={products} />
+
       <SectionHighlight highlight={highlights[0]} />
 
+      <SectionDetails details={details} />
       {/* <SectionFeature
         id='productHero'
         heading={heroSectionData[1].heading}
