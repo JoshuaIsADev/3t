@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 import Heading from './Heading';
 import Row from './Row';
 import Column from './Column';
@@ -22,7 +23,7 @@ function Hero({ background, altHero, heading, subHeading, paragraphs }) {
       </Row>
       <Row>
         {paragraphs.map((paragraph, i) => (
-          <Column key={Math.floor(Math.random() * 100)} $variation='paragraph'>
+          <Column key={uuidv4()} $variation='paragraph'>
             <p>{paragraph}</p>
           </Column>
         ))}

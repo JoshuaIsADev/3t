@@ -81,33 +81,39 @@
   },
   {
     "details": [
-      { "heading": "Design is in the details" },
+      { "id": "detailHeading", "heading": "Design is in the details" },
       {
+        "id": 1,
         "heading": "Perfect aero cutout",
         "paragraph": "Close-fitting cutout to shield the rear wheel and achieve the most speed.",
         "image": "/img/details/01_racemax.jpg"
       },
       {
+        "id": 2,
         "heading": "Mind the gap",
         "paragraph": "No oversized gaps between front tire & downtube for better airflow transition and less turbulence.",
         "image": "/img/details/02_racemax.jpg"
       },
       {
+        "id": 3,
         "heading": "Huge clearance",
         "paragraph": "The original Exploro set today’s standard for up to 54mm tire clearance. The RaceMax has up to 61mm!",
         "image": "/img/details/03_racemax.jpg"
       },
       {
+        "id": 4,
         "heading": "75mm downtube base",
         "paragraph": "Lower downtube aero profile is 75mm wide to fully shield water bottle.",
         "image": "/img/details/04_racemax.jpg"
       },
       {
+        "id": 5,
         "heading": "50mm downtube neck",
         "paragraph": "Upper downtube necks down to 50mm to pick up the airflow coming off the front tire.",
         "image": "/img/details/05_racemax.jpg"
       },
       {
+        "id": 6,
         "heading": "Size-specific downtube",
         "paragraph": "Reduced depth on smaller sizes to keep frame compliant and keep space for bottles.",
         "image": "/img/details/06_racemax.jpg"

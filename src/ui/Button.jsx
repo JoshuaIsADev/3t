@@ -43,7 +43,8 @@ const ButtonGallery = styled.button`
 const Button = styled.button`
   border: none;
   cursor: pointer;
-  ${(props) => variations[props.$variation]};
+  background-color: var(--color-grey-0)
+    ${(props) => variations[props.$variation]};
 `;
 
 export { Button, ButtonGallery };
