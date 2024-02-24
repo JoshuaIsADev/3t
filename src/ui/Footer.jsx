@@ -39,9 +39,9 @@ function Footer() {
   return (
     <footer>
       <Section $variation='footer'>
-        <Row $variation='right'>
+        <Row $variation='footer'>
           {addresses.map((address) => (
-            <Column key={address.id} $variation='left'>
+            <Column key={address.id} $variation='footer'>
               <Heading as='h4'>{address.heading}</Heading>
               <p>{address.subheading}</p>
               <p>{address.address}</p>

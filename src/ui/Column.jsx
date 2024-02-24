@@ -5,6 +5,10 @@ const variations = {
     width: 100vw;
   `,
 
+  footer: css`
+    gap: 2rem;
+  `,
+
   highlight: css`
     max-width: 600px;
     gap: 2rem;

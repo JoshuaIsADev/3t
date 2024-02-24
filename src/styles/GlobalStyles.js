@@ -89,6 +89,10 @@ img {
   text-underline-offset: 1rem;
 }
 
+/* .swiper-slide {
+  max-width: 800px;
+} */
+
 
 //OVERRIDES
 .faded {

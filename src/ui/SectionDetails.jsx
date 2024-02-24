@@ -18,7 +18,7 @@ const DetailContainer = styled.div`
   width: 100%;
   max-width: var(--width-max);
   border-bottom: 1px solid var(--color-grey-200);
-  padding: 2rem 0 2%.5rem;
+  padding: 2rem 0 2.6rem;
   gap: 0rem;
 `;
 
@@ -41,11 +41,10 @@ const Img = styled.img`
   width: 300px;
   height: 200px;
   object-fit: cover;
-  padding-top: 1rem;
+  margin-top: 1.5rem;
 `;
 
 function SectionDetails({ details }) {
-  console.log(details.slice(1));
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (nextIndex) => {

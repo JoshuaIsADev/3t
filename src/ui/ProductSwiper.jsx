@@ -8,17 +8,20 @@ import { Navigation, Pagination } from 'swiper/modules';
 import SwiperNav from './SwiperNav';
 
 const StyledProductSwiper = styled(Swiper)`
-  grid-column: 1 / span 4;
-  grid-row: 3 / span 1;
   width: 100%;
-  background-color: none;
+  & .swiper-slide {
+    max-width: 800px;
+  }
+  /* & .swiper-slide:nth-child(1n) {
+    margin-left: var(--padding-row);
+  } */
   & .swiper-pagination-bullet {
     width: 50px;
     height: 1px;
     border-radius: 0;
   }
   & .swiper-pagination-bullets {
-    bottom: 1rem;
+    /* bottom: 1rem; */
     z-index: 1;
   }
 
@@ -27,22 +30,22 @@ const StyledProductSwiper = styled(Swiper)`
   }
 `;
 
-function ProductSwiper({ productData }) {
+function ProductSwiper({ products }) {
+  console.log(products);
   return (
     <StyledProductSwiper
       modules={[Pagination, Navigation]}
-      pagination={true}
+      slidesPerView={'auto'}
+      centeredSlides={false}
+      spaceBetween={16}
+      pagination={{
+        clickable: true,
+      }}
       // navigation={true}
     >
-      {productData.map((product) => (
-        <SwiperSlide key={product.image}>
-          <ProductCard
-            name={product.name}
-            headline={product.headline}
-            price={product.price}
-            link={product.link}
-            image={product.image}
-          />
+      {products.map((product) => (
+        <SwiperSlide key={product.id}>
+          <ProductCard product={product} />
         </SwiperSlide>
       ))}
       <SwiperNav />

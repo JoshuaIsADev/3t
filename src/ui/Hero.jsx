@@ -7,14 +7,12 @@ import Ticker from './Ticker';
 
 function Hero({ background, heading, subHeading, tickerText }) {
   return (
-    <Section background={background}>
-      <Row $variation='heading'>
+    <Section $background={background}>
+      <Row $variation='heading' $paddingBottom='0'>
         <Heading as='h1'>{heading}</Heading>
       </Row>
       <Row>
-        <Column>
-          <Heading as='h4'>{subHeading}</Heading>
-        </Column>
+        <Heading as='h4'>{subHeading}</Heading>
       </Row>
       <Ticker text={tickerText} />
     </Section>

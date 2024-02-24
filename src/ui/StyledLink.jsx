@@ -22,9 +22,11 @@ const variations = {
   `,
 
   product: css`
+    font-size: 1.25rem;
+    font-weight: 500;
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3rem;
   `,
 };
 

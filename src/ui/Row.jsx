@@ -2,8 +2,7 @@ import styled, { css } from 'styled-components';
 
 const variations = {
   heading: css`
-    /* padding-top: 6rem; */
-    padding-bottom: 6rem;
+    padding-bottom: ${(props) => props.$paddingBottom || '6rem'};
     padding-right: var(--padding-row);
   `,
 
@@ -11,6 +10,11 @@ const variations = {
     padding-left: var(--padding-row);
     padding-right: var(--padding-row);
     padding-bottom: 6rem;
+  `,
+
+  footer: css`
+    padding-left: var(--padding-row);
+    gap: 4rem;
   `,
 
   right: css`

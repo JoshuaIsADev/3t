@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import Row from './Row';
 import Section from './Section';
 import ArticleHeader from './ArticleHeader';
+import { ProductSwiper } from './ProductSwiper';
 
 const StyledArticle = styled.article`
   display: flex;
@@ -15,6 +16,7 @@ const StyledArticle = styled.article`
 `;
 
 function SectionProducts({ products }) {
+  // console.log(products.slice(1));
   return (
     <Section>
       <ArticleHeader
@@ -22,7 +24,7 @@ function SectionProducts({ products }) {
         paragraph={products[0].paragraph}
       />
       <StyledArticle>
-        <Column>
+        {/* <Column>
           <ProductCard product={products[1]} />
         </Column>
 
@@ -35,8 +37,9 @@ function SectionProducts({ products }) {
         </Column>
         <Column>
           <ProductCard product={products[4]} />
-        </Column>
+        </Column> */}
       </StyledArticle>
+      <ProductSwiper products={products.slice(1)} />
     </Section>
   );
 }

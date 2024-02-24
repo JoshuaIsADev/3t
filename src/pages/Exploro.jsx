@@ -84,7 +84,7 @@ function Exploro() {
 
   return (
     <>
-      <Noise />
+      {/* <Noise /> */}
       <Hero
         background={hero.heroBackground}
         heading={hero.name}

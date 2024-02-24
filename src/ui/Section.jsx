@@ -15,7 +15,7 @@ const Section = styled.section`
   max-width: var(--width-max);
   margin: 0 auto;
   padding: 6rem 2rem 6rem;
-  background-image: url(${(props) => props.background});
+  background-image: url(${(props) => props.$background});
   background-size: cover;
   ${(props) => variations[props.$variation]}
 `;

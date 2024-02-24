@@ -39,7 +39,6 @@ const Heading = styled.h1`
     css`
       font-size: 4rem;
       font-weight: 900;
-      line-height: clamp(0.75rem, 100vw / 18, 8rem);
       text-transform: uppercase;
       transform: translateX(-0.1rem);
       padding: ${(props) => props.$padding || '0'};
