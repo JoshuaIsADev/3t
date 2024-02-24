@@ -1,17 +1,23 @@
 import styled, { css } from 'styled-components';
 
 const variations = {
+  details: css`
+    width: 100vw;
+  `,
+
   highlight: css`
     max-width: 600px;
-    align-items: center;
-    text-align: center;
     gap: 2rem;
   `,
-  paragraph: css`
-    max-width: 400px;
-    align-items: center;
-    text-align: center;
+
+  heading: css`
+    max-width: var(--width-main);
   `,
+
+  paragraph: css`
+    max-width: var(--width-main);
+  `,
+
   left: css`
     width: 100%;
     align-items: flex-start;
@@ -27,9 +33,6 @@ const variations = {
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  text-align: center;
   ${(props) => variations[props.$variation]};
 `;
 

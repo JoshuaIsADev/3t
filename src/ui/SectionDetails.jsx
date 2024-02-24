@@ -9,15 +9,16 @@ import { GoPlus } from 'react-icons/go';
 import { HiMiniPlus, HiMiniMinus } from 'react-icons/hi2';
 import { IconContext } from 'react-icons';
 import { Button } from './Button';
+import ArticleHeader from './ArticleHeader';
 
 const DetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 100vw;
-  max-width: 1000px;
-  border-bottom: 1px solid var(--color-grey-900);
-  padding: 0 0 2rem;
+  width: 100%;
+  max-width: var(--width-max);
+  border-bottom: 1px solid var(--color-grey-200);
+  padding: 2rem 0 2%.5rem;
   gap: 0rem;
 `;
 
@@ -27,8 +28,8 @@ const DetailRow = styled.div`
   flex-wrap: nowrap;
   align-items: end;
   text-align: left;
-  width: 100%;
   gap: 20rem;
+  width: 100%;
   cursor: pointer;
 `;
 
@@ -44,6 +45,7 @@ const Img = styled.img`
 `;
 
 function SectionDetails({ details }) {
+  console.log(details.slice(1));
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (nextIndex) => {
@@ -56,26 +58,25 @@ function SectionDetails({ details }) {
 
   return (
     <Section>
+      <ArticleHeader
+        heading={details[0].heading}
+        paragraph={details[0].paragraph}
+      />
       <article>
         <Row>
-          <Column $variation='highlight'>
-            <Heading as='h3'>{details[0].heading}</Heading>
-          </Column>
-        </Row>
-        <Row>
-          <Column>
-            {details.map((detail, index) => {
+          <Column $variation='details'>
+            {details.slice(1).map((detail, index) => {
               const isExpanded = index === expandedIndex;
 
               return (
                 <DetailContainer key={detail.id}>
                   <DetailRow onClick={() => handleClick(index)}>
-                    <Heading as='h6' $variation='cap'>
+                    <Heading as='h4' $variation='cap'>
                       {detail.heading}
                     </Heading>
                     <IconContext.Provider value={{ size: '2rem' }}>
                       <ButtonContainer>
-                        <Button>
+                        <Button $variation='details'>
                           {isExpanded ? <HiMiniMinus /> : <HiMiniPlus />}
                         </Button>
                       </ButtonContainer>

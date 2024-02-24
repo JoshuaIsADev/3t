@@ -2,6 +2,23 @@ import styled, { css } from 'styled-components';
 // import right from '../../public/right.svg';
 
 const variations = {
+  details: css`
+    border: none;
+    background-color: var(--color-grey-0);
+  `,
+
+  newsletter: css`
+    background-color: var(--color-grey-900);
+    color: var(--color-grey-0);
+    padding: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+    min-height: 10rem;
+    min-width: 10rem;
+  `,
+
   active: css`
     background-color: var(--color-grey-900);
   `,
@@ -41,10 +58,8 @@ const ButtonGallery = styled.button`
 `;
 
 const Button = styled.button`
-  border: none;
   cursor: pointer;
-  background-color: var(--color-grey-0)
-    ${(props) => variations[props.$variation]};
+  ${(props) => variations[props.$variation]};
 `;
 
 export { Button, ButtonGallery };

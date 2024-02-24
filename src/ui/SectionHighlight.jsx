@@ -3,6 +3,7 @@ import Section from './Section';
 import Row from './Row';
 import Column from './Column';
 import Heading from './Heading';
+import ArticleHeader from './ArticleHeader';
 
 const ImgContainer = styled.article`
   /* display: flex;
@@ -12,58 +13,41 @@ const ImgContainer = styled.article`
 `;
 
 const Img1 = styled.img`
-  max-width: 600px;
-  padding-top: 25rem;
-  padding-bottom: 0rem;
+  width: 100%;
 `;
 
 const Img2 = styled.img`
-  max-width: 1000px;
-  padding-top: 5rem;
-  padding-bottom: 15rem;
+  padding-right: 20vw;
 `;
 
 const Img3 = styled.img`
-  max-width: 800px;
-  padding-top: 0rem;
-  /* padding-bottom: 15rem; */
-  padding-left: 5rem;
+  padding-left: 30vw;
 `;
 const Img4 = styled.img`
-  max-width: 800px;
-  padding-top: 0rem;
-  padding-bottom: 5rem;
-  padding-right: 5rem;
+  padding-right: 25vw;
 `;
 
 function SectionHighlight({ highlight }) {
   return (
     <Section>
+      <ArticleHeader
+        heading={highlight.heading}
+        paragraph={highlight.paragraph}
+      />
       <article>
-        <Row>
-          <Column $variation='highlight'>
-            <Heading as='h3'>{highlight.heading}</Heading>
-            <p>{highlight.paragraph}</p>
-            <Heading as='h6'>{highlight.subHeading}</Heading>
-          </Column>
+        <Row $variation='right'>
+          <Img1 src={highlight.image[0]} />
+        </Row>
+        <Row $variation='left'>
+          <Img2 src={highlight.image[1]} />
+        </Row>
+        <Row $variation='right'>
+          <Img3 src={highlight.image[2]} />
+        </Row>
+        <Row $variation='left'>
+          <Img4 src={highlight.image[3]} />
         </Row>
       </article>
-      <Row>
-        <Column>
-          <Img1 src={highlight.image[0]} />
-        </Column>
-        <Column>
-          <Img2 src={highlight.image[1]} />
-        </Column>
-      </Row>
-      <Row>
-        <Column>
-          <Img3 src={highlight.image[2]} />
-        </Column>
-        <Column>
-          <Img4 src={highlight.image[3]} />
-        </Column>
-      </Row>
     </Section>
   );
 }

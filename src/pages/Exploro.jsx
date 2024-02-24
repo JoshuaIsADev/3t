@@ -11,6 +11,7 @@ import Hero from '../ui/Hero';
 import SectionProducts from '../ui/SectionProducts';
 import SectionHighlight from '../ui/SectionHighlight';
 import SectionDetails from '../ui/SectionDetails';
+import Footer from '../ui/Footer';
 
 const sizes = {
   51: {
@@ -86,10 +87,9 @@ function Exploro() {
       <Noise />
       <Hero
         background={hero.heroBackground}
-        altHero='hero'
         heading={hero.name}
         subHeading={hero.heroSubHeading}
-        paragraphs={hero.heroParagraphs}
+        tickerText={hero.tickerText}
       ></Hero>
 
       <SectionProducts products={products} />
@@ -97,6 +97,7 @@ function Exploro() {
       <SectionHighlight highlight={highlights[0]} />
 
       <SectionDetails details={details} />
+      <Footer />
       {/* <SectionFeature
         id='productHero'
         heading={heroSectionData[1].heading}

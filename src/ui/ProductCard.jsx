@@ -22,7 +22,7 @@ function ProductCard({ product }) {
   return (
     <StyledProductCard>
       <Img src={product.image} />
-      <Heading as='h6'>{product.name}</Heading>
+      <Heading as='h4'>{product.name}</Heading>
       <Heading as='h6'>{product.headline}</Heading>
       <p>from ${product.price}</p>
       <Button $variation='configure'>

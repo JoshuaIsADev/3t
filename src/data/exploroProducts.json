@@ -9,12 +9,17 @@
           "Explore gravel roads and the toughest terrain without giving up any road speed with 3T’s award-winning range of aero gravel bikes."
         ],
         "heroSubHeading": "The original fast gravel bike",
-        "video": "/img/exploro_small.webm"
+        "video": "/img/exploro_small.webm",
+        "tickerText": "Summer sale going on now! Act fast, models in limited supply!"
       }
     ]
   },
   {
     "products": [
+      {
+        "heading": "Explore gravel roads and the toughest terrain without giving up any road speed with 3T’s award-winning range of aero gravel bikes.",
+        "paragraph": "Choose your Exploro"
+      },
       {
         "name": "Exploro Primo",
         "headline": "The world's first aero gravel bike",
@@ -52,12 +57,12 @@
   {
     "highlights": [
       {
-        "heading": "Freedom for all",
+        "heading": "Fast adventures. Unforgettable experiences.",
         "subHeading": "Total Freedom at last!",
         "paragraph": "Long before gravel riding became popular, we decided we wanted to ride faster & farther on any terrain. The resulting 3T Exploro was the first to combine road speed and mountain toughness, so you can race through the smooth sections and crush the rough stuff.",
         "image": [
-          "/img/exploro_2_ultra.jpg",
           "/img/3t_exploro_racemax_boost_PAO01276-1200x675b.jpg",
+          "/img/exploro3bb.jpg",
           "/img/mustachescactus-3pBQBGWbkEA-unsplashc.jpg",
           "/img/coen-van-de-broek-xZR-AMfH878-unsplashb.jpg"
         ]
@@ -81,7 +86,11 @@
   },
   {
     "details": [
-      { "id": "detailHeading", "heading": "Design is in the details" },
+      {
+        "id": "detailHeading",
+        "heading": "Wind-tunnel tested, with water bottles just to be sure",
+        "paragraph": "We didn’t want the Exploro Primo to be fast in just theory, but also in the real world. So we tested at a realistic 20mph (32kmh) instead of the standard 30mph (48kmh) and optimized the frame for water bottles (tough to do long, epic rides without). We even designed the Sqaero shape to work well when covered in mud! The result? A muddy Exploro with 40mm knobby gravel tires and 2 water bottles (red line in the graph) is faster than the equivalent clean round tube bike is with 28mm slick road tires and without bottles (grey line)."
+      },
       {
         "id": 1,
         "heading": "Perfect aero cutout",

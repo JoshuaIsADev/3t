@@ -26,9 +26,18 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-md: 1rem;
   --border-radius-lg: 2rem;
 
-  --width-desktop: calc(100vw - 7rem);
+  /* --width-desktop: calc(100vw - 7rem); */
   --width-max: 1920px;
-  /* --container-width-small: 450px; */
+  --width-main: 1200px;
+
+  --padding-row: 25vw;
+
+  @media (max-width: 1400px) {
+  --padding-row: 12vw;
+}
+@media (max-width: 1000px) {
+  --padding-row: 0vw;
+}
 }
 
 *,
@@ -60,7 +69,9 @@ a {
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.5rem;
 }
 
 li {
@@ -83,9 +94,6 @@ img {
 .faded {
   color: var(--color-grey-300)
 }
-
-
-
 
 `;
 

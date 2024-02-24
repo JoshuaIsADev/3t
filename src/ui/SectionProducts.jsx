@@ -3,6 +3,7 @@ import Column from './Column';
 import ProductCard from './ProductCard';
 import Row from './Row';
 import Section from './Section';
+import ArticleHeader from './ArticleHeader';
 
 const StyledArticle = styled.article`
   display: flex;
@@ -16,11 +17,11 @@ const StyledArticle = styled.article`
 function SectionProducts({ products }) {
   return (
     <Section>
+      <ArticleHeader
+        heading={products[0].heading}
+        paragraph={products[0].paragraph}
+      />
       <StyledArticle>
-        <Column>
-          <ProductCard product={products[0]} />
-        </Column>
-
         <Column>
           <ProductCard product={products[1]} />
         </Column>
@@ -28,8 +29,12 @@ function SectionProducts({ products }) {
         <Column>
           <ProductCard product={products[2]} />
         </Column>
+
         <Column>
           <ProductCard product={products[3]} />
+        </Column>
+        <Column>
+          <ProductCard product={products[4]} />
         </Column>
       </StyledArticle>
     </Section>

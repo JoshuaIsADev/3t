@@ -5,17 +5,32 @@ const variations = {
   hero: css`
     color: var(--color-brand);
   `,
+
+  header: css`
+    font-size: 2rem;
+    font-weight: 400;
+    border: 1px solid var(--color-grey-900);
+    border-radius: 4rem;
+    padding: 0.25rem 2rem 0.75rem;
+    &:hover,
+    &:active,
+    &.active:link,
+    &.active:visited {
+      color: var(--color-grey-300);
+      border: 1px solid var(--color-grey-300);
+    }
+  `,
+
+  product: css`
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2rem;
+  `,
 };
 
 const StyledLink = styled(NavLink)`
   &:link,
   &:visited {
-    font-size: 1rem;
-    text-transform: uppercase;
-    /* text-decoration: underline; */
-    font-weight: 600;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.2rem;
     color: var(--color-grey-900);
     ${(props) => variations[props.$variation]}
   }

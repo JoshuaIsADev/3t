@@ -3,14 +3,17 @@ import Logo from './Logo';
 import Row from './Row';
 import Column from './Column';
 import { NavLink } from 'react-router-dom';
+import { Button } from './Button';
+import StyledLink from './StyledLink';
 // import ProductNav from './ProductNav';
 // import StoreNav from './StoreNav';
 
 const StyledHeader = styled.header`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   z-index: 100;
   position: fixed;
 `;
@@ -19,37 +22,42 @@ const Ul = styled.ul`
   gap: 2rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 function Header() {
   return (
     <StyledHeader>
-      <Column $variation='left'>
+      <Logo />
+      <nav>
         <Ul>
           <li>
-            <NavLink to='/exploro'>Exploro</NavLink>
+            <StyledLink to='/exploro' $variation='header'>
+              Exploro
+            </StyledLink>
           </li>
           <li>
-            <NavLink to='/strada'>Strada</NavLink>
+            <StyledLink to='/strada' $variation='header'>
+              Strada
+            </StyledLink>
           </li>
           <li>
-            <NavLink to='/about'>About</NavLink>
+            <StyledLink to='/about' $variation='header'>
+              About
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink to='/login' $variation='header'>
+              Login
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink to='/cart' $variation='header'>
+              Cart
+            </StyledLink>
           </li>
         </Ul>
-      </Column>
-      <Column>
-        <Logo />
-      </Column>
-      <Column $variation='right'>
-        <Ul>
-          <li>
-            <NavLink to='/login'>Login</NavLink>
-          </li>
-          <li>
-            <NavLink to='/cart'>Cart</NavLink>
-          </li>
-        </Ul>
-      </Column>
+      </nav>
     </StyledHeader>
   );
 }
