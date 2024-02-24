@@ -4,25 +4,27 @@ import ProductCard from './ProductCard';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import SwiperNav from './SwiperNav';
 
 const StyledProductSwiper = styled(Swiper)`
   width: 100%;
+  padding-top: 4rem;
+
   & .swiper-slide {
     max-width: 800px;
   }
-  /* & .swiper-slide:nth-child(1n) {
-    margin-left: var(--padding-row);
-  } */
   & .swiper-pagination-bullet {
     width: 50px;
-    height: 1px;
+    height: 2px;
     border-radius: 0;
   }
   & .swiper-pagination-bullets {
-    /* bottom: 1rem; */
-    z-index: 1;
+    display: flex;
+    width: 100%;
+    top: 0.7rem;
+    z-index: -10;
+    padding-right: 20rem;
   }
 
   & .swiper-pagination-bullet-active {
@@ -34,20 +36,19 @@ function ProductSwiper({ products }) {
   console.log(products);
   return (
     <StyledProductSwiper
-      modules={[Pagination, Navigation]}
+      modules={[Pagination, Navigation, Keyboard]}
       slidesPerView={'auto'}
       centeredSlides={false}
       spaceBetween={16}
-      pagination={{
-        clickable: true,
-      }}
-      // navigation={true}
+      pagination={true}
+      keyboard={true}
     >
       {products.map((product) => (
         <SwiperSlide key={product.id}>
           <ProductCard product={product} />
         </SwiperSlide>
       ))}
+
       <SwiperNav />
     </StyledProductSwiper>
   );

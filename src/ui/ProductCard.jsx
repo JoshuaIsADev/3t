@@ -1,14 +1,10 @@
 import styled from 'styled-components';
-import Heading from './Heading';
-import { Button } from './Button';
-import { NavLink } from 'react-router-dom';
 import StyledLink from './StyledLink';
 
 const StyledProductCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 1rem; */
   max-width: 800px;
   min-width: 300px;
   border: 1px solid var(--color-grey-200);

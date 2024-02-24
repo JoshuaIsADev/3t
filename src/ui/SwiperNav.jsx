@@ -8,8 +8,8 @@ const ButtonLeft = styled.button`
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(var(--color-grey-0), 0);
-  width: 50px;
-  height: 31px;
+  width: 25px;
+  height: 25px;
   border: none;
   cursor: pointer;
 `;
@@ -20,20 +20,20 @@ const ButtonRight = styled.button`
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(var(--color-grey-0), 0);
-  width: 50px;
-  height: 31px;
+  width: 25px;
+  height: 25px;
   border: none;
   cursor: pointer;
 `;
 
 const StyledSwiperNav = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 2rem;
   position: absolute;
-  top: 50%;
-  z-index: 1;
+  top: 0rem;
   width: 100%;
-  padding: 0 1rem;
+  padding-left: var(--padding-row);
 `;
 
 function SwiperNav() {
