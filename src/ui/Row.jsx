@@ -43,6 +43,7 @@ const Row = styled.div`
   width: 100%;
   flex-wrap: nowrap;
   gap: 1rem;
+  position: relative;
   ${(props) => variations[props.$variation]};
 `;
 
