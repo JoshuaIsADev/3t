@@ -2,14 +2,10 @@ import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Section from './Section';
 import Row from './Row';
-import Column from './Column';
-import Heading from './Heading';
 import ArticleHeader from './ArticleHeader';
 import { useRef } from 'react';
 
 const ImgContainer = styled.article`
-  /* display: flex;
-  flex-wrap: wrap; */
   position: relative;
   width: 100%;
 `;
@@ -47,40 +43,40 @@ function SectionHighlight({ highlight }) {
         heading={highlight.heading}
         paragraph={highlight.paragraph}
       />
-      <article>
-        <motion.div
-          style={{ y: img1Y }}
-          transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-        >
-          <Row $variation='right'>
-            <Img1 src={highlight.image[0]} />
-          </Row>
-        </motion.div>
-        <motion.div
-          style={{ y: img2Y }}
-          transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-        >
-          <Row $variation='left'>
-            <Img2 src={highlight.image[1]} />
-          </Row>
-        </motion.div>
-        <motion.div
-          style={{ y: img3Y }}
-          transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-        >
-          <Row $variation='right'>
-            <Img3 src={highlight.image[2]} />
-          </Row>
-        </motion.div>
-        <motion.div
-          style={{ y: img4Y }}
-          transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-        >
-          <Row $variation='left'>
-            <Img4 src={highlight.image[3]} />
-          </Row>
-        </motion.div>
-      </article>
+      {/* <ImgContainer> */}
+      <motion.div
+        style={{ y: img1Y }}
+        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
+      >
+        <Row $variation='right'>
+          <Img1 src={highlight.image[0]} />
+        </Row>
+      </motion.div>
+      <motion.div
+        style={{ y: img2Y }}
+        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
+      >
+        <Row $variation='left'>
+          <Img2 src={highlight.image[1]} />
+        </Row>
+      </motion.div>
+      <motion.div
+        style={{ y: img3Y }}
+        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
+      >
+        <Row $variation='right'>
+          <Img3 src={highlight.image[2]} />
+        </Row>
+      </motion.div>
+      <motion.div
+        style={{ y: img4Y }}
+        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
+      >
+        <Row $variation='left'>
+          <Img4 src={highlight.image[3]} />
+        </Row>
+      </motion.div>
+      {/* </ImgContainer> */}
     </Section>
   );
 }

@@ -3,7 +3,7 @@ import Heading from './Heading';
 import Row from './Row';
 import Column from './Column';
 import Section from './Section';
-import Ticker from './Ticker';
+import HeroTicker from './HeroTicker';
 
 function Hero({ background, heading, subHeading, tickerText }) {
   return (
@@ -14,7 +14,7 @@ function Hero({ background, heading, subHeading, tickerText }) {
       <Row>
         <Heading as='h4'>{subHeading}</Heading>
       </Row>
-      <Ticker text={tickerText} />
+      <HeroTicker text={tickerText} />
     </Section>
   );
 }

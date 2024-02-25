@@ -37,6 +37,7 @@ const variations = {
 const Column = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   ${(props) => variations[props.$variation]};
 `;
 

@@ -9,6 +9,7 @@ const variations = {
 
 const Section = styled.section`
   display: flex;
+  position: relative;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;

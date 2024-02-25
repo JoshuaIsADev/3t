@@ -19,10 +19,12 @@ const variations = {
 
   right: css`
     padding-left: var(--padding-row);
+    position: relative;
   `,
 
   left: css`
     padding-right: var(--padding-row);
+    position: relative;
   `,
 
   noPadding: css`

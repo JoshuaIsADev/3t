@@ -79,7 +79,7 @@ const sizes = {
 function Exploro() {
   const hero = exploroProducts[0].hero[0];
   const products = exploroProducts[1].products;
-  const highlights = exploroProducts[2].highlights;
+  const highlights = exploroProducts[2].highlights[0];
   const details = exploroProducts[3].details;
 
   return (
@@ -94,7 +94,7 @@ function Exploro() {
 
       <SectionProducts products={products} />
 
-      <SectionHighlight highlight={highlights[0]} />
+      <SectionHighlight highlight={highlights} />
 
       <SectionDetails details={details} />
       <Footer />

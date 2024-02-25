@@ -13,6 +13,7 @@ import ArticleHeader from './ArticleHeader';
 import { motion } from 'framer-motion';
 
 const DetailContainer = styled(motion.div)`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -21,7 +22,6 @@ const DetailContainer = styled(motion.div)`
   border-bottom: 1px solid var(--color-grey-200);
   padding: 2rem 0 2.6rem;
   gap: 0rem;
-  position: relative;
 `;
 
 const Hovered = {
@@ -61,9 +61,13 @@ const DetailRow = styled(motion.div)`
   flex-wrap: nowrap;
   align-items: end;
   text-align: left;
-  gap: 20rem;
+  gap: 1rem;
   width: 100%;
   cursor: pointer;
+`;
+
+const TextContainer = styled.div`
+  max-width: 600px;
 `;
 
 const ButtonContainer = styled.div`
@@ -136,7 +140,9 @@ function SectionDetails({ details }) {
                   </DetailRow>
                   {isExpanded && (
                     <DetailRow>
-                      <p>{detail.paragraph}</p>
+                      <TextContainer>
+                        <p>{detail.paragraph}</p>
+                      </TextContainer>
                       <Img src={detail.image} />
                     </DetailRow>
                   )}
