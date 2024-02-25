@@ -36,10 +36,10 @@ function SectionHighlight({ highlight }) {
     target: ref,
     offset: ['start start', 'end start'],
   });
-  const img1Y = useTransform(scrollYProgress, [0, 1], ['20%', '-100%']);
+  const img1Y = useTransform(scrollYProgress, [0, 1], ['50%', '-250%']);
   const img2Y = useTransform(scrollYProgress, [0, 1], ['100%', '-200%']);
   const img3Y = useTransform(scrollYProgress, [0, 1], ['-50%', '50%']);
-  const img4Y = useTransform(scrollYProgress, [0, 1], ['350%', '-100%']);
+  const img4Y = useTransform(scrollYProgress, [0, 1], ['250%', '-50%']);
 
   return (
     <Section ref={ref}>

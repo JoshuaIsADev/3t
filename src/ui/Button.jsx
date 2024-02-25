@@ -5,6 +5,8 @@ const variations = {
   details: css`
     border: none;
     background-color: var(--color-grey-0);
+    width: 2rem;
+    height: 0.5rem;
   `,
 
   newsletter: css`
