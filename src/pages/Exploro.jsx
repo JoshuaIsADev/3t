@@ -97,39 +97,6 @@ function Exploro() {
       <SectionHighlight highlight={highlights} />
 
       <SectionDetails details={details} />
-      <Footer />
-      {/* <SectionFeature
-        id='productHero'
-        heading={heroSectionData[1].heading}
-        subHeading={heroSectionData[1].subHeading}
-        // background={highlights.background}
-      ></SectionFeature>
-      <Section id='products'>
-        <HeadingContainer
-          heading='A model for every need'
-          subHeading={exploroProductsData[1].highlights[0].introHeading}
-        />
-        <ArticleContainer $variation='single'>
-          <ProductSwiper productData={exploroProductsData[0].products} />
-        </ArticleContainer>
-      </Section>
-      <SectionFeature
-        background={exploroProductsData[1].highlights[0].galleryImg[0]}
-      ></SectionFeature>
-      <Section id='highlight1'>
-        <HeadingContainer
-          heading={exploroProductsData[1].highlights[0].highlight1Heading}
-          subHeading={exploroProductsData[1].highlights[0].highlight1SubHeading}
-        />
-        <ArticleContainer>
-          <InfoCard
-            heading={exploroProductsData[1].highlights[0].highight1subheading2}
-            paragraph={exploroProductsData[1].highlights[0].highlight1paragraph}
-          />
-
-          <ImgCard src={exploroProductsData[1].highlights[0].highlight2Img} />
-        </ArticleContainer>
-      </Section> */}
     </>
   );
 }

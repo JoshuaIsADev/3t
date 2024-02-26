@@ -33,7 +33,6 @@ const StyledProductSwiper = styled(Swiper)`
 `;
 
 function ProductSwiper({ products }) {
-  console.log(products);
   return (
     <StyledProductSwiper
       modules={[Pagination, Navigation, Keyboard]}

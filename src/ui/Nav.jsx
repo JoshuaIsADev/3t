@@ -121,8 +121,8 @@ function Nav() {
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to='/login' disabled={isNavVisible}>
-              Login
+            <StyledNavLink to='/signin' disabled={isNavVisible}>
+              Sign In
             </StyledNavLink>
           </li>
           <li>

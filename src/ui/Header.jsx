@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import Logo from './Logo';
-import Row from './Row';
-import Column from './Column';
-import { NavLink } from 'react-router-dom';
-import { Button } from './Button';
 import StyledLink from './StyledLink';
-// import ProductNav from './ProductNav';
-// import StoreNav from './StoreNav';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -47,8 +41,8 @@ function Header() {
             </StyledLink>
           </li>
           <li>
-            <StyledLink to='/login' $variation='header'>
-              Login
+            <StyledLink to='/signin' $variation='header'>
+              Sign In
             </StyledLink>
           </li>
           <li>
