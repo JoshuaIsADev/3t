@@ -9,6 +9,11 @@ const variations = {
     gap: 2rem;
   `,
 
+  form: css`
+    gap: 1rem;
+    width: 100%;
+  `,
+
   highlight: css`
     max-width: 600px;
     gap: 2rem;

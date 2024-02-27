@@ -17,8 +17,8 @@ const variations = {
     text-transform: uppercase;
     border: none;
     border-radius: 10rem;
-    min-height: 10rem;
-    min-width: 10rem;
+    aspect-ratio: 1/1;
+    height: 10rem;
   `,
 
   active: css`

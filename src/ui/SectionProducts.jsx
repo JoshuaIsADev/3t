@@ -14,7 +14,6 @@ function SectionProducts({ products }) {
         heading={products[0].heading}
         paragraph={products[0].paragraph}
       />
-      {/* <StyledArticle></StyledArticle> */}
       <article>
         <Row>
           <ProductSwiper products={products.slice(1)} />

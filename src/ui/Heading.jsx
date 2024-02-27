@@ -52,9 +52,7 @@ const Heading = styled.h1`
       line-height: 3rem;
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0'};
-    `}
-    
-  ${(props) =>
+    `} /* ${(props) =>
     props.as === 'h5' &&
     css`
       font-size: 1rem;
@@ -81,7 +79,7 @@ const Heading = styled.h1`
       font-weight: 500;
       line-height: 1.8rem;
       padding: ${(props) => props.$padding || '0'};
-    `}
+    `} */
 `;
 
 export default Heading;

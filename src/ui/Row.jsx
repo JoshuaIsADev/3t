@@ -13,8 +13,7 @@ const variations = {
   `,
 
   footer: css`
-    padding-left: var(--padding-row);
-    gap: 4rem;
+    gap: 8rem;
   `,
 
   right: css`
@@ -25,6 +24,10 @@ const variations = {
   left: css`
     padding-right: var(--padding-row);
     position: relative;
+  `,
+
+  bottom: css`
+    align-items: flex-end;
   `,
 
   noPadding: css`
