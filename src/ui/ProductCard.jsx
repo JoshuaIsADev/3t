@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import StyledLink from './StyledLink';
+import Heading from './Heading';
 
 const StyledProductCard = styled.div`
   display: flex;
@@ -22,12 +23,7 @@ const Ul = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  align-items: center;
-`;
-
-const Li = styled.li`
-  font-size: 1.25rem;
-  font-weight: 500;
+  align-items: end;
 `;
 
 function ProductCard({ product }) {
@@ -35,16 +31,22 @@ function ProductCard({ product }) {
     <StyledProductCard>
       <Img src={product.image} />
       <Ul>
-        <Li>{product.name}</Li>
-        <Li>From ${product.price}</Li>
+        <li>
+          <Heading as='h4'>{product.name}</Heading>
+        </li>
+        <li>
+          <Heading as='h5'>From ${product.price}</Heading>
+        </li>
       </Ul>
       <Ul>
-        <Li>{product.headline}</Li>
-        <Li>
+        <li>
+          <Heading as='h5'>{product.headline}</Heading>
+        </li>
+        <li>
           <StyledLink to={`/${product.link}`} $variation='product'>
             Shop now
           </StyledLink>
-        </Li>
+        </li>
       </Ul>
     </StyledProductCard>
   );

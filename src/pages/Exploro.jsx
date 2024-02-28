@@ -92,11 +92,11 @@ function Exploro() {
         tickerText={hero.tickerText}
       ></Hero>
 
-      {/* <SectionProducts products={products} />
+      <SectionProducts name={hero.name} products={products} />
 
       <SectionHighlight highlight={highlights} />
 
-      <SectionDetails details={details} /> */}
+      {/* <SectionDetails details={details} /> */}
     </>
   );
 }

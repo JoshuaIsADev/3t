@@ -17,8 +17,8 @@
   {
     "products": [
       {
-        "heading": "Explore gravel roads and the toughest terrain without giving up any road speed.",
-        "paragraph": "Long before gravel riding became popular, we decided we wanted to ride faster & farther on any terrain. The resulting 3T Exploro was the first to combine road speed and mountain toughness, so you can race through the smooth sections and crush the rough stuff. Total freedom at last!"
+        "heading": "A bike for every need",
+        "paragraph": "Explore gravel roads and the toughest terrain without giving up any road speed with 3T’s award-winning range of aero gravel bikes."
       },
       {
         "id": 1,
@@ -61,30 +61,32 @@
   {
     "highlights": [
       {
-        "heading": "Fast adventures. Unforgettable experiences.",
-        "subHeading": "Total Freedom at last!",
-        "paragraph": "The Exploro pioneered aerodynamics for gravel bikes, including even mud-covered knobby tire wind tunnel testing (much to the chagrin of the wind tunnel staff). The race-proven Exploro range gives you the speed you’re used to on asphalt and an additional advantage on wind-swept gravel tracks.",
-        "image": [
-          "/img/3t_exploro_racemax_boost_PAO01276-1200x675b.jpg",
-          "/img/exploro3bb.jpg",
-          "/img/mustachescactus-3pBQBGWbkEA-unsplashc.jpg",
-          "/img/coen-van-de-broek-xZR-AMfH878-unsplashb.jpg"
-        ]
+        "id": 1,
+        "heading": "Total freedom.",
+        "paragraph": "Long before gravel riding became popular, we decided we wanted to ride faster & farther on any terrain. The resulting 3T Exploro was the first to combine road speed and mountain toughness, so you can race through the smooth sections and crush the rough stuff. Total freedom at last!",
+        "image": "/img/3t_exploro_racemax_boost_PAO01276-1200x675b.jpg"
       },
       {
-        "highlightHeading": "The original fast gravel bike",
-        "highlightSubHeading": "The Exploro pioneered aerodynamics for gravel bikes, including even mud-covered knobby tire wind tunnel testing (much to the chagrin of the wind tunnel staff). The race-proven Exploro range gives you the speed you’re used to on asphalt and an additional advantage on wind-swept gravel tracks.",
-        "highightSubHeading2": "2-step aero downtube (75/50mm wide) shielding water bottles & redirecting front wheel turbulence.",
-        "highlight2paragraph": "We didn’t want the Exploro Primo to be fast in theory, we wanted it to be fast in the real world. So we tested at a realistic 20mph (32kmh) instead of the standard 30mph (48kmh) and optimized the frame for water bottles too. We even designed the Sqaero shape to work well when covered in mud! The result? A muddy Exploro with 40mm knobby gravel tires and 2 water bottles (red line in the graph) is faster than the equivalent clean round tube bike is with 28mm slick road tires and without bottles (grey line).",
-        "highlight2Img": ["/img/exploro_2_ultra.jpg"],
-        "highlightHeading3": "The Exploro PRO/TEAM bikes all use the latest generation of the original Exploro frame. It's a great choice for a high-end, highly-versatile gravel bike at an affordable price.The Exploro RACEMAX is the absolute fastest gravel bike possible, aero optimized for for 35-42mm WAM (Width As Measured) tires but for particularly tough rides or long trips it even fits up to 61mm tires.The Exploro ULTRA is designed to go fast on the worst possible terrain, aero optimized for 55-61mm tires (but of course you can spec a narrower tire too). It also combines an aero seattube with a round seatpost so you can use any 27.2 round, dropper or suspension post.",
-        "highlightImg3": ["/img/exploro3b.jpg", "/img/exploro3.jpg"],
-        "galleryImg": [
-          "/img/3T-BMW-Exploro-Bike-42.jpg",
-          "/img/3T-BMW-Exploro-Bike-13.jpg",
-          "/img/3T-BMW-Exploro-Bike-10.jpg"
-        ],
-        "featureImg": "/img/exploro-travel.jpg"
+        "id": 2,
+        "heading": "The original fast gravel bike.",
+        "paragraph": "The Exploro pioneered aerodynamics for gravel bikes, including even mud-covered knobby tire wind tunnel testing (much to the chagrin of the wind tunnel staff). The race-proven Exploro range gives you the speed you’re used to on asphalt and an additional advantage on wind-swept gravel tracks.",
+        "image": "/img/exploro3bb.jpg"
+      },
+      {
+        "id": 3,
+        "heading": "3 flavors of exploring",
+        "paragraph": "The Exploro PRO/TEAM bikes all use the latest generation of the original Exploro frame. It’s a great choice for a high-end, highly-versatile gravel bike at an affordable price.",
+        "paragraph2": "The Exploro RACEMAX is the absolute fastest gravel bike possible, aero optimized for for 35-42mm WAM (Width As Measured) tires but for particularly tough rides or long trips it even fits up to 61mm tires.",
+        "paragraph3": "The Exploro ULTRA is designed to go fast on the worst possible terrain, aero optimized for 55-61mm tires (but of course you can spec a narrower tire too). It also combines an aero seattube with a round seatpost so you can use any 27.2 round, dropper or suspension post.",
+        "image": "/img/mustachescactus-3pBQBGWbkEA-unsplashc.jpg"
+      },
+      {
+        "id": 4,
+        "heading": "Tweak your tire",
+        "paragraph": "Gravel riding is all about tire choice and the 3T Exploro models fit the widest possible tires, up to 61mm.But each model is optimized for a different purpose.",
+        "paragraph2": "The Exploro PRO/TEAM is a Jack of all trades, the RACEMAX is an all-out speed machine while the ULTRA can conquer the toughest terrain faster than any other gravel bike.",
+
+        "image": "/img/coen-van-de-broek-xZR-AMfH878-unsplashb.jpg"
       }
     ]
   },

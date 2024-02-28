@@ -13,6 +13,7 @@ const StyledProductSwiper = styled(Swiper)`
 
   & .swiper-slide {
     max-width: 800px;
+    padding: 0 2rem;
   }
   & .swiper-pagination-bullet {
     width: 50px;
@@ -21,10 +22,11 @@ const StyledProductSwiper = styled(Swiper)`
   }
   & .swiper-pagination-bullets {
     display: flex;
+    justify-content: right;
     width: 100%;
+    padding: 0 var(--padding-sides);
     top: 0.7rem;
     z-index: -10;
-    padding-right: 20rem;
   }
 
   & .swiper-pagination-bullet-active {
@@ -38,17 +40,16 @@ function ProductSwiper({ products }) {
       modules={[Pagination, Navigation, Keyboard]}
       slidesPerView={'auto'}
       centeredSlides={false}
-      spaceBetween={16}
+      spaceBetween={0}
       pagination={true}
       keyboard={true}
     >
+      <SwiperNav />
       {products.map((product) => (
         <SwiperSlide key={product.id}>
           <ProductCard product={product} />
         </SwiperSlide>
       ))}
-
-      <SwiperNav />
     </StyledProductSwiper>
   );
 }

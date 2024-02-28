@@ -28,12 +28,12 @@ const ButtonRight = styled.button`
 
 const StyledSwiperNav = styled.div`
   display: flex;
+  position: absolute;
   justify-content: left;
   gap: 2rem;
-  position: absolute;
   top: 0rem;
+  left: var(--padding-sides);
   width: 100%;
-  padding-left: var(--padding-row);
 `;
 
 function SwiperNav() {

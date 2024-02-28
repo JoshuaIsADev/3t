@@ -16,6 +16,7 @@ const Heading = styled.h1`
       font-size: 19rem;
       font-weight: 900;
       line-height: 18rem;
+      letter-spacing: -0.5rem;
       text-transform: uppercase;
       ${(props) => variations[props.$variation]};
       padding: 0 0 2rem;
@@ -27,7 +28,7 @@ const Heading = styled.h1`
     css`
       font-size: 8rem;
       font-weight: 800;
-      line-height: 6rem;
+      line-height: 7rem;
       text-transform: uppercase;
       letter-spacing: -0.5rem;
       ${(props) => variations[props.$variation]}
@@ -60,6 +61,7 @@ ${(props) =>
       font-size: 0.875rem;
       font-weight: 800;
       line-height: 1rem;
+      text-transform: uppercase;
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0'};
     `}

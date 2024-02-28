@@ -60,7 +60,7 @@ html {
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -71,9 +71,9 @@ a {
 }
 
 p {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 2.5rem;
+  font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.25rem;
 }
 
 li {

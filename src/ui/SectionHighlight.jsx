@@ -3,81 +3,87 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Section from './Section';
 import Row from './Row';
 import ArticleHeader from './ArticleHeader';
-import { useRef } from 'react';
+import Heading from './Heading';
 
-const ImgContainer = styled.article`
-  position: relative;
+const StyledSectionHighlight = styled.section`
   width: 100%;
+  max-width: var(--width-max);
+  height: 200vh;
+  margin: 0 auto;
+  padding: 6rem var(--padding-sides) 2rem;
 `;
 
-const Img1 = styled.img`
+const HighlightCard = styled.article`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
   width: 100%;
-  position: relative;
+  height: calc(100vh - 10rem);
+  padding-top: 2rem;
+  position: sticky;
+  top: 10vh;
 `;
 
-const Img2 = styled.img`
-  padding-right: 20vw;
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  max-width: var(--width-text-max);
 `;
 
-const Img3 = styled.img`
-  padding-left: 30vw;
+const HeadingContainer = styled.div`
+  width: 100%;
+  overflow-wrap: break-word;
+  padding-bottom: 0rem;
+  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: normal;
 `;
-const Img4 = styled.img`
-  padding-right: 25vw;
+
+const SubheadingContainer = styled.div`
+  width: 100%;
+  padding-bottom: 2rem;
+`;
+
+const ParagraphContainer = styled.div`
+  width: 100%;
+  /* padding-bottom: 2rem; */
+`;
+
+const ImgContainer = styled.div`
+  width: 100%;
+  min-width: 700px;
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 2rem;
 `;
 
 function SectionHighlight({ highlight }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
-  const img1Y = useTransform(scrollYProgress, [0, 1], ['50%', '-250%']);
-  const img2Y = useTransform(scrollYProgress, [0, 1], ['100%', '-200%']);
-  const img3Y = useTransform(scrollYProgress, [0, 1], ['-50%', '50%']);
-  const img4Y = useTransform(scrollYProgress, [0, 1], ['250%', '-50%']);
-
   return (
-    <Section ref={ref}>
-      <ArticleHeader
-        heading={highlight.heading}
-        paragraph={highlight.paragraph}
-      />
-      {/* <ImgContainer> */}
-      <motion.div
-        style={{ y: img1Y }}
-        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-      >
-        <Row $variation='right'>
-          <Img1 src={highlight.image[0]} />
-        </Row>
-      </motion.div>
-      <motion.div
-        style={{ y: img2Y }}
-        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-      >
-        <Row $variation='left'>
-          <Img2 src={highlight.image[1]} />
-        </Row>
-      </motion.div>
-      <motion.div
-        style={{ y: img3Y }}
-        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-      >
-        <Row $variation='right'>
-          <Img3 src={highlight.image[2]} />
-        </Row>
-      </motion.div>
-      <motion.div
-        style={{ y: img4Y }}
-        transition={{ ease: 'easeInOut', type: 'spring', duration: 0 }}
-      >
-        <Row $variation='left'>
-          <Img4 src={highlight.image[3]} />
-        </Row>
-      </motion.div>
-      {/* </ImgContainer> */}
-    </Section>
+    <StyledSectionHighlight>
+      <HighlightCard>
+        <InfoContainer>
+          <HeadingContainer>
+            <Heading as='h2'>{highlight.heading}</Heading>
+          </HeadingContainer>
+          <ParagraphContainer>
+            <SubheadingContainer>
+              <Heading as='h5'>Highlight 1 / 3</Heading>
+            </SubheadingContainer>
+            <p>{highlight.paragraph}</p>
+          </ParagraphContainer>
+        </InfoContainer>
+        <ImgContainer>
+          <Img src={highlight.image} />
+        </ImgContainer>
+      </HighlightCard>
+    </StyledSectionHighlight>
   );
 }
 

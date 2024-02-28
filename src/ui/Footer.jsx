@@ -27,7 +27,7 @@ const FormContainer = styled.form`
 
 const HeadingContainer = styled.div`
   width: 100%;
-  padding-bottom: 0rem;
+  padding-bottom: 4rem;
 `;
 
 const AddressesContainer = styled.article`
