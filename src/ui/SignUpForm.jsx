@@ -59,13 +59,12 @@ function SignUpForm() {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  // const StyledForm = styled.form`
-  //   display: flex;
-  // `
-
   return (
     <article>
-      <ArticleHeader heading='Sign up with your email and password' />
+      <Row $variation='heading' $paddingBottom='2rem'>
+        <Heading as='h2'>Sign up with your email and password</Heading>
+      </Row>
+
       <form onSubmit={handleSubmit}>
         <Row $variation='bottom'>
           <Column $variation='form'>

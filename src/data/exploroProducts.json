@@ -3,7 +3,7 @@
     "hero": [
       {
         "name": "Exploro",
-        "heroBackground": "/img/section-02d.jpg",
+        "image": "/img/section-02d.jpg",
         "heroParagraphs": [
           "If you’re like us, you love riding in rough terrain but live in a more urban jungle. So you need a bike that is fast on-road and capable off-road.",
           "Explore gravel roads and the toughest terrain without giving up any road speed with 3T’s award-winning range of aero gravel bikes."

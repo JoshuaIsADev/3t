@@ -12,7 +12,7 @@ const variations = {
     padding-bottom: 6rem;
   `,
 
-  footer: css`
+  address: css`
     gap: 8rem;
   `,
 

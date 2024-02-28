@@ -86,17 +86,17 @@ function Exploro() {
     <>
       {/* <Noise /> */}
       <Hero
-        background={hero.heroBackground}
+        image={hero.image}
         heading={hero.name}
         subHeading={hero.heroSubHeading}
         tickerText={hero.tickerText}
       ></Hero>
 
-      <SectionProducts products={products} />
+      {/* <SectionProducts products={products} />
 
       <SectionHighlight highlight={highlights} />
 
-      <SectionDetails details={details} />
+      <SectionDetails details={details} /> */}
     </>
   );
 }

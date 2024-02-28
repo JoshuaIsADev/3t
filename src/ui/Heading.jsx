@@ -13,13 +13,13 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h1' &&
     css`
-      font-size: 12rem;
+      font-size: 19rem;
       font-weight: 900;
-      line-height: 8rem;
+      line-height: 18rem;
       text-transform: uppercase;
       ${(props) => variations[props.$variation]};
       padding: 0 0 2rem;
-      transform: translateX(-0.5rem);
+      transform: translateX(-1.2rem);
     `}
 
   ${(props) =>
@@ -47,39 +47,22 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h4' &&
     css`
-      font-size: 4rem;
+      font-size: 1.25rem;
       font-weight: 800;
-      line-height: 3rem;
+      line-height: 1.25rem;
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0'};
-    `} /* ${(props) =>
+    `}
+
+${(props) =>
     props.as === 'h5' &&
     css`
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1rem;
-      text-transform: uppercase;
-      padding: ${(props) => props.$padding || '0'};
-    `}
-
-  ${(props) =>
-    props.as === 'h6' &&
-    css`
-      font-size: 3rem;
+      font-size: 0.875rem;
       font-weight: 800;
-      line-height: 1.8rem;
-      padding: ${(props) => props.$padding || '0'};
+      line-height: 1rem;
       ${(props) => variations[props.$variation]}
-    `}
-
-  ${(props) =>
-    props.as === 'h7' &&
-    css`
-      font-size: 3rem;
-      font-weight: 500;
-      line-height: 1.8rem;
       padding: ${(props) => props.$padding || '0'};
-    `} */
+    `}
 `;
 
 export default Heading;

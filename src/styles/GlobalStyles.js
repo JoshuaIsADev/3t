@@ -28,9 +28,11 @@ const GlobalStyles = createGlobalStyle`
 
   /* --width-desktop: calc(100vw - 7rem); */
   --width-max: 1920px;
+  --width-text-max: 700px; 
   --width-main: 1200px;
 
   --padding-row: 25vw;
+  --padding-sides: 2rem;
 
   @media (max-width: 1400px) {
   --padding-row: 12vw;
@@ -56,8 +58,8 @@ html {
 }
 
 body {
-  font-family: 'Darker Grotesque', sans-serif;
-  font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

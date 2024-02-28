@@ -11,53 +11,65 @@ const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  /* padding: 10rem 0 2rem; */
+  width: 100%;
+  max-width: var(--width-max);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 8rem var(--padding-sides) 2rem;
 `;
 
-const StyledForm = styled.form`
+const FormContainer = styled.form`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   gap: 2rem;
+`;
+
+const HeadingContainer = styled.div`
+  width: 100%;
+  padding-bottom: 0rem;
+`;
+
+const AddressesContainer = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: var(--width-text-max);
+  padding-bottom: 2rem;
 `;
 
 function Footer() {
   const addresses = footerData[0].address;
   return (
-    <footer>
-      <Section $variation='footer'>
-        <Row $variation='footer'>
+    <StyledFooter>
+      <HeadingContainer>
+        <Heading as='h2'>Sign up for our newsletter</Heading>
+      </HeadingContainer>
+      <div>
+        <AddressesContainer>
           {addresses.map((address) => (
-            <Column key={address.id} $variation='footer'>
-              <Heading as='h4'>{address.heading}</Heading>
-              <p>{address.subheading}</p>
-              <p>{address.address}</p>
-              <p>{address.phone}</p>
-            </Column>
+            <div key={address.id}>
+              <Heading as='h5'>{address.heading}</Heading>
+              <Heading as='h5'>{address.subheading}</Heading>
+              <Heading as='h5'>{address.address}</Heading>
+              <Heading as='h5'>{address.phone}</Heading>
+            </div>
           ))}
-        </Row>
-        <StyledForm>
-          <Row>
-            <Column>
-              <label htmlFor='email'>
-                <Heading as='h2'>Sign up for our newsletter</Heading>
-              </label>
-            </Column>
-          </Row>
-          <Row>
-            <FormInput
-              placeholder='Your email address'
-              type='email'
-              required
-              name='email'
-              value=''
-            />
-            <Button $variation='newsletter'>Submit</Button>
-          </Row>
-        </StyledForm>
-      </Section>
-    </footer>
+        </AddressesContainer>
+        <FormContainer>
+          <FormInput
+            label='Sign up'
+            placeholder='Your email address'
+            type='email'
+            required
+            name='email'
+            value=''
+          />
+          <Button $variation='newsletter'>Submit</Button>
+        </FormContainer>
+      </div>
+    </StyledFooter>
   );
 }
 
