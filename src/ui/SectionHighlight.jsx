@@ -1,89 +1,75 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Section from './Section';
-import Row from './Row';
-import ArticleHeader from './ArticleHeader';
-import Heading from './Heading';
+import HighlightCard from './HighlightCard';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
-const StyledSectionHighlight = styled.section`
+const variations = {
+  slide1: css`
+    height: 500vh;
+  `,
+};
+
+const StyledSectionHighlight = styled(motion.section)`
+  position: relative;
   width: 100%;
   max-width: var(--width-max);
   height: 200vh;
   margin: 0 auto;
   padding: 6rem var(--padding-sides) 2rem;
+  ${(props) => variations[props.$variation]}
 `;
 
-const HighlightCard = styled.article`
+const StyledHighlightCard = styled(motion.div)`
   display: flex;
   flex-direction: row;
   gap: 2rem;
   width: 100%;
-  height: calc(100vh - 10rem);
-  padding-top: 2rem;
+  padding-top: 8rem;
   position: sticky;
-  top: 10vh;
+  /* position: fixed; */
+  top: 0rem;
+  height: calc(100vh - 2rem);
+  /* padding: 8rem var(--padding-sides) 2rem; */
 `;
 
-const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 100%;
-  max-width: var(--width-text-max);
-`;
+function SectionHighlight({ highlights }) {
+  const { ref: myRef, inView: cardVisible } = useInView();
+  const { ref: myRef2, inView: cardVisible2 } = useInView();
 
-const HeadingContainer = styled.div`
-  width: 100%;
-  overflow-wrap: break-word;
-  padding-bottom: 0rem;
-  overflow-wrap: break-word;
-  overflow-wrap: anywhere;
-  word-break: normal;
-`;
-
-const SubheadingContainer = styled.div`
-  width: 100%;
-  padding-bottom: 2rem;
-`;
-
-const ParagraphContainer = styled.div`
-  width: 100%;
-  /* padding-bottom: 2rem; */
-`;
-
-const ImgContainer = styled.div`
-  width: 100%;
-  min-width: 700px;
-`;
-
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left;
-  border-radius: 2rem;
-`;
-
-function SectionHighlight({ highlight }) {
   return (
-    <StyledSectionHighlight>
-      <HighlightCard>
-        <InfoContainer>
-          <HeadingContainer>
-            <Heading as='h2'>{highlight.heading}</Heading>
-          </HeadingContainer>
-          <ParagraphContainer>
-            <SubheadingContainer>
-              <Heading as='h5'>Highlight 1 / 3</Heading>
-            </SubheadingContainer>
-            <p>{highlight.paragraph}</p>
-          </ParagraphContainer>
-        </InfoContainer>
-        <ImgContainer>
-          <Img src={highlight.image} />
-        </ImgContainer>
-      </HighlightCard>
-    </StyledSectionHighlight>
+    <>
+      <StyledSectionHighlight ref={myRef} $variation='slide1'>
+        <StyledHighlightCard
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, duration: 2 }}
+          exit={{ opacity: 0, duration: 2 }}
+        >
+          <HighlightCard
+            heading={highlights[0].heading}
+            paragraph={highlights[0].paragraph}
+            image={highlights[0].image}
+          />
+        </StyledHighlightCard>
+      </StyledSectionHighlight>
+      <StyledSectionHighlight ref={myRef2}>
+        <StyledHighlightCard
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, duration: 2 }}
+          exit={{ opacity: 0, duration: 2 }}
+        >
+          {cardVisible2 ? (
+            <HighlightCard
+              heading={highlights[1].heading}
+              paragraph={highlights[1].paragraph}
+              image={highlights[1].image}
+            />
+          ) : (
+            ''
+          )}
+        </StyledHighlightCard>
+      </StyledSectionHighlight>
+    </>
   );
 }
 
