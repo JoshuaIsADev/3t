@@ -43,22 +43,25 @@ const Img = styled.img`
   border-radius: 2rem;
 `;
 
-function HighlightCard({ heading, paragraph, image }) {
+function HighlightCard({ highlight, id, outOf }) {
+  console.log(id);
   return (
     <>
       <InfoContainer>
         <HeadingContainer>
-          <Heading as='h2'>{heading}</Heading>
+          <Heading as='h2'>{highlight.heading}</Heading>
         </HeadingContainer>
         <ParagraphContainer>
           <SubheadingContainer>
-            <Heading as='h5'>Highlight 1 / 3</Heading>
+            <Heading as='h5'>
+              Highlight {highlight.id} / {outOf}
+            </Heading>
           </SubheadingContainer>
-          <p>{paragraph}</p>
+          <p>{highlight.paragraph}</p>
         </ParagraphContainer>
       </InfoContainer>
       <ImgContainer>
-        <Img src={image} />
+        <Img src={highlight.image} />
       </ImgContainer>
     </>
   );

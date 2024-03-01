@@ -26,7 +26,7 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h2' &&
     css`
-      font-size: 8rem;
+      font-size: 7rem;
       font-weight: 800;
       line-height: 7rem;
       text-transform: uppercase;
@@ -62,6 +62,16 @@ ${(props) =>
       font-weight: 800;
       line-height: 1rem;
       text-transform: uppercase;
+      ${(props) => variations[props.$variation]}
+      padding: ${(props) => props.$padding || '0'};
+    `}
+${(props) =>
+    props.as === 'h6' &&
+    css`
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1rem;
+
       ${(props) => variations[props.$variation]}
       padding: ${(props) => props.$padding || '0'};
     `}

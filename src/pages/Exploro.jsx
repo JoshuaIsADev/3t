@@ -96,7 +96,7 @@ function Exploro() {
 
       <SectionHighlight highlights={highlights} />
 
-      {/* <SectionDetails details={details} /> */}
+      <SectionDetails details={details} />
     </>
   );
 }

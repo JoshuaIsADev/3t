@@ -22,8 +22,8 @@ const variations = {
   `,
 
   product: css`
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.3rem;

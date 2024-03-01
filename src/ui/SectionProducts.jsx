@@ -1,9 +1,4 @@
 import styled from 'styled-components';
-import Column from './Column';
-import ProductCard from './ProductCard';
-import Row from './Row';
-import Section from './Section';
-import ArticleHeader from './ArticleHeader';
 import { ProductSwiper } from './ProductSwiper';
 import Heading from './Heading';
 

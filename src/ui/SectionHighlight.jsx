@@ -6,17 +6,17 @@ import { useRef } from 'react';
 const variations = {
   slide1: css`
     position: relative;
-    height: 300vh;
+    height: 225vh;
   `,
 
   slide2: css`
     position: relative;
-    height: 300vh;
+    height: 125vh;
   `,
 
   slide3: css`
     position: relative;
-    height: 300vh;
+    height: 225vh;
   `,
 
   cardMiddle: css`
@@ -81,9 +81,8 @@ function SectionHighlight({ highlights }) {
       <StyledSectionHighlight ref={myRef} $variation='slide1'>
         <StyledHighlightCard style={{ opacity }}>
           <HighlightCard
-            heading={highlights[0].heading}
-            paragraph={highlights[0].paragraph}
-            image={highlights[0].image}
+            highlight={highlights[0]}
+            outOf={highlights.length - 1}
           />
         </StyledHighlightCard>
       </StyledSectionHighlight>
@@ -93,22 +92,19 @@ function SectionHighlight({ highlights }) {
           $variation='cardMiddle'
         >
           <HighlightCard
-            heading={highlights[1].heading}
-            paragraph={highlights[1].paragraph}
-            image={highlights[1].image}
+            highlight={highlights[1]}
+            outOf={highlights.length - 1}
           />
         </StyledHighlightCard>
       </StyledSectionHighlight>
       <StyledSectionHighlight ref={myRef3} $variation='slide3'>
         <StyledHighlightCard style={{ opacity: opacity3 }}>
           <HighlightCard
-            heading={highlights[2].heading}
-            paragraph={highlights[2].paragraph}
-            image={highlights[2].image}
+            highlight={highlights[2]}
+            outOf={highlights.length - 1}
           />
         </StyledHighlightCard>
       </StyledSectionHighlight>
-      <StyledSectionHighlight></StyledSectionHighlight>
     </>
   );
 }

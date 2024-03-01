@@ -10,20 +10,28 @@ const StyledProductCard = styled.div`
   min-width: 300px;
   border: 1px solid var(--color-grey-200);
   border-radius: 10px;
-  padding: 1rem;
 `;
+
+// const TextContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 0.5rem;
+//   padding-top: 1rem;
+// `;
 
 const Img = styled.img`
   width: 100%;
   object-fit: contain;
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--color-grey-200);
 `;
 
 const Ul = styled.ul`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
-  align-items: end;
+  padding: 1.5rem 1rem 1.5rem;
+  gap: 0.5rem;
 `;
 
 function ProductCard({ product }) {
@@ -32,15 +40,13 @@ function ProductCard({ product }) {
       <Img src={product.image} />
       <Ul>
         <li>
-          <Heading as='h4'>{product.name}</Heading>
+          <Heading as='h5'>{product.name}</Heading>
         </li>
         <li>
-          <Heading as='h5'>From ${product.price}</Heading>
+          <Heading as='h6'>{product.headline}</Heading>
         </li>
-      </Ul>
-      <Ul>
         <li>
-          <Heading as='h5'>{product.headline}</Heading>
+          <Heading as='h6'>From ${product.price}</Heading>
         </li>
         <li>
           <StyledLink to={`/${product.link}`} $variation='product'>

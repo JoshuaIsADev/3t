@@ -10,10 +10,12 @@ import SwiperNav from './SwiperNav';
 const StyledProductSwiper = styled(Swiper)`
   width: 100%;
   padding-top: 4rem;
+  padding-left: 3rem;
 
   & .swiper-slide {
     max-width: 800px;
-    padding: 0 2rem;
+    padding: 0 1rem 0 0;
+    transform: translateX(-1rem);
   }
   & .swiper-pagination-bullet {
     width: 50px;
@@ -21,12 +23,14 @@ const StyledProductSwiper = styled(Swiper)`
     border-radius: 0;
   }
   & .swiper-pagination-bullets {
+    position: absolute;
     display: flex;
-    justify-content: right;
+    justify-content: left;
     width: 100%;
     padding: 0 var(--padding-sides);
     top: 0.7rem;
-    z-index: -10;
+    left: 10rem;
+    z-index: 1;
   }
 
   & .swiper-pagination-bullet-active {

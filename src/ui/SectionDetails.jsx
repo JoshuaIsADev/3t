@@ -12,6 +12,35 @@ import { Button } from './Button';
 import ArticleHeader from './ArticleHeader';
 import { motion } from 'framer-motion';
 
+const StyledSectionDetails = styled.article`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--width-max);
+  margin: 0 auto;
+  padding: 8rem var(--padding-sides) 0;
+`;
+
+const HeadingContainer = styled.div`
+  width: 100%;
+  padding: 0;
+  padding-bottom: 3rem;
+`;
+
+const SubheadingContainer = styled.div`
+  width: 100%;
+  max-width: var(--width-text-max);
+  padding: 0;
+  padding-bottom: 2rem;
+`;
+
+const ParagraphContainer = styled.div`
+  width: 100%;
+  max-width: var(--width-text-max);
+  padding: 0;
+  padding-bottom: 2rem;
+`;
+
 const DetailContainer = styled(motion.div)`
   position: relative;
   display: flex;
@@ -20,7 +49,7 @@ const DetailContainer = styled(motion.div)`
   width: 100%;
   max-width: var(--width-max);
   border-bottom: 1px solid var(--color-grey-200);
-  padding: 2rem 0 2.6rem;
+  padding: 1rem 0 1.6rem;
   gap: 0rem;
 `;
 
@@ -93,67 +122,66 @@ function SectionDetails({ details }) {
   };
 
   return (
-    <Section>
-      <ArticleHeader
-        heading={details[0].heading}
-        paragraph={details[0].paragraph}
-      />
-      <article>
-        <Row>
-          <Column $variation='details'>
-            {details.slice(1).map((detail, index) => {
-              const isExpanded = index === expandedIndex;
+    <StyledSectionDetails>
+      <HeadingContainer>
+        <Heading as='h2'>{details[0].heading}</Heading>
+      </HeadingContainer>
+      <ParagraphContainer>
+        <p>{details[0].paragraph}</p>
+      </ParagraphContainer>
 
-              return (
-                <DetailContainer
-                  key={detail.id}
-                  whileHover={isExpanded ? 'hide' : 'show'}
-                  transition={{
-                    duration: 0.4,
-                    type: 'ease',
-                    stiffness: '300',
-                  }}
-                >
-                  <DetailRow
-                    onClick={() => handleClick(index)}
-                    variants={HoveredRow}
-                  >
-                    <Heading as='h4' $variation='cap'>
-                      {detail.heading}
-                    </Heading>
-                    <IconContext.Provider value={{ size: '2rem' }}>
-                      <ButtonContainer>
-                        <Button $variation='details'>
-                          {isExpanded ? (
-                            <HiMiniMinus />
-                          ) : (
-                            <HiMiniPlus
-                              style={{
-                                backgroundColor: 'black',
-                                color: 'white',
-                              }}
-                            />
-                          )}
-                        </Button>
-                      </ButtonContainer>
-                    </IconContext.Provider>
-                  </DetailRow>
-                  {isExpanded && (
-                    <DetailRow>
-                      <TextContainer>
-                        <p>{detail.paragraph}</p>
-                      </TextContainer>
-                      <Img src={detail.image} />
-                    </DetailRow>
-                  )}
-                  <BlackBg variants={Hovered} />
-                </DetailContainer>
-              );
-            })}
-          </Column>
-        </Row>
+      <article>
+        {details.slice(1).map((detail, index) => {
+          const isExpanded = index === expandedIndex;
+
+          return (
+            <DetailContainer
+              key={detail.id}
+              whileHover={isExpanded ? 'hide' : 'show'}
+              transition={{
+                duration: 0.4,
+                type: 'ease',
+                stiffness: '300',
+              }}
+            >
+              <DetailRow
+                onClick={() => handleClick(index)}
+                variants={HoveredRow}
+              >
+                <Heading as='h3' $variation='cap'>
+                  {detail.heading}
+                </Heading>
+                <IconContext.Provider value={{ size: '2rem' }}>
+                  <ButtonContainer>
+                    <Button $variation='details'>
+                      {isExpanded ? (
+                        <HiMiniMinus />
+                      ) : (
+                        <HiMiniPlus
+                          style={{
+                            backgroundColor: 'black',
+                            color: 'white',
+                          }}
+                        />
+                      )}
+                    </Button>
+                  </ButtonContainer>
+                </IconContext.Provider>
+              </DetailRow>
+              {isExpanded && (
+                <DetailRow>
+                  <TextContainer>
+                    <p>{detail.paragraph}</p>
+                  </TextContainer>
+                  <Img src={detail.image} />
+                </DetailRow>
+              )}
+              <BlackBg variants={Hovered} />
+            </DetailContainer>
+          );
+        })}
       </article>
-    </Section>
+    </StyledSectionDetails>
   );
 }
 
