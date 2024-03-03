@@ -44,7 +44,6 @@ const Img = styled.img`
 `;
 
 function HighlightCard({ highlight, id, outOf }) {
-  console.log(id);
   return (
     <>
       <InfoContainer>

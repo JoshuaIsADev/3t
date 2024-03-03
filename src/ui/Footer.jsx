@@ -1,8 +1,5 @@
 import Heading from './Heading';
-import Row from './Row';
-import Section from './Section';
 import footerData from './../data/footerData.json';
-import Column from './Column';
 import styled from 'styled-components';
 import { Button } from './Button';
 import FormInput from './FormInput';
@@ -64,7 +61,7 @@ function Footer() {
             type='email'
             required
             name='email'
-            value=''
+            defaultValue=''
           />
           <Button $variation='newsletter'>Submit</Button>
         </FormContainer>

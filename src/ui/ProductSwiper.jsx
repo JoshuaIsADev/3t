@@ -30,7 +30,7 @@ const StyledProductSwiper = styled(Swiper)`
     padding: 0 var(--padding-sides);
     top: 0.7rem;
     left: 10rem;
-    z-index: 1;
+    z-index: -10;
   }
 
   & .swiper-pagination-bullet-active {

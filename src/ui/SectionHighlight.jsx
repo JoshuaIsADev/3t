@@ -32,6 +32,7 @@ const StyledSectionHighlight = styled(motion.section)`
   height: 200vh;
   margin: 0 auto;
   padding: 6rem var(--padding-sides) 2rem;
+  z-index: -100;
   ${(props) => variations[props.$variation]}
 `;
 
