@@ -49,7 +49,7 @@ function ProductCard({ product }) {
           <Heading as='h6'>From ${product.price}</Heading>
         </li>
         <li>
-          <StyledLink to={`/${product.link}`} $variation='product'>
+          <StyledLink to={`/${product.link}`} $variation='underline'>
             Shop now
           </StyledLink>
         </li>

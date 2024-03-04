@@ -56,11 +56,11 @@ function Footer() {
         </AddressesContainer>
         <FormContainer>
           <FormInput
-            label='Sign up'
+            label='Newsletter'
             placeholder='Your email address'
             type='email'
             required
-            name='email'
+            name='newsletter'
             defaultValue=''
           />
           <Button $variation='newsletter'>Submit</Button>

@@ -11,6 +11,7 @@ import SignIn from './pages/SignIn';
 import Cart from './pages/Cart';
 import PageNotFound from './pages/PageNotFound';
 import AppLayout from './ui/AppLayout';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='strada' element={<Strada />} />
             <Route path='about' element={<About />} />
             <Route path='signin' element={<SignIn />} />
+            <Route path='signup' element={<SignUp />} />
             <Route path='cart' element={<Cart />} />
             <Route path='*' element={<PageNotFound />} />
           </Route>

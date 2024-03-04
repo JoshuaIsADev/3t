@@ -21,7 +21,7 @@ const variations = {
     }
   `,
 
-  product: css`
+  underline: css`
     font-size: 1rem;
     font-weight: 600;
     text-decoration: underline;

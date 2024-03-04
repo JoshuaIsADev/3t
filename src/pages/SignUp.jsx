@@ -1,15 +1,10 @@
-import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
-} from '../utils/firebase/firebase.utils';
-
 import styled from 'styled-components';
 import Heading from '../ui/Heading';
 import { Button } from '../ui/Button';
 import FormInput from '../ui/FormInput';
 import StyledLink from '../ui/StyledLink';
 
-const StyledSignIn = styled.section`
+const StyledSignUp = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,25 +44,41 @@ const SignUpContainer = styled.article`
   padding-bottom: 2rem;
 `;
 
-function SignIn() {
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
-  };
+const NewsletterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const CheckboxInput = styled.input`
+  height: 1.5rem;
+  width: 1.5rem;
+`;
+
+function SignUp() {
   return (
     <>
-      <StyledSignIn>
+      <StyledSignUp>
         <HeadingContainer>
-          <Heading as='h2'>Sign in to your account</Heading>
+          <Heading as='h2'>Create an account</Heading>
         </HeadingContainer>
         <div>
           <SignUpContainer>
-            <Heading as='h5'>
-              Not yet a 3T member yet?{' '}
-              <StyledLink to='/signup' $variation='underline'>
-                Create an account.
-              </StyledLink>
-            </Heading>
+            <NewsletterContainer>
+              <CheckboxInput
+                label='Newsletter'
+                placeholder='Your email address'
+                type='checkbox'
+                required
+                name='newsletter'
+                defaultValue=''
+              />
+              <Heading as='h5'>
+                Sign up for our newsletter and recieve the latest 3T news and
+                releases
+              </Heading>
+            </NewsletterContainer>
           </SignUpContainer>
           <FormContainer>
             <InputContainer>
@@ -80,6 +91,14 @@ function SignIn() {
                 defaultValue=''
               />
               <FormInput
+                label='email'
+                placeholder='Email'
+                type='email'
+                required
+                name='email'
+                defaultValue=''
+              />
+              <FormInput
                 label='password'
                 placeholder='Password'
                 type='password'
@@ -87,15 +106,21 @@ function SignIn() {
                 name='password'
                 defaultValue=''
               />
+              <FormInput
+                label='confirmPassword'
+                placeholder='Confirm password'
+                type='confirmPassword'
+                required
+                name='confirmPassword'
+                defaultValue=''
+              />
             </InputContainer>
-            <Button $variation='newsletter' onClick={logGoogleUser}>
-              Sign In
-            </Button>
+            <Button $variation='newsletter'>Sign Up</Button>
           </FormContainer>
         </div>
-      </StyledSignIn>
+      </StyledSignUp>
     </>
   );
 }
 
-export default SignIn;
+export default SignUp;
