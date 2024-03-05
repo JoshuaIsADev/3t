@@ -54,7 +54,7 @@ function Footer() {
             </div>
           ))}
         </AddressesContainer>
-        <FormContainer>
+        <FormContainer onSubmit={() => {}}>
           <FormInput
             label='Newsletter'
             placeholder='Your email address'
@@ -63,7 +63,9 @@ function Footer() {
             name='newsletter'
             defaultValue=''
           />
-          <Button $variation='newsletter'>Submit</Button>
+          <Button type='submit' $variation='newsletter'>
+            Submit
+          </Button>
         </FormContainer>
       </div>
     </StyledFooter>

@@ -8,14 +8,14 @@ import styled from 'styled-components';
 
 const Input = styled.input`
   width: 100%;
-  background-color: var(--color-grey-900);
-  color: var(--color-grey-0);
+  background-color: var(--color-grey-0);
+  color: var(--color-grey-900);
   padding: 1rem 4rem;
   height: 10rem;
   font-size: 4rem;
   font-weight: 600;
   text-transform: uppercase;
-  border: none;
+  border: 1px solid var(--color-grey-900);
   border-radius: 10rem;
 `;
 

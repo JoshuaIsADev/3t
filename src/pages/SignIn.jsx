@@ -72,11 +72,11 @@ function SignIn() {
           <FormContainer>
             <InputContainer>
               <FormInput
-                label='username'
-                placeholder='Username'
-                type='username'
+                label='displayName'
+                placeholder='Display name'
+                type='text'
                 required
-                name='username'
+                name='displayName'
                 defaultValue=''
               />
               <FormInput
