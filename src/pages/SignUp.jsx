@@ -74,8 +74,6 @@ function SignUp() {
   const { displayName, email, password, confirmPassword, newsletter } =
     formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };

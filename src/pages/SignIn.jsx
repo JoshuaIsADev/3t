@@ -1,6 +1,7 @@
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
+  signInAuthWithEmailAndPassword,
 } from '../utils/firebase/firebase.utils';
 
 import styled from 'styled-components';
@@ -8,6 +9,7 @@ import Heading from '../ui/Heading';
 import { Button } from '../ui/Button';
 import FormInput from '../ui/FormInput';
 import StyledLink from '../ui/StyledLink';
+import { useState } from 'react';
 
 const StyledSignIn = styled.section`
   display: flex;
@@ -49,10 +51,53 @@ const SignUpContainer = styled.article`
   padding-bottom: 2rem;
 `;
 
+const defaultFormFields = {
+  email: '',
+  password: '',
+};
+
 function SignIn() {
-  const logGoogleUser = async () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { email, password } = formFields;
+
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
+  const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    await createUserDocumentFromAuth(user);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await signInAuthWithEmailAndPassword(email, password);
+      console.log(response);
+      resetFormFields();
+    } catch (error) {
+      switch (error.code) {
+        case 'auth/wrong-password':
+          alert('Incorrect password for email');
+          break;
+        case 'auth/user-not-found':
+          alert('email not found');
+          break;
+        default:
+          console.log(error);
+      }
+      // if (error.code === 'auth/invalid-credential') {
+      //   alert('Incorrect password for email');
+      // }
+      console.log(error);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormFields({ ...formFields, [name]: value });
   };
   return (
     <>
@@ -69,15 +114,16 @@ function SignIn() {
               </StyledLink>
             </Heading>
           </SignUpContainer>
-          <FormContainer>
+          <FormContainer onSubmit={handleSubmit}>
             <InputContainer>
               <FormInput
-                label='displayName'
-                placeholder='Display name'
-                type='text'
+                label='email'
+                placeholder='Email'
+                type='email'
                 required
-                name='displayName'
-                defaultValue=''
+                name='email'
+                value={email}
+                onChange={handleChange}
               />
               <FormInput
                 label='password'
@@ -85,11 +131,19 @@ function SignIn() {
                 type='password'
                 required
                 name='password'
-                defaultValue=''
+                value={password}
+                onChange={handleChange}
               />
             </InputContainer>
-            <Button $variation='newsletter' onClick={logGoogleUser}>
+            <Button $variation='newsletter' type='submit'>
               Sign In
+            </Button>
+            <Button
+              $variation='newsletter'
+              type='button'
+              onClick={signInWithGoogle}
+            >
+              Sign In Google
             </Button>
           </FormContainer>
         </div>
